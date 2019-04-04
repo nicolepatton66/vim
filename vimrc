@@ -373,6 +373,7 @@ vmap <silent> ,X ygv!xmllint --format -<cr>
 augroup custom
     autocmd!
 
+    autocmd BufRead,BufNewFile *.coffee        set ft=coffee
     autocmd BufRead,BufNewFile *.slim          set ft=slim
     autocmd BufRead,BufNewFile *.hs            set ft=xml
     autocmd BufRead,BufNewFile *.tt            set ft=html
@@ -386,6 +387,7 @@ augroup custom
 
     autocmd FileType asm        call Asm_settings()
     autocmd FileType c          call C_settings()
+    autocmd FileType coffee     call Coffee_settings()
     autocmd FileType cpp        call Cpp_settings()
     autocmd FileType eruby      call ERuby_settings()
     autocmd FileType html       call Html_settings()
@@ -406,14 +408,15 @@ augroup custom
     " remove crap that filetype plugins automatically add
     autocmd FileType * setl formatoptions-=r formatoptions-=o formatoptions-=l
 
-    autocmd BufWrite *.java :call DeleteTrailingWS()
-    autocmd BufWrite *.js   :call DeleteTrailingWS()
-    autocmd BufWrite *.pm   :call DeleteTrailingWS()
-    autocmd BufWrite *.pl   :call DeleteTrailingWS()
-    autocmd BufWrite *.rb   :call DeleteTrailingWS()
-    autocmd BufWrite *.erb  :call DeleteTrailingWS()
-    autocmd BufWrite *.slim :call DeleteTrailingWS()
-    autocmd BufWrite *.yml  :call DeleteTrailingWS()
+    autocmd BufWrite *.java   :call DeleteTrailingWS()
+    autocmd BufWrite *.js     :call DeleteTrailingWS()
+    autocmd BufWrite *.pm     :call DeleteTrailingWS()
+    autocmd BufWrite *.pl     :call DeleteTrailingWS()
+    autocmd BufWrite *.rb     :call DeleteTrailingWS()
+    autocmd BufWrite *.erb    :call DeleteTrailingWS()
+    autocmd BufWrite *.slim   :call DeleteTrailingWS()
+    autocmd BufWrite *.yml    :call DeleteTrailingWS()
+    autocmd BufWrite *.coffee :call DeleteTrailingWS()
 
     " make sure mouse is left in a sane state
     autocmd VimLeavePre * set ttymouse=xterm
@@ -556,6 +559,11 @@ function! ERuby_settings()
 endfunction
 
 function! Scss_settings()
+    set softtabstop=2
+    set shiftwidth=2
+endfunction
+
+function! Coffee_settings()
     set softtabstop=2
     set shiftwidth=2
 endfunction
