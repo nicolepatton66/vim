@@ -30,7 +30,6 @@ set termencoding=utf-8
 
 " syntax highlighting
 set background=dark
-"colorscheme smyck
 colorscheme apprentice
 syntax on
 highlight Normal ctermbg=Black
@@ -223,24 +222,22 @@ nnoremap <silent> <F4> 0f{%/:\s*function\s*(<cr>0wzz:nohlsearch<cr>
 nnoremap <silent> <F5> gqap
 vnoremap <silent> <F5> gq
 
-" F6 toggle list (show whitespace, etc)
-nnoremap <silent> <F6> :call ToggleList()<cr>
+nnoremap <silent> <F6> :call ToggleShowEOLSpacesAndTabs()<cr>
 
 " F7 clean up file (convert tabs, etc)
 nnoremap <silent> <F7> :%s/\s\+$//e<cr>ggVG=:v/./.,/./-1join<cr><c-l>gg:nohlsearch<cr>
 
 " F8 clear eol space
-"nnoremap <silent> <F8> m`:%s/\s\+$//e<cr>``:nohlsearch<cr>
 nnoremap <silent> <F8> :call ClearEOLSpace()<cr>:nohlsearch<cr>
 
 " F9 redraw screen and clear highlighting
 nnoremap <silent> <F9> <c-l>:nohlsearch<cr>
 
 " F10 bash
-nnoremap <silent> <F10> :set ft=sh<cr>ggi#!/bin/bash<cr>set -e<cr><cr><esc>
+nnoremap <silent> <F10> :set ft=sh<cr>ggi#!/bin/bash<cr>set -e<cr><cr><esc>:!chmod 755 %<cr>
 
 " F11 ruby
-nnoremap <silent> <F11> :set ft=ruby<cr>ggi#!/usr/bin/env ruby<cr><cr><esc>
+nnoremap <silent> <F11> :set ft=ruby<cr>ggi#!/usr/bin/env ruby<cr><cr><esc>:!chmod 755 %<cr>
 
 " F12 text
 nnoremap <silent> <F12> :set ft=text<cr>
@@ -436,15 +433,14 @@ function! ClearEOLSpace()
     normal ``
 endfunction
 
-" show end of line spaces and tabs
-function! SetListOn()
+function! ShowEOLSpacesAndTabs()
     if !exists("g:list_showing")
         let g:list_showing = 1
     endif
     set list
 endfunction
 
-function! ToggleList()
+function! ToggleShowEOLSpacesAndTabs()
     if !exists("g:list_showing")
         let g:list_showing = 0
     endif
@@ -534,17 +530,19 @@ endfunction
 " Lang_settings -------------------------------------------
 
 function! Ruby_settings()
-    call SetListOn()
+    call ShowEOLSpacesAndTabs()
 
     colorscheme railscasts
 
     set colorcolumn=80
     set softtabstop=2
     set shiftwidth=2
+
+    ia lb puts "========================= "
 endfunction
 
 function! ERuby_settings()
-    call SetListOn()
+    call ShowEOLSpacesAndTabs()
 
     colorscheme railscasts
 
@@ -556,6 +554,22 @@ function! ERuby_settings()
     vmap <silent> ,, ygv!comment_html<cr>
     nmap <silent> ,. :s/<!-- *\(.*\)-->/\1/<cr><F8>
     vmap <silent> ,. :s/<!-- *\(.*\)-->/\1/<cr><F8>
+
+    " create closing tag
+    nnoremap <silent> ,c yypli/<esc>f dt>k$
+endfunction
+
+function! Html_settings()
+    set softtabstop=2
+    set shiftwidth=2
+
+    nmap <silent> ,, !!comment_html<cr>
+    vmap <silent> ,, ygv!comment_html<cr>
+    nmap <silent> ,. :s/<!-- *\(.*\)-->/\1/<cr><F8>
+    vmap <silent> ,. :s/<!-- *\(.*\)-->/\1/<cr><F8>
+
+    " create closing tag
+    nnoremap <silent> ,c yypli/<esc>f dt>k$
 endfunction
 
 function! Scss_settings()
@@ -579,7 +593,7 @@ function! Slim_settings()
 endfunction
 
 function! Perl_settings()
-    call SetListOn()
+    call ShowEOLSpacesAndTabs()
 
     set colorcolumn=80
 
@@ -613,9 +627,9 @@ function! Perl_settings()
 endfunction
 
 function! Javascript_settings()
-    call SetListOn()
-
     set colorcolumn=80
+    set softtabstop=2
+    set shiftwidth=2
 
     setlocal comments=s1:/*,mb:*,ex:*/,://
 
@@ -626,13 +640,10 @@ function! Javascript_settings()
 
     nnoremap <silent> ,w :normal! kA {<esc>jo}<esc>k==
     nnoremap <silent> ,W :normal! k$hDjjddk<cr>==
-
-    ia ret return
-    ia xx //XXX
 endfunction
 
 function! Java_settings()
-    call SetListOn()
+    call ShowEOLSpacesAndTabs()
 
     set colorcolumn=80
 
@@ -671,7 +682,7 @@ function! Asm_settings()
 endfunction
 
 function! C_settings()
-    call SetListOn()
+    call ShowEOLSpacesAndTabs()
 
     set colorcolumn=80
 
@@ -681,23 +692,13 @@ function! C_settings()
 endfunction
 
 function! Cpp_settings()
-    call SetListOn()
+    call ShowEOLSpacesAndTabs()
 
     set colorcolumn=80
 
     setlocal cin
     setlocal cino=:.5s=.5sc1
     setlocal comments=s1:/*,mb:*,ex:*/,://
-endfunction
-
-function! Html_settings()
-    set softtabstop=2
-    set shiftwidth=2
-
-    nmap <silent> ,, !!comment_html<cr>
-    vmap <silent> ,, ygv!comment_html<cr>
-    nmap <silent> ,. :s/<!-- *\(.*\)-->/\1/<cr><F8>
-    vmap <silent> ,. :s/<!-- *\(.*\)-->/\1/<cr><F8>
 endfunction
 
 function! Json_settings()
