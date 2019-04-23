@@ -234,7 +234,7 @@ nnoremap <silent> <F8> :call ClearEOLSpace()<cr>:nohlsearch<cr>
 nnoremap <silent> <F9> <c-l>:nohlsearch<cr>
 
 " F10 bash
-nnoremap <silent> <F10> :set ft=sh<cr>ggi#!/bin/bash<cr>set -e<cr><cr><esc>:!chmod 755 %<cr>
+nnoremap <silent> <F10> :set ft=sh<cr>ggi#!/usr/bin/env bash<cr>set -e<cr><cr><esc>:!chmod 755 %<cr>
 
 " F11 ruby
 nnoremap <silent> <F11> :set ft=ruby<cr>ggi#!/usr/bin/env ruby<cr><cr><esc>:!chmod 755 %<cr>
