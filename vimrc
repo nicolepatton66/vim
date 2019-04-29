@@ -215,8 +215,8 @@ set pastetoggle=<F2>
 " F3 toggles mouse ownership (Vim or terminal)
 nnoremap <silent> <F3> :call ToggleMouse()<cr>
 
-" F4 jump to next function
-nnoremap <silent> <F4> 0f{%/:\s*function\s*(<cr>0wzz:nohlsearch<cr>
+" F4 toggle indent guide
+nnoremap <silent> <F4> :IndentGuidesToggle<cr>
 
 " F5 justify paragraphs
 nnoremap <silent> <F5> gqap
