@@ -585,6 +585,7 @@ endfunction
 function! Slim_settings()
     set softtabstop=2
     set shiftwidth=2
+    set cursorcolumn
 
     nmap <silent> ,, !!comment_slim<cr>
     vmap <silent> ,, ygv!comment_slim<cr>
