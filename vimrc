@@ -36,9 +36,11 @@ set termencoding=utf-8
 set background=dark
 colorscheme apprentice
 syntax on
-highlight Normal ctermbg=Black
 
-" set tab width and don't use tab chars!
+" make the background truly black
+highlight Normal ctermbg=black
+
+" set tab width and don't use tab chars
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -174,9 +176,6 @@ set undolevels=1000
 " customize tabs, trailing whitespace, and non-breaking spaces (when list is on)
 exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
 
-" java syntax (doesn't work to put this in the java setup function)
-let java_allow_cpp_keywords=1
-
 " Module_settings -----------------------------------------
 
 " BufExplorer
@@ -196,17 +195,6 @@ let Tlist_Sort_Type = "name"
 let Tlist_Enable_Fold_Column = 0
 nnoremap <silent> ,t :TlistToggle<cr>
 
-" DragVisuals
-"let g:DVB_TrimWS = 1
-"vmap <expr> <LEFT>  DVB_Drag('left')
-"vmap <expr> <RIGHT> DVB_Drag('right')
-"vmap <expr> <DOWN>  DVB_Drag('down')
-"vmap <expr> <UP>    DVB_Drag('up')
-"vmap <expr> D       DVB_Duplicate()
-
-" JSON - hide double quotes or not
-let g:vim_json_syntax_conceal = 0
-
 " Keybindings ---------------------------------------------
 
 " F2 toggles between autoindent when pasting or not
@@ -222,6 +210,7 @@ nnoremap <silent> <F4> :IndentGuidesToggle<cr>
 nnoremap <silent> <F5> gqap
 vnoremap <silent> <F5> gq
 
+" F6 show EOL whitespace
 nnoremap <silent> <F6> :call ToggleShowEOLSpacesAndTabs()<cr>
 
 " F7 clean up file (convert tabs, etc)
@@ -271,17 +260,10 @@ nnoremap <silent> ,m <c-w>w<c-w>_
 " quote word
 nnoremap <silent> ,q :normal! "zyiw<esc>:let @z="\'".@z."\'"<cr>cw<c-r>z<esc>b
 nnoremap <silent> ,Q :normal! "zyiw<esc>:let @z="\"".@z."\""<cr>cw<c-r>z<esc>b
-"nnoremap <silent> ,Q :normal! F'xf'x<esc>
 
 " spellcheck word
 nnoremap <silent> ,s :!echo <cword> \| aspell -a<cr>
 vnoremap <silent> ,s :w! %.spellcheck<cr>:!aspell -x check %.spellcheck<cr>:*d<cr>:if line(".") != line("$")<cr>.-1r %.spellcheck<cr>else<cr>.r %.spellcheck<cr>endif<cr>:!rm %.spellcheck<cr>
-
-" open vimrc
-nnoremap <silent> ,v :next $MYVIMRC<cr>
-
-" open .vim_dict
-nnoremap <silent> ,d :next ~/.vim_dict<cr>
 
 " underline current line
 nnoremap <silent> ,u yypv$hr=
@@ -359,7 +341,7 @@ nnoremap <expr> gV "`[".getregtype(v:register)[0]."`]"
 nnoremap ,r :%s/\<<c-r><c-w>\>//gc<left><left><left>
 nnoremap ,R :%s/\<<c-r><c-w>\>/<c-r><c-w>/gc<left><left><left>
 
-" pretty print json
+" pretty print json, xml
 nmap <silent> ,x !!python -mjson.tool<cr>
 vmap <silent> ,x ygv!python -mjson.tool<cr>
 nmap <silent> ,X !!xmllint --format -<cr>
@@ -378,9 +360,7 @@ augroup custom
     autocmd BufRead,BufNewFile *.txt           set ft=text
     autocmd BufRead,BufNewFile *.json          set ft=json
     autocmd BufRead,BufNewFile .bash_functions set ft=sh
-
-    autocmd BufRead COMMIT_EDITMSG set ft=text
-    autocmd BufRead log_*          set wrap
+    autocmd BufRead            COMMIT_EDITMSG  set ft=text
 
     autocmd FileType asm        call Asm_settings()
     autocmd FileType c          call C_settings()
@@ -604,10 +584,6 @@ function! Perl_settings()
     setlocal cino=:.5s=.5sc1
     setlocal cinkeys=0{,0},!^F,o,O,e
 
-    " check perl code with :make
-    setlocal makeprg=perl\ -c\ %\ $*
-    setlocal errorformat=%f:%l:%m
-
     setlocal iskeyword-=,
 
     let perl_want_scope_in_variables=1
@@ -646,6 +622,8 @@ function! Javascript_settings()
 endfunction
 
 function! Java_settings()
+    let java_allow_cpp_keywords=1
+
     call ShowEOLSpacesAndTabs()
 
     set colorcolumn=80
@@ -662,17 +640,13 @@ function! Java_settings()
     nnoremap <silent> ,o :e <c-r><c-w>.java<cr>
 
     " wrap cur line inside braces
-    "nmap <silent> ,w :normal! O{<esc>jjddkkp
     nnoremap <silent> ,w :normal! kA {<esc>jo}<esc>k==
 
     " clear braces around cur line
-    "nnoremap <silent> ,W :normal! kddjddk^<cr>==
     nnoremap <silent> ,W :normal! k$hDjjddk<cr>==
 
     nnoremap dm /}<cr>[m?^\(\s*$\\|{\)<cr>jV]m%d
     nnoremap ym /}<cr>[m?^\(\s*$\\|{\)<cr>jV]m%y
-
-    nnoremap <silent> <F5>  o<esc>o// -----------------------------------------------------<esc>bllllR  <esc>R
 
     nmap <silent> ,, !!comment_java<cr>
     vmap <silent> ,, ygv!comment_java<cr>
@@ -705,6 +679,9 @@ function! Cpp_settings()
 endfunction
 
 function! Json_settings()
+    " hide double quotes or not
+    let g:vim_json_syntax_conceal = 0
+
     set autoindent
     set formatoptions=tcq2l
     set textwidth=78
