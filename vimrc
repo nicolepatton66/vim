@@ -549,6 +549,7 @@ function! ERuby_settings()
     set colorcolumn=80
     set softtabstop=2
     set shiftwidth=2
+    set cursorcolumn
 
     nmap <silent> ,, !!comment_html<cr>
     vmap <silent> ,, ygv!comment_html<cr>
@@ -580,6 +581,7 @@ endfunction
 function! Coffee_settings()
     set softtabstop=2
     set shiftwidth=2
+    set cursorcolumn
 endfunction
 
 function! Slim_settings()
