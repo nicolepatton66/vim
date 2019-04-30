@@ -707,9 +707,9 @@ endfunction
 function! Json_settings()
     set autoindent
     set formatoptions=tcq2l
-    set textwidth=78 shiftwidth=2
-    set softtabstop=2 tabstop=8
-    set expandtab
+    set textwidth=78
+    set softtabstop=2
+    set shiftwidth=2
 endfunction
 
 function! Mail_settings()
