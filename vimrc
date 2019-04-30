@@ -39,7 +39,7 @@ syntax on
 highlight Normal ctermbg=Black
 
 " set tab width and don't use tab chars!
-set tabstop=8
+set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
