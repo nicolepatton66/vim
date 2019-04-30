@@ -24,6 +24,10 @@
 " do this first!
 set nocompatible
 
+" detect filetypes and auto load any plugins for them
+filetype on
+filetype plugin on
+
 " encoding
 set encoding=utf-8
 set termencoding=utf-8
@@ -33,10 +37,6 @@ set background=dark
 colorscheme apprentice
 syntax on
 highlight Normal ctermbg=Black
-
-" detect filetypes and auto load any plugins for them
-filetype on
-filetype plugin on
 
 " set tab width and don't use tab chars!
 set tabstop=8
