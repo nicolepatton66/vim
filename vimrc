@@ -380,6 +380,7 @@ augroup custom
     autocmd FileType sql        call Sql_settings()
     autocmd FileType text       call Text_settings()
     autocmd FileType vim        call Vim_settings()
+    autocmd FileType xhtml      call Html_settings()
     autocmd FileType xml        call Html_settings()
 
     " remove crap that filetype plugins automatically add
@@ -526,7 +527,6 @@ function! ERuby_settings()
     colorscheme railscasts
 
     setlocal colorcolumn=80
-    setlocal cursorcolumn
     setlocal shiftwidth=2
 
     nmap <silent> ,, !!comment_html<cr>
@@ -539,6 +539,9 @@ function! ERuby_settings()
 endfunction
 
 function! Html_settings()
+    call ShowEOLSpacesAndTabs()
+
+    setlocal colorcolumn=80
     setlocal shiftwidth=2
 
     nmap <silent> ,, !!comment_html<cr>
