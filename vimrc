@@ -41,8 +41,8 @@ syntax on
 highlight Normal ctermbg=black
 
 " set tab width and don't use tab chars
-set tabstop=4
-set softtabstop=4
+set tabstop=8
+set softtabstop=-1
 set shiftwidth=4
 set expandtab
 
@@ -383,7 +383,7 @@ augroup custom
     autocmd FileType xml        call Html_settings()
 
     " remove crap that filetype plugins automatically add
-    autocmd FileType * setl formatoptions-=r formatoptions-=o formatoptions-=l
+    autocmd FileType * setlocal formatoptions-=r formatoptions-=o formatoptions-=l
 
     autocmd BufWrite *.java   :call DeleteTrailingWS()
     autocmd BufWrite *.js     :call DeleteTrailingWS()
@@ -514,9 +514,8 @@ function! Ruby_settings()
 
     colorscheme railscasts
 
-    set colorcolumn=80
-    set softtabstop=2
-    set shiftwidth=2
+    setlocal colorcolumn=80
+    setlocal shiftwidth=2
 
     ia lb puts "========================= "
 endfunction
@@ -526,10 +525,9 @@ function! ERuby_settings()
 
     colorscheme railscasts
 
-    set colorcolumn=80
-    set softtabstop=2
-    set shiftwidth=2
-    set cursorcolumn
+    setlocal colorcolumn=80
+    setlocal cursorcolumn
+    setlocal shiftwidth=2
 
     nmap <silent> ,, !!comment_html<cr>
     vmap <silent> ,, ygv!comment_html<cr>
@@ -541,8 +539,7 @@ function! ERuby_settings()
 endfunction
 
 function! Html_settings()
-    set softtabstop=2
-    set shiftwidth=2
+    setlocal shiftwidth=2
 
     nmap <silent> ,, !!comment_html<cr>
     vmap <silent> ,, ygv!comment_html<cr>
@@ -554,20 +551,17 @@ function! Html_settings()
 endfunction
 
 function! Scss_settings()
-    set softtabstop=2
-    set shiftwidth=2
+    setlocal shiftwidth=2
 endfunction
 
 function! Coffee_settings()
-    set softtabstop=2
-    set shiftwidth=2
-    set cursorcolumn
+    setlocal cursorcolumn
+    setlocal shiftwidth=2
 endfunction
 
 function! Slim_settings()
-    set softtabstop=2
-    set shiftwidth=2
-    set cursorcolumn
+    setlocal cursorcolumn
+    setlocal shiftwidth=2
 
     nmap <silent> ,, !!comment_slim<cr>
     vmap <silent> ,, ygv!comment_slim<cr>
@@ -578,12 +572,10 @@ endfunction
 function! Perl_settings()
     call ShowEOLSpacesAndTabs()
 
-    set colorcolumn=80
-
+    setlocal colorcolumn=80
     setlocal cin
     setlocal cino=:.5s=.5sc1
     setlocal cinkeys=0{,0},!^F,o,O,e
-
     setlocal iskeyword-=,
 
     let perl_want_scope_in_variables=1
@@ -606,9 +598,8 @@ function! Perl_settings()
 endfunction
 
 function! Javascript_settings()
-    set colorcolumn=80
-    set softtabstop=2
-    set shiftwidth=2
+    setlocal colorcolumn=80
+    setlocal shiftwidth=2
 
     setlocal comments=s1:/*,mb:*,ex:*/,://
 
@@ -626,8 +617,7 @@ function! Java_settings()
 
     call ShowEOLSpacesAndTabs()
 
-    set colorcolumn=80
-
+    setlocal colorcolumn=80
     setlocal cin
     setlocal comments=s1:/*,mb:*,ex:*/,://
     setlocal cino=:.5s=.5sc1
@@ -655,14 +645,13 @@ function! Java_settings()
 endfunction
 
 function! Asm_settings()
-    setlocal shiftwidth=8
+    "setlocal shiftwidth=8
 endfunction
 
 function! C_settings()
     call ShowEOLSpacesAndTabs()
 
-    set colorcolumn=80
-
+    setlocal colorcolumn=80
     setlocal cin
     setlocal cino=:.5s=.5sc1
     setlocal comments=s1:/*,mb:*,ex:*/,://
@@ -671,8 +660,7 @@ endfunction
 function! Cpp_settings()
     call ShowEOLSpacesAndTabs()
 
-    set colorcolumn=80
-
+    setlocal colorcolumn=80
     setlocal cin
     setlocal cino=:.5s=.5sc1
     setlocal comments=s1:/*,mb:*,ex:*/,://
@@ -682,11 +670,8 @@ function! Json_settings()
     " hide double quotes or not
     let g:vim_json_syntax_conceal = 0
 
-    set autoindent
-    set formatoptions=tcq2l
-    set textwidth=78
-    set softtabstop=2
-    set shiftwidth=2
+    setlocal formatoptions=tcq2l
+    setlocal shiftwidth=2
 endfunction
 
 function! Mail_settings()
@@ -712,11 +697,11 @@ function! Text_settings()
 endfunction
 
 function! Vim_settings()
+    colorscheme smyck
+
     setlocal comments=:\"
     nmap <silent> ,, !!comment_vim<cr>
     vmap <silent> ,, ygv!comment_vim<cr>
     nmap <silent> ,. :s/"//<cr><F8>
     vmap <silent> ,. :s/"//<cr><F8>
-
-    colorscheme smyck
 endfunction
