@@ -8,18 +8,7 @@
 "   Functions
 "   Lang_settings
 "
-" Plugins:
-"   OmniPerl
-"   BufExplorer
-"   TagList
-"   TemporalMarks
-"   DragVisuals
-"
-" Tips:
-"   :verbose set varname
-"   :set verbose=9
-"
-" ~~~~~~~~~~~~~~~~~~~
+" ~~~~~~~~~~~~~~~~~~~~~
 
 " do this first!
 set nocompatible
@@ -89,7 +78,6 @@ set clipboard=unnamedplus
 
 " don't change the terminal title
 set notitle
-"set title titlestring=%t
 
 " get the backspace key to do sensible things
 set backspace=indent,eol,start
@@ -132,7 +120,7 @@ set showcmd
 set matchpairs+=<:>
 
 " what sort of eol's to handle (priority list)
-set fileformats=unix,dos,mac
+set fileformats=unix,mac,dos
 
 " milliseconds before cmd is cancelled
 set timeoutlen=2000
@@ -145,7 +133,7 @@ set history=50
 set viminfo='20,\"50,n~/.viminfo
 
 " auto ignore these when tabbing through file names
-set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.out,.class
+set suffixes=.bak,~,.swp,.o,.info,.aux,.dvi,.out,.class
 
 " don't wrap lines
 set nowrap
@@ -154,7 +142,7 @@ set nowrap
 set wildmenu
 set wildmode=list:longest,full
 
-" only add status line when >1 windows are open
+" only add status line when >1 buffers are open
 set laststatus=1
 
 " ruler
@@ -168,9 +156,7 @@ set hidden
 " allow visual blocks to go past eol, etc
 set virtualedit=block
 
-" persist undo, and keep the files in a tucked away corner
-"set undodir=$HOME/tmp/.vim_undo_files
-"set undofile
+" how many changes can we undo
 set undolevels=1000
 
 " customize tabs, trailing whitespace, and non-breaking spaces (when list is on)
@@ -517,8 +503,6 @@ function! Ruby_settings()
 
     setlocal colorcolumn=80
     setlocal shiftwidth=2
-
-    ia lb puts "========================= "
 endfunction
 
 function! ERuby_settings()
