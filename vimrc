@@ -332,6 +332,8 @@ nmap <silent> ,x !!python -mjson.tool<cr>
 vmap <silent> ,x ygv!python -mjson.tool<cr>
 nmap <silent> ,X !!xmllint --format -<cr>
 vmap <silent> ,X ygv!xmllint --format -<cr>
+nmap <silent> ,S !!sqlformat --reindent --keywords upper -<cr>
+vmap <silent> ,S ygv!sqlformat --reindent --keywords upper -<cr>
 
 " Autocommands --------------------------------------------
 
