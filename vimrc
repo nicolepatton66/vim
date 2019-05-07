@@ -503,6 +503,8 @@ function! Ruby_settings()
 
     setlocal colorcolumn=80
     setlocal shiftwidth=2
+
+    ia lb puts "============================================="
 endfunction
 
 function! ERuby_settings()
