@@ -496,6 +496,23 @@ function! DeleteTrailingWS()
     exe "normal `z"
 endfunction
 
+function RubyEndToken()
+    let current_line = getline( '.' )
+    let braces_at_end = '{\s*\(|\(,\|\s\|\w\)*|\s*\)\?$'
+    let stuff_without_do = '^\s*\(class\|if\|unless\|begin\|case\|for\|module\|while\|until\|def\)'
+    let with_do = 'do\s*\(|\(,\|\s\|\w\)*|\s*\)\?$'
+
+    if match(current_line, braces_at_end) >= 0
+        return "\<CR>}\<C-O>O"
+    elseif match(current_line, stuff_without_do) >= 0
+        return "\<CR>end\<C-O>O"
+    elseif match(current_line, with_do) >= 0
+        return "\<CR>end\<C-O>O"
+    else
+        return "\<CR>"
+    endif
+endfunction
+
 " Lang_settings -------------------------------------------
 
 function! Ruby_settings()
@@ -505,6 +522,9 @@ function! Ruby_settings()
 
     setlocal colorcolumn=80
     setlocal shiftwidth=2
+
+    " create closing tokens (complete block)
+    imap <buffer> <cr> <c-r>=RubyEndToken()<cr>
 
     ia lb puts "============================================="
 endfunction
