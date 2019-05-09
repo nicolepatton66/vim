@@ -29,6 +29,9 @@ syntax on
 " make the background truly black
 highlight Normal ctermbg=black
 
+" enable matchit
+runtime macros/matchit.vim
+
 " set tab width and don't use tab chars
 set tabstop=8
 set softtabstop=-1
