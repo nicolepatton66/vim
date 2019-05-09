@@ -181,6 +181,9 @@ let Tlist_Sort_Type = "name"
 let Tlist_Enable_Fold_Column = 0
 nnoremap <silent> ,t :TlistToggle<cr>
 
+" Closetag
+let g:closetag_filetypes = 'html,xhtml,eruby,xml'
+
 " Keybindings ---------------------------------------------
 
 " F2 toggles between autoindent when pasting or not
@@ -541,9 +544,6 @@ function! ERuby_settings()
     vmap <silent> ,, ygv!comment_html<cr>
     nmap <silent> ,. :s/<!-- *\(.*\)-->/\1/<cr><F8>
     vmap <silent> ,. :s/<!-- *\(.*\)-->/\1/<cr><F8>
-
-    " create closing tag
-    nnoremap <silent> ,c yypli/<esc>f dt>k$
 endfunction
 
 function! Html_settings()
@@ -556,9 +556,6 @@ function! Html_settings()
     vmap <silent> ,, ygv!comment_html<cr>
     nmap <silent> ,. :s/<!-- *\(.*\)-->/\1/<cr><F8>
     vmap <silent> ,. :s/<!-- *\(.*\)-->/\1/<cr><F8>
-
-    " create closing tag
-    nnoremap <silent> ,c yypli/<esc>f dt>k$
 endfunction
 
 function! Scss_settings()
