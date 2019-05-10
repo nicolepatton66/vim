@@ -502,7 +502,7 @@ function! DeleteTrailingWS()
     exe "normal `z"
 endfunction
 
-function RubyEndToken()
+function! RubyEndToken()
     let current_line = getline( '.' )
     let braces_at_end = '{\s*\(|\(,\|\s\|\w\)*|\s*\)\?$'
     let stuff_without_do = '^\s*\(class\|if\|unless\|begin\|case\|for\|module\|while\|until\|def\)'
