@@ -409,23 +409,23 @@ function! ClearEOLSpace()
 endfunction
 
 function! ShowEOLSpacesAndTabs()
-    if !exists("g:list_showing")
-        let g:list_showing = 1
+    if !exists("b:list_showing")
+        let b:list_showing = 1
     endif
-    set list
+    setlocal list
 endfunction
 
 function! ToggleShowEOLSpacesAndTabs()
-    if !exists("g:list_showing")
-        let g:list_showing = 0
+    if !exists("b:list_showing")
+        let b:list_showing = 0
     endif
 
-    if g:list_showing == 0
-        let g:list_showing = 1
-        set list
+    if b:list_showing == 0
+        let b:list_showing = 1
+        setlocal list
     else
-        let g:list_showing = 0
-        set nolist
+        let b:list_showing = 0
+        setlocal nolist
     endif
 endfunction
 
