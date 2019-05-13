@@ -61,9 +61,7 @@ set formatoptions=cq1
 
 " . = scan the current buffer ('wrapscan' is ignored)
 " b = scan other loaded buffers that are in the buffer list
-" k = scan the files given with the 'dictionary' option
-set complete=.,b,k
-set dictionary=~/.vim_dict
+set complete=.,b
 
 " write file when putting vim to sleep
 set autowrite
