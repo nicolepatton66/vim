@@ -50,7 +50,7 @@ set sidescrolloff=5
 
 " sane indentation by default
 set autoindent
-set smartindent
+set cindent
 filetype indent on
 
 " c = autowrap comments using textwidth
@@ -259,9 +259,6 @@ nnoremap <silent> ,U yypv$hr-
 " move to top/bottom quarter of screen
 nnoremap <silent> ,H M8k
 nnoremap <silent> ,L M8j
-
-" fix it so that # comments don't automatically go to the left margin
-inoremap # X<c-h>#
 
 " use visual blocks by default... ^v does character based
 nnoremap v <c-v>
