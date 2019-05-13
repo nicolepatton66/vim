@@ -699,6 +699,7 @@ function! Sql_settings()
 endfunction
 
 function! Text_settings()
+    setlocal colorcolumn=80
     setlocal nosmartindent
     setlocal formatoptions=tc1
 endfunction
