@@ -614,7 +614,9 @@ function! Javascript_settings()
     nmap <silent> ,. :s/\/\///<cr><F8>
     vmap <silent> ,. :s/\/\///<cr><F8>
 
+    " wrap cur line inside braces
     nnoremap <silent> ,w :normal! kA {<esc>jo}<esc>k==
+    " clear braces around cur line
     nnoremap <silent> ,W :normal! k$hDjjddk<cr>==
 endfunction
 
@@ -637,7 +639,6 @@ function! Java_settings()
 
     " wrap cur line inside braces
     nnoremap <silent> ,w :normal! kA {<esc>jo}<esc>k==
-
     " clear braces around cur line
     nnoremap <silent> ,W :normal! k$hDjjddk<cr>==
 
