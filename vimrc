@@ -117,9 +117,6 @@ set shortmess=atT
 " display commands and other useful stuff
 set showcmd
 
-" add angle brackets to % matching
-set matchpairs+=<:>
-
 " what sort of eol's to handle (priority list)
 set fileformats=unix,mac,dos
 
