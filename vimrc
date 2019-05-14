@@ -332,6 +332,8 @@ nmap <silent> ,X !!xmllint --format -<cr>
 vmap <silent> ,X ygv!xmllint --format -<cr>
 nmap <silent> ,S !!sqlformat --reindent --keywords upper -<cr>
 vmap <silent> ,S ygv!sqlformat --reindent --keywords upper -<cr>
+nmap <silent> ,k V!kv<cr>
+vmap <silent> ,k !kv<cr>
 
 " Autocommands --------------------------------------------
 
