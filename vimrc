@@ -326,6 +326,7 @@ nnoremap ,r :%s/\<<c-r><c-w>\>//gc<left><left><left>
 nnoremap ,R :%s/\<<c-r><c-w>\>/<c-r><c-w>/gc<left><left><left>
 
 " pretty print json, xml, sql (sqlformat from sqlparse pkg)
+" ,k is to pretty print key value pairs
 nmap <silent> ,x !!python -mjson.tool<cr>
 vmap <silent> ,x ygv!python -mjson.tool<cr>
 nmap <silent> ,X !!xmllint --format -<cr>
