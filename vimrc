@@ -212,11 +212,11 @@ nnoremap <silent> <F9> <c-l>:nohlsearch<cr>
 " F10 bash
 nnoremap <silent> <F10> :set ft=sh<cr>ggi#!/usr/bin/env bash<cr>set -e<cr><cr><esc>:!chmod 755 %<cr>
 
-" F11 ruby
-nnoremap <silent> <F11> :set ft=ruby<cr>ggi#!/usr/bin/env ruby<cr><cr><esc>:!chmod 755 %<cr>
+" F11 perl
+nnoremap <silent> <F11> :set ft=perl<cr>ggi#!/usr/bin/env perl<cr><cr><esc>:!chmod 755 %<cr>
 
-" F12 text
-nnoremap <silent> <F12> :set ft=text<cr>
+" F12 ruby
+nnoremap <silent> <F12> :set ft=ruby<cr>ggi#!/usr/bin/env ruby<cr><cr><esc>:!chmod 755 %<cr>
 
 " default comments (shell type)
 set comments=:#
