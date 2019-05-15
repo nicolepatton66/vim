@@ -23,8 +23,11 @@ set termencoding=utf-8
 
 " syntax highlighting
 set background=dark
-colorscheme apprentice
+set termguicolors
 syntax on
+
+" colorscheme
+colorscheme apprentice
 
 " make the background truly black
 highlight Normal ctermbg=black
