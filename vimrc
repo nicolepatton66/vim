@@ -27,7 +27,8 @@ set termguicolors
 syntax on
 
 " colorscheme
-colorscheme apprentice
+colorscheme gruvbox
+let g:gruvbox_contrast_dark = 'soft'
 
 " make the background truly black
 highlight Normal ctermbg=black
@@ -718,6 +719,9 @@ function! Sql_settings()
 endfunction
 
 function! Text_settings()
+    colorscheme apprentice
+    highlight Normal ctermbg=black
+
     setlocal colorcolumn=80
     setlocal nosmartindent
     setlocal formatoptions=tc1
