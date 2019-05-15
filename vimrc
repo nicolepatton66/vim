@@ -375,7 +375,6 @@ augroup custom
     autocmd FileType java       call Java_settings()
     autocmd FileType javascript call Javascript_settings()
     autocmd FileType json       call Json_settings()
-    autocmd FileType mail       call Mail_settings()
     autocmd FileType make       call Make_settings()
     autocmd FileType perl       call Perl_settings()
     autocmd FileType ruby       call Ruby_settings()
@@ -699,11 +698,6 @@ function! Json_settings()
 
     setlocal formatoptions=tcq2l
     setlocal shiftwidth=2
-endfunction
-
-function! Mail_settings()
-    setlocal textwidth=72
-    noremap <F8> m`:%s/\s\+$//e<cr>:%s/^--$/-- /e<cr>``<c-l>
 endfunction
 
 function! Make_settings()
