@@ -728,8 +728,6 @@ function! Text_settings()
 endfunction
 
 function! Vim_settings()
-    colorscheme smyck
-
     setlocal comments=:\"
     nmap <silent> ,, !!comment_vim<cr>
     vmap <silent> ,, ygv!comment_vim<cr>
