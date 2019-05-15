@@ -386,7 +386,7 @@ augroup custom
     autocmd FileType xhtml      call Html_settings()
     autocmd FileType xml        call Html_settings()
 
-    " remove crap that filetype plugins automatically add
+    " remove crap that somehow gets added
     autocmd FileType * setlocal formatoptions-=r formatoptions-=o formatoptions-=l
 
     autocmd BufWrite *.java   :call DeleteTrailingWS()
