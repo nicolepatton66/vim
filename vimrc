@@ -325,14 +325,19 @@ nnoremap <expr> gV "`[".getregtype(v:register)[0]."`]"
 nnoremap ,r :%s/\<<c-r><c-w>\>//gc<left><left><left>
 nnoremap ,R :%s/\<<c-r><c-w>\>/<c-r><c-w>/gc<left><left><left>
 
-" pretty print json, xml, sql (sqlformat from sqlparse pkg)
-" ,k is to pretty print key value pairs
+" pretty print json
 nmap <silent> ,x !!python -mjson.tool<cr>
 vmap <silent> ,x ygv!python -mjson.tool<cr>
+
+" pretty print xml
 nmap <silent> ,X !!xmllint --format -<cr>
 vmap <silent> ,X ygv!xmllint --format -<cr>
+
+" pretty print sql
 nmap <silent> ,S !!sqlformat --reindent --keywords upper -<cr>
 vmap <silent> ,S ygv!sqlformat --reindent --keywords upper -<cr>
+
+" pretty print comma separated key/value pairs
 nmap <silent> ,k V!kv<cr>
 vmap <silent> ,k !kv<cr>
 
