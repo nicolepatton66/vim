@@ -218,6 +218,10 @@ nnoremap <silent> <F11> :set ft=perl<cr>ggi#!/usr/bin/env perl<cr><cr><esc>:!chm
 " F12 ruby
 nnoremap <silent> <F12> :set ft=ruby<cr>ggi#!/usr/bin/env ruby<cr><cr><esc>:!chmod 755 %<cr>
 
+" set mode of current file
+nnoremap <silent> ,6 :!chmod 644 %<cr>
+nnoremap <silent> ,7 :!chmod 755 %<cr>
+
 " default comments (shell type)
 set comments=:#
 nmap <silent> ,, !!comment_perl<cr>
