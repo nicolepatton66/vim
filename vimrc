@@ -719,10 +719,8 @@ function! Sql_settings()
 endfunction
 
 function! Text_settings()
-    colorscheme apprentice
-    highlight Normal ctermbg=black
+    colorscheme default
 
-    setlocal colorcolumn=80
     setlocal nosmartindent
     setlocal formatoptions=tc1
 endfunction
