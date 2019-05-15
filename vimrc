@@ -229,6 +229,8 @@ vmap <silent> ,, ygv!comment_perl<cr>
 nnoremap <silent> ,. :s/\(\s*\)#/\1/<cr>:call ClearEOLSpace()<cr>:nohlsearch<cr>
 vnoremap <silent> ,. :s/#//<cr>:call ClearEOLSpace()<cr>:nohlsearch<cr>
 
+nnoremap <silent> ,c :call ToggleColorColumn()<cr>
+
 " column alignment (,l un-aligns)
 vmap <silent> ,a !align<cr>
 nmap <silent> ,a :!align<cr>
@@ -448,6 +450,14 @@ function! ToggleMouse()
     endif
 endfunction
 
+function! ToggleColorColumn()
+    if &cc == ''
+        set cc=80
+    else
+        set cc=
+    endif
+endfunction
+
 function! TabWrapper()
     let col = col('.') - 1
 
@@ -642,9 +652,6 @@ function! Java_settings()
     syn keyword javaTodo contained XXX DEBUG NOTICE WARNING TAG TODO FIXME HARDCODE DATABASE
 
     inoremap <silent> <tab> <c-r>=JavaTabWrapper()<cr>
-
-    nnoremap <silent> ,c 2:j<cr>2:j<cr>lllxx
-    nnoremap <silent> ,o :e <c-r><c-w>.java<cr>
 
     " wrap cur line inside braces
     nnoremap <silent> ,w :normal! kA {<esc>jo}<esc>k==
