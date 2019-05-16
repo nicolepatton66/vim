@@ -365,6 +365,7 @@ augroup custom
     autocmd BufRead,BufNewFile *.json          set ft=json
     autocmd BufRead,BufNewFile .bash_functions set ft=sh
     autocmd BufRead            COMMIT_EDITMSG  set ft=text
+    autocmd BufRead            .erdconfig      set ft=yaml
 
     autocmd FileType asm        call Asm_settings()
     autocmd FileType c          call C_settings()
