@@ -546,8 +546,6 @@ endfunction
 function! Ruby_settings()
     call ShowEOLSpacesAndTabs()
 
-    "colorscheme railscasts
-
     setlocal shiftwidth=2
 
     " create closing tokens (complete block)
@@ -558,8 +556,6 @@ endfunction
 
 function! ERuby_settings()
     call ShowEOLSpacesAndTabs()
-
-    "colorscheme railscasts
 
     setlocal shiftwidth=2
 
