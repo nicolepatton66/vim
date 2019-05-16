@@ -718,6 +718,9 @@ function! Text_settings()
 endfunction
 
 function! Vim_settings()
+    " open help for word under cursor
+    nnoremap <silent> ,h :help <c-r><c-w><cr>
+
     setlocal comments=:\"
     nmap <silent> ,, !!comment_vim<cr>
     vmap <silent> ,, ygv!comment_vim<cr>
