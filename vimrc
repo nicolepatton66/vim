@@ -336,16 +336,16 @@ nnoremap ,r :%s/\<<c-r><c-w>\>//gc<left><left><left>
 nnoremap ,R :%s/\<<c-r><c-w>\>/<c-r><c-w>/gc<left><left><left>
 
 " pretty print json
-nmap <silent> ,x !!python -mjson.tool<cr>
-vmap <silent> ,x ygv!python -mjson.tool<cr>
+nmap <silent> ,x !!python -mjson.tool<cr>:set ft=json<cr>
+vmap <silent> ,x ygv!python -mjson.tool<cr>:set ft=json<cr>
 
 " pretty print xml
-nmap <silent> ,X !!xmllint --format -<cr>
-vmap <silent> ,X ygv!xmllint --format -<cr>
+nmap <silent> ,X !!xmllint --format -<cr>:set ft=xml<cr>
+vmap <silent> ,X ygv!xmllint --format -<cr>:set ft=xml<cr>
 
 " pretty print sql
-nmap <silent> ,S !!sqlformat --reindent --keywords upper -<cr>
-vmap <silent> ,S ygv!sqlformat --reindent --keywords upper -<cr>
+nmap <silent> ,S !!sqlformat --reindent --keywords upper -<cr>:set ft=sql<cr>
+vmap <silent> ,S ygv!sqlformat --reindent --keywords upper -<cr>:set ft=sql<cr>
 
 " pretty print comma separated key/value pairs
 nmap <silent> ,k V!kv<cr>
