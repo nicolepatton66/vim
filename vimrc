@@ -541,7 +541,7 @@ endfunction
 function! Ruby_settings()
     call ShowEOLSpacesAndTabs()
 
-    colorscheme railscasts
+    "colorscheme railscasts
 
     setlocal colorcolumn=80
     setlocal shiftwidth=2
@@ -555,7 +555,7 @@ endfunction
 function! ERuby_settings()
     call ShowEOLSpacesAndTabs()
 
-    colorscheme railscasts
+    "colorscheme railscasts
 
     setlocal colorcolumn=80
     setlocal shiftwidth=2
