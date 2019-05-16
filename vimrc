@@ -543,7 +543,6 @@ function! Ruby_settings()
 
     "colorscheme railscasts
 
-    setlocal colorcolumn=80
     setlocal shiftwidth=2
 
     " create closing tokens (complete block)
@@ -557,7 +556,6 @@ function! ERuby_settings()
 
     "colorscheme railscasts
 
-    setlocal colorcolumn=80
     setlocal shiftwidth=2
 
     nmap <silent> ,, !!comment_html<cr>
@@ -569,7 +567,6 @@ endfunction
 function! Html_settings()
     call ShowEOLSpacesAndTabs()
 
-    setlocal colorcolumn=80
     setlocal shiftwidth=2
 
     nmap <silent> ,, !!comment_html<cr>
@@ -600,7 +597,6 @@ endfunction
 function! Perl_settings()
     call ShowEOLSpacesAndTabs()
 
-    setlocal colorcolumn=80
     setlocal cin
     setlocal cino=:.5s=.5sc1
     setlocal cinkeys=0{,0},!^F,o,O,e
@@ -626,7 +622,6 @@ function! Perl_settings()
 endfunction
 
 function! Javascript_settings()
-    setlocal colorcolumn=80
     setlocal shiftwidth=2
 
     setlocal comments=s1:/*,mb:*,ex:*/,://
@@ -647,7 +642,6 @@ function! Java_settings()
 
     call ShowEOLSpacesAndTabs()
 
-    setlocal colorcolumn=80
     setlocal cin
     setlocal comments=s1:/*,mb:*,ex:*/,://
     setlocal cino=:.5s=.5sc1
@@ -677,7 +671,6 @@ endfunction
 function! C_settings()
     call ShowEOLSpacesAndTabs()
 
-    setlocal colorcolumn=80
     setlocal cin
     setlocal cino=:.5s=.5sc1
     setlocal comments=s1:/*,mb:*,ex:*/,://
@@ -686,7 +679,6 @@ endfunction
 function! Cpp_settings()
     call ShowEOLSpacesAndTabs()
 
-    setlocal colorcolumn=80
     setlocal cin
     setlocal cino=:.5s=.5sc1
     setlocal comments=s1:/*,mb:*,ex:*/,://
