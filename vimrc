@@ -233,7 +233,11 @@ vmap <silent> ,, ygv!comment_perl<cr>
 nnoremap <silent> ,. :s/\(\s*\)#/\1/<cr>:call ClearEOLSpace()<cr>:nohlsearch<cr>
 vnoremap <silent> ,. :s/#//<cr>:call ClearEOLSpace()<cr>:nohlsearch<cr>
 
+" toggle colorcolumn
 nnoremap <silent> ,c :call ToggleColorColumn()<cr>
+
+" toggle cursorcolumn
+nnoremap <silent> ,C :set cursorcolumn!<cr>
 
 " column alignment (,l un-aligns)
 vmap <silent> ,a !align<cr>
