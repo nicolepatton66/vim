@@ -26,12 +26,12 @@ set background=dark
 set termguicolors
 syntax on
 
-" colorscheme
+" colors
+let g:gruvbox_contrast_dark = 'hard'
 colorscheme gruvbox
-let g:gruvbox_contrast_dark = 'soft'
 
 " make the background truly black
-highlight Normal ctermbg=black
+"highlight Normal ctermbg=black
 
 " enable matchit
 runtime macros/matchit.vim
@@ -714,6 +714,7 @@ endfunction
 
 function! Text_settings()
     colorscheme default
+    syntax off
 
     setlocal nosmartindent
     setlocal formatoptions=tc1
