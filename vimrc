@@ -713,9 +713,6 @@ function! Sql_settings()
 endfunction
 
 function! Text_settings()
-    colorscheme default
-    syntax off
-
     setlocal nosmartindent
     setlocal formatoptions=tc1
 endfunction
