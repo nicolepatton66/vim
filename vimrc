@@ -454,10 +454,10 @@ function! ToggleMouse()
 endfunction
 
 function! ToggleColorColumn()
-    if &cc == ''
-        set cc=80
+    if &colorcolumn == ''
+        set colorcolumn=80
     else
-        set cc=
+        set colorcolumn=
     endif
 endfunction
 
