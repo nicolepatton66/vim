@@ -144,12 +144,12 @@ set nowrap
 set wildmenu
 set wildmode=list:longest,full
 
-" only add status line when >1 buffers are open
-set laststatus=1
-
-" ruler
+" ruler (only used when there is no statusline)
 set ruler
 set rulerformat=%-32(%12(%l\ of\ %L%)\ %-6((%p%%)%)\ %-3c\ %)
+
+" statusline
+set laststatus=2
 set statusline=%t\ %y%m%=%-32(%12(%l\ of\ %L%)\ %-6((%p%%)%)\ %-3c\ %)
 
 " don't close buffers: hide them (allow opening new files with unsaved changes, etc)
