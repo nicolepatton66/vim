@@ -227,11 +227,11 @@ nnoremap <silent> ,6 :!chmod 644 %<cr>
 nnoremap <silent> ,7 :!chmod 755 %<cr>
 
 " default comments (shell type)
-set comments=:#
-nmap <silent> ,, !!comment_perl<cr>
-vmap <silent> ,, ygv!comment_perl<cr>
-nnoremap <silent> ,. :s/\(\s*\)#/\1/<cr>:call ClearEOLSpace()<cr>:nohlsearch<cr>
-vnoremap <silent> ,. :s/#//<cr>:call ClearEOLSpace()<cr>:nohlsearch<cr>
+setlocal comments=:#
+nmap <silent> ,, !!comment_default<cr>
+vmap <silent> ,, ygv!comment_default<cr>
+nmap <silent> ,. :s/\(\s*\)#/\1/<cr>:call ClearEOLSpace()<cr>:nohlsearch<cr>
+vmap <silent> ,. :s/#//<cr>:call ClearEOLSpace()<cr>:nohlsearch<cr>
 
 " toggle colorcolumn
 nnoremap <silent> ,c :call ToggleColorColumn()<cr>
@@ -416,6 +416,45 @@ augroup END
 
 " Functions -----------------------------------------------
 
+function! CommentHtml()
+    nmap <silent> ,, !!comment_html<cr>
+    vmap <silent> ,, ygv!comment_html<cr>
+    nmap <silent> ,. :s/<!-- *\(.*\)-->/\1/<cr><F8>
+    vmap <silent> ,. :s/<!-- *\(.*\)-->/\1/<cr><F8>
+endfunction
+
+function! CommentSlim()
+    setlocal comments=:\/
+    nmap <silent> ,, !!comment_slim<cr>
+    vmap <silent> ,, ygv!comment_slim<cr>
+    nmap <silent> ,. :s/\///<cr><F8>
+    vmap <silent> ,. :s/\///<cr><F8>
+endfunction
+
+function! CommentForwardSlashes()
+    setlocal comments=:\/\/
+    nmap <silent> ,, !!comment_forward_slashes<cr>
+    vmap <silent> ,, ygv!comment_forward_slashes<cr>
+    nmap <silent> ,. :s/\/\///<cr><F8>
+    vmap <silent> ,. :s/\/\///<cr><F8>
+endfunction
+
+function! CommentSql()
+    setlocal comments=:--
+    nmap <silent> ,, !!comment_sql<cr>
+    vmap <silent> ,, ygv!comment_sql<cr>
+    nmap <silent> ,. :s/-- //<cr><F8>
+    vmap <silent> ,. :s/-- //<cr><F8>
+endfunction
+
+function! CommentVim()
+    setlocal comments=:\"
+    nmap <silent> ,, !!comment_vim<cr>
+    vmap <silent> ,, ygv!comment_vim<cr>
+    nmap <silent> ,. :s/"//<cr><F8>
+    vmap <silent> ,. :s/"//<cr><F8>
+endfunction
+
 function! ClearEOLSpace()
     normal m`
     %s/\s\+$//e
@@ -556,24 +595,17 @@ endfunction
 
 function! ERuby_settings()
     call ShowEOLSpacesAndTabs()
+    call CommentHtml()
 
     setlocal shiftwidth=2
 
-    nmap <silent> ,, !!comment_html<cr>
-    vmap <silent> ,, ygv!comment_html<cr>
-    nmap <silent> ,. :s/<!-- *\(.*\)-->/\1/<cr><F8>
-    vmap <silent> ,. :s/<!-- *\(.*\)-->/\1/<cr><F8>
 endfunction
 
 function! Html_settings()
     call ShowEOLSpacesAndTabs()
+    call CommentHtml()
 
     setlocal shiftwidth=2
-
-    nmap <silent> ,, !!comment_html<cr>
-    vmap <silent> ,, ygv!comment_html<cr>
-    nmap <silent> ,. :s/<!-- *\(.*\)-->/\1/<cr><F8>
-    vmap <silent> ,. :s/<!-- *\(.*\)-->/\1/<cr><F8>
 endfunction
 
 function! Scss_settings()
@@ -586,13 +618,10 @@ function! Coffee_settings()
 endfunction
 
 function! Slim_settings()
+    call CommentSlim()
+
     setlocal cursorcolumn
     setlocal shiftwidth=2
-
-    nmap <silent> ,, !!comment_slim<cr>
-    vmap <silent> ,, ygv!comment_slim<cr>
-    nmap <silent> ,. :s/\///<cr><F8>
-    vmap <silent> ,. :s/\///<cr><F8>
 endfunction
 
 function! Perl_settings()
@@ -623,14 +652,9 @@ function! Perl_settings()
 endfunction
 
 function! Javascript_settings()
+    call CommentForwardSlashes()
+
     setlocal shiftwidth=2
-
-    setlocal comments=s1:/*,mb:*,ex:*/,://
-
-    nmap <silent> ,, !!comment_java<cr>
-    vmap <silent> ,, ygv!comment_java<cr>
-    nmap <silent> ,. :s/\/\///<cr><F8>
-    vmap <silent> ,. :s/\/\///<cr><F8>
 
     " wrap cur line inside braces
     nnoremap <silent> ,w :normal! kA {<esc>jo}<esc>k==
@@ -642,9 +666,9 @@ function! Java_settings()
     let java_allow_cpp_keywords=1
 
     call ShowEOLSpacesAndTabs()
+    call CommentForwardSlashes()
 
     setlocal cin
-    setlocal comments=s1:/*,mb:*,ex:*/,://
     setlocal cino=:.5s=.5sc1
 
     syn keyword javaTodo contained XXX DEBUG NOTICE WARNING TAG TODO FIXME HARDCODE DATABASE
@@ -658,31 +682,26 @@ function! Java_settings()
 
     nnoremap dm /}<cr>[m?^\(\s*$\\|{\)<cr>jV]m%d
     nnoremap ym /}<cr>[m?^\(\s*$\\|{\)<cr>jV]m%y
-
-    nmap <silent> ,, !!comment_java<cr>
-    vmap <silent> ,, ygv!comment_java<cr>
-    nmap <silent> ,. :s/\/\///<cr><F8>
-    vmap <silent> ,. :s/\/\///<cr><F8>
 endfunction
 
 function! Asm_settings()
-    "setlocal shiftwidth=8
+    setlocal shiftwidth=8
 endfunction
 
 function! C_settings()
     call ShowEOLSpacesAndTabs()
+    call CommentForwardSlashes()
 
     setlocal cin
     setlocal cino=:.5s=.5sc1
-    setlocal comments=s1:/*,mb:*,ex:*/,://
 endfunction
 
 function! Cpp_settings()
     call ShowEOLSpacesAndTabs()
+    call CommentForwardSlashes()
 
     setlocal cin
     setlocal cino=:.5s=.5sc1
-    setlocal comments=s1:/*,mb:*,ex:*/,://
 endfunction
 
 function! Json_settings()
@@ -698,11 +717,7 @@ function! Make_settings()
 endfunction
 
 function! Sql_settings()
-    setlocal comments=:--
-    nmap <silent> ,, !!comment_sql<cr>
-    vmap <silent> ,, ygv!comment_sql<cr>
-    nmap <silent> ,. :s/-- //<cr><F8>
-    vmap <silent> ,. :s/-- //<cr><F8>
+    call CommentSql()
 endfunction
 
 function! Text_settings()
@@ -711,12 +726,8 @@ function! Text_settings()
 endfunction
 
 function! Vim_settings()
+    call CommentVim()
+
     " open help for word under cursor
     nnoremap <silent> ,h :help <c-r><c-w><cr>
-
-    setlocal comments=:\"
-    nmap <silent> ,, !!comment_vim<cr>
-    vmap <silent> ,, ygv!comment_vim<cr>
-    nmap <silent> ,. :s/"//<cr><F8>
-    vmap <silent> ,. :s/"//<cr><F8>
 endfunction
