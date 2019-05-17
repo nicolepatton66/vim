@@ -1,0 +1,33 @@
+#!/usr/bin/env perl
+
+use strict;
+
+my $front_comment = "<!-- ";
+my $back_comment = " -->";
+
+my @lines = ();
+my $dist  = 100000;
+
+while(<>) {
+    chomp(my $line = $_);
+    push @lines, $line;
+
+    m/^\s*$/ and next;
+
+    m/^(\s*)/;
+    my $len = length $1;
+    $dist = $len if $len < $dist;
+}
+
+$dist = 0 if $dist == 100000;
+
+foreach my $line (@lines) {
+
+    if(length($line) > $dist) {
+        print substr($line, 0, $dist) . $front_comment . substr($line, $dist) . "$back_comment\n";
+    } else {
+        print " " x $dist . "$front_comment$back_comment\n";
+    }
+}
+
+exit 0;

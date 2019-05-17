@@ -1,0 +1,47 @@
+#!/usr/bin/env perl
+
+$amt_leading_ws = -1;
+@lines = ();
+$biggest = 0;
+
+while(<>)
+{
+    chomp($line = $_);
+    $line =~ s/\r//g;
+
+    if($amt_leading_ws == -1)
+    {
+        $line =~ /^(\s*)/;
+        $amt_leading_ws = length $1;
+    }
+
+    # condense line first
+    (@tokens) = $line =~ /([^" \t]*"[^"]*"\S*|[^' \t]*'[^']*'\S*|\/\/.*$|\S+)/g;
+    $line = ' ' x $amt_leading_ws . join(' ', @tokens);
+
+    ($pre, $post) = split('=', $line);
+    $pre =~ s/\s+$//g;
+    $post =~ s/^\s+//g;
+
+    push @lines, [ $pre, $post ];
+
+    $length = length $pre;
+    $length > $biggest and $biggest = $length;
+}
+
+for $i (0 .. $#lines)
+{
+    $tokens = $lines[$i];
+
+    $num_tokens = scalar(@$tokens);
+    $num_tokens == 0 and do { print "\n"; next; };
+
+    $pre  = $tokens->[0];
+    $post = $tokens->[1];
+
+    $pad = $biggest - length($pre);
+
+    print "$pre" . " " x $pad . " = $post\n";
+}
+
+exit 0;
