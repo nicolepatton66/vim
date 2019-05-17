@@ -390,6 +390,7 @@ augroup custom
     autocmd FileType vim        call Vim_settings()
     autocmd FileType xhtml      call Html_settings()
     autocmd FileType xml        call Html_settings()
+    autocmd FileType yaml       call Yaml_settings()
 
     " remove crap that somehow gets added
     autocmd FileType * setlocal formatoptions-=r formatoptions-=o formatoptions-=l
@@ -626,6 +627,10 @@ function! Slim_settings()
     call CommentSlim()
 
     setlocal cursorcolumn
+    setlocal shiftwidth=2
+endfunction
+
+function! Yaml_settings()
     setlocal shiftwidth=2
 endfunction
 
