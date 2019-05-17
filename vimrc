@@ -455,6 +455,11 @@ function! CommentVim()
     vmap <silent> ,. :s/"//<cr><F8>
 endfunction
 
+function! WrapLineInBraces()
+    nnoremap <silent> ,w :normal! kA {<esc>jo}<esc>k==
+    nnoremap <silent> ,W :normal! k$hDjjddk<cr>==
+endfunction
+
 function! ClearEOLSpace()
     normal m`
     %s/\s\+$//e
@@ -646,20 +651,13 @@ function! Perl_settings()
     ia ret return
     ia xx #XXX
     ia lb print STDERR "###################\n";#XXX
-    ia udd use Data::Dumper;
-    ia uth use Time::HiRes qw(time);
-    ia una use namespace::autoclean;
 endfunction
 
 function! Javascript_settings()
     call CommentForwardSlashes()
+    call WrapLineInBraces()
 
     setlocal shiftwidth=2
-
-    " wrap cur line inside braces
-    nnoremap <silent> ,w :normal! kA {<esc>jo}<esc>k==
-    " clear braces around cur line
-    nnoremap <silent> ,W :normal! k$hDjjddk<cr>==
 endfunction
 
 function! Java_settings()
@@ -667,6 +665,7 @@ function! Java_settings()
 
     call ShowEOLSpacesAndTabs()
     call CommentForwardSlashes()
+    call WrapLineInBraces()
 
     setlocal cin
     setlocal cino=:.5s=.5sc1
@@ -674,11 +673,6 @@ function! Java_settings()
     syn keyword javaTodo contained XXX DEBUG NOTICE WARNING TAG TODO FIXME HARDCODE DATABASE
 
     inoremap <silent> <tab> <c-r>=JavaTabWrapper()<cr>
-
-    " wrap cur line inside braces
-    nnoremap <silent> ,w :normal! kA {<esc>jo}<esc>k==
-    " clear braces around cur line
-    nnoremap <silent> ,W :normal! k$hDjjddk<cr>==
 
     nnoremap dm /}<cr>[m?^\(\s*$\\|{\)<cr>jV]m%d
     nnoremap ym /}<cr>[m?^\(\s*$\\|{\)<cr>jV]m%y
