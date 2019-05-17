@@ -1,16 +1,14 @@
 #!/usr/bin/env perl
 
 $amt_leading_ws = -1;
-@lines = ();
-$biggest = 0;
+@lines          = ();
+$biggest        = 0;
 
-while(<>)
-{
+while(<>) {
     chomp($line = $_);
     $line =~ s/\r//g;
 
-    if($amt_leading_ws == -1)
-    {
+    if($amt_leading_ws == -1) {
         $line =~ /^(\s*)/;
         $amt_leading_ws = length $1;
     }
@@ -29,8 +27,7 @@ while(<>)
     $length > $biggest and $biggest = $length;
 }
 
-for $i (0 .. $#lines)
-{
+for $i (0 .. $#lines) {
     $tokens = $lines[$i];
 
     $num_tokens = scalar(@$tokens);

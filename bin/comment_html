@@ -3,7 +3,7 @@
 use strict;
 
 my $front_comment = "<!-- ";
-my $back_comment = " -->";
+my $back_comment  = " -->";
 
 my @lines = ();
 my $dist  = 100000;
@@ -25,7 +25,8 @@ foreach my $line (@lines) {
 
     if(length($line) > $dist) {
         print substr($line, 0, $dist) . $front_comment . substr($line, $dist) . "$back_comment\n";
-    } else {
+    }
+    else {
         print " " x $dist . "$front_comment$back_comment\n";
     }
 }

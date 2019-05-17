@@ -23,7 +23,8 @@ $dist = 0 if $dist == 100000;
 foreach my $line (@lines) {
     if(length($line) > $dist) {
         print substr($line, 0, $dist) . $comment . substr($line, $dist) . "\n";
-    } else {
+    }
+    else {
         print " " x $dist . "$comment\n";
     }
 }
