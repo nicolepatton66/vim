@@ -4,8 +4,8 @@
 " TAGS:
 "   Module_settings
 "   Keybindings
-"   Autocommands
 "   Functions
+"   Autocommands
 "   Lang_settings
 "
 " ~~~~~~~~~~~~~~~~~~~~~
@@ -355,66 +355,6 @@ vmap <silent> ,S ygv!sqlformat --reindent --keywords upper -<cr>:set ft=sql<cr>
 nmap <silent> ,k V!split_on_comma<cr>
 vmap <silent> ,k !split_on_comma<cr>
 
-" Autocommands --------------------------------------------
-
-augroup custom
-    autocmd!
-
-    autocmd BufRead,BufNewFile *.coffee        set ft=coffee
-    autocmd BufRead,BufNewFile *.slim          set ft=slim
-    autocmd BufRead,BufNewFile *.hs            set ft=xml
-    autocmd BufRead,BufNewFile *.tt            set ft=html
-    autocmd BufRead,BufNewFile *.tt2           set ft=html
-    autocmd BufRead,BufNewFile *.txt           set ft=text
-    autocmd BufRead,BufNewFile *.json          set ft=json
-    autocmd BufRead,BufNewFile .bash_functions set ft=sh
-    autocmd BufRead            COMMIT_EDITMSG  set ft=text
-    autocmd BufRead            .erdconfig      set ft=yaml
-
-    autocmd FileType asm        call Asm_settings()
-    autocmd FileType c          call C_settings()
-    autocmd FileType coffee     call Coffee_settings()
-    autocmd FileType cpp        call Cpp_settings()
-    autocmd FileType eruby      call ERuby_settings()
-    autocmd FileType html       call Html_settings()
-    autocmd FileType java       call Java_settings()
-    autocmd FileType javascript call Javascript_settings()
-    autocmd FileType json       call Json_settings()
-    autocmd FileType make       call Make_settings()
-    autocmd FileType perl       call Perl_settings()
-    autocmd FileType ruby       call Ruby_settings()
-    autocmd FileType scss       call Scss_settings()
-    autocmd FileType slim       call Slim_settings()
-    autocmd FileType sql        call Sql_settings()
-    autocmd FileType text       call Text_settings()
-    autocmd FileType vim        call Vim_settings()
-    autocmd FileType xhtml      call Html_settings()
-    autocmd FileType xml        call Html_settings()
-    autocmd FileType yaml       call Yaml_settings()
-
-    " remove crap that somehow gets added
-    autocmd FileType * setlocal formatoptions-=r formatoptions-=o formatoptions-=l
-
-    autocmd BufWrite *.java   :call DeleteTrailingWS()
-    autocmd BufWrite *.js     :call DeleteTrailingWS()
-    autocmd BufWrite *.pm     :call DeleteTrailingWS()
-    autocmd BufWrite *.pl     :call DeleteTrailingWS()
-    autocmd BufWrite *.rb     :call DeleteTrailingWS()
-    autocmd BufWrite *.erb    :call DeleteTrailingWS()
-    autocmd BufWrite *.slim   :call DeleteTrailingWS()
-    autocmd BufWrite *.yml    :call DeleteTrailingWS()
-    autocmd BufWrite *.coffee :call DeleteTrailingWS()
-
-    " make sure mouse is left in a sane state
-    autocmd VimLeavePre * set ttymouse=xterm
-
-    " always return to last position when opening a file
-    autocmd BufReadPost *
-    \   if line("'\"") > 1 && line("'\"") <= line("$")
-    \|     exe "normal! g`\""
-    \|  endif
-augroup END
-
 " Functions -----------------------------------------------
 
 function! CommentHtml()
@@ -586,6 +526,66 @@ function! RubyEndToken()
         return "\<CR>"
     endif
 endfunction
+
+" Autocommands --------------------------------------------
+
+augroup custom
+    autocmd!
+
+    autocmd BufRead,BufNewFile *.coffee        set ft=coffee
+    autocmd BufRead,BufNewFile *.slim          set ft=slim
+    autocmd BufRead,BufNewFile *.hs            set ft=xml
+    autocmd BufRead,BufNewFile *.tt            set ft=html
+    autocmd BufRead,BufNewFile *.tt2           set ft=html
+    autocmd BufRead,BufNewFile *.txt           set ft=text
+    autocmd BufRead,BufNewFile *.json          set ft=json
+    autocmd BufRead,BufNewFile .bash_functions set ft=sh
+    autocmd BufRead            COMMIT_EDITMSG  set ft=text
+    autocmd BufRead            .erdconfig      set ft=yaml
+
+    autocmd FileType asm        call Asm_settings()
+    autocmd FileType c          call C_settings()
+    autocmd FileType coffee     call Coffee_settings()
+    autocmd FileType cpp        call Cpp_settings()
+    autocmd FileType eruby      call ERuby_settings()
+    autocmd FileType html       call Html_settings()
+    autocmd FileType java       call Java_settings()
+    autocmd FileType javascript call Javascript_settings()
+    autocmd FileType json       call Json_settings()
+    autocmd FileType make       call Make_settings()
+    autocmd FileType perl       call Perl_settings()
+    autocmd FileType ruby       call Ruby_settings()
+    autocmd FileType scss       call Scss_settings()
+    autocmd FileType slim       call Slim_settings()
+    autocmd FileType sql        call Sql_settings()
+    autocmd FileType text       call Text_settings()
+    autocmd FileType vim        call Vim_settings()
+    autocmd FileType xhtml      call Html_settings()
+    autocmd FileType xml        call Html_settings()
+    autocmd FileType yaml       call Yaml_settings()
+
+    " remove crap that somehow gets added
+    autocmd FileType * setlocal formatoptions-=r formatoptions-=o formatoptions-=l
+
+    autocmd BufWrite *.java   :call DeleteTrailingWS()
+    autocmd BufWrite *.js     :call DeleteTrailingWS()
+    autocmd BufWrite *.pm     :call DeleteTrailingWS()
+    autocmd BufWrite *.pl     :call DeleteTrailingWS()
+    autocmd BufWrite *.rb     :call DeleteTrailingWS()
+    autocmd BufWrite *.erb    :call DeleteTrailingWS()
+    autocmd BufWrite *.slim   :call DeleteTrailingWS()
+    autocmd BufWrite *.yml    :call DeleteTrailingWS()
+    autocmd BufWrite *.coffee :call DeleteTrailingWS()
+
+    " make sure mouse is left in a sane state
+    autocmd VimLeavePre * set ttymouse=xterm
+
+    " always return to last position when opening a file
+    autocmd BufReadPost *
+    \   if line("'\"") > 1 && line("'\"") <= line("$")
+    \|     exe "normal! g`\""
+    \|  endif
+augroup END
 
 " Lang_settings -------------------------------------------
 
