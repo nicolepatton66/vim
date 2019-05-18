@@ -122,7 +122,7 @@ set shortmess=atT
 set showcmd
 
 " what sort of eol's to handle (priority list)
-set fileformats=unix,mac,dos
+set fileformats=unix,dos
 
 " milliseconds before cmd is cancelled
 set timeoutlen=2000
@@ -418,6 +418,7 @@ augroup END
 " Functions -----------------------------------------------
 
 function! CommentHtml()
+    setlocal comments=
     nmap <silent> ,, !!comment_html<cr>
     vmap <silent> ,, ygv!comment_html<cr>
     nmap <silent> ,. :s/<!-- *\(.*\)-->/\1/<cr><F8>
@@ -604,7 +605,6 @@ function! ERuby_settings()
     call CommentHtml()
 
     setlocal shiftwidth=2
-
 endfunction
 
 function! Html_settings()
