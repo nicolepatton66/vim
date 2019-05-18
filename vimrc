@@ -352,8 +352,8 @@ nmap <silent> ,S !!sqlformat --reindent --keywords upper -<cr>:set ft=sql<cr>
 vmap <silent> ,S ygv!sqlformat --reindent --keywords upper -<cr>:set ft=sql<cr>
 
 " pretty print comma separated key/value pairs
-nmap <silent> ,k V!kv<cr>
-vmap <silent> ,k !kv<cr>
+nmap <silent> ,k V!split_on_comma<cr>
+vmap <silent> ,k !split_on_comma<cr>
 
 " Autocommands --------------------------------------------
 
