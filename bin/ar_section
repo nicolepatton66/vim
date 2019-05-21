@@ -8,4 +8,4 @@ do
     line=$input
 done < "${1:-/dev/stdin}"
 
-perl $HOME/.vim/bin/ar_section.pl $line
+perl $HOME/.vim/bin/ar_section.pl "$line"
