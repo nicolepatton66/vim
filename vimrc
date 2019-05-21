@@ -351,9 +351,9 @@ vmap <silent> ,X ygv!xmllint --format -<cr>:set ft=xml<cr>
 nmap <silent> ,S !!sqlformat --reindent --keywords upper -<cr>:set ft=sql<cr>
 vmap <silent> ,S ygv!sqlformat --reindent --keywords upper -<cr>:set ft=sql<cr>
 
-" pretty print comma separated key/value pairs
-nmap <silent> ,k V!split_on_comma<cr>
-vmap <silent> ,k !split_on_comma<cr>
+" pretty print active record results
+nmap <silent> ,k V!ar_section<cr>
+vmap <silent> ,k !ar_section<cr>
 
 " Functions -----------------------------------------------
 
