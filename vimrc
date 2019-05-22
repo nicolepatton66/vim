@@ -54,7 +54,6 @@ set sidescrolloff=5
 
 " sane indentation by default
 set autoindent
-set cindent
 filetype indent on
 
 " c = autowrap comments using textwidth
