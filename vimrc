@@ -238,6 +238,9 @@ nnoremap <silent> ,c :call ToggleColorColumn()<cr>
 " toggle cursorcolumn
 nnoremap <silent> ,C :set cursorcolumn!<cr>
 
+" toggle line numbers
+nnoremap <silent> ,n :set number!<cr>
+
 " column alignment (,l un-aligns)
 vmap <silent> ,a !align<cr>
 nmap <silent> ,a :!align<cr>
