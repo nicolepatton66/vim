@@ -11,7 +11,7 @@ foreach my $section (@sections) {
     my $name = $1;
     print "$name:\n";
 
-    my @lines = split /,/, $section;
+    my @lines = sort split /,/, $section;
     foreach my $line (@lines) {
         $line =~ s/^\s*//;
         print "  $line\n";
