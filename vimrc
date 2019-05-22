@@ -354,6 +354,10 @@ vmap <silent> ,S ygv!sqlformat --reindent --keywords upper -<cr>:set ft=sql<cr>
 nmap <silent> ,k V!record_split<cr>
 vmap <silent> ,k !record_split<cr>
 
+" decode urls
+nmap <silent> ,d V!python -c "import sys, urllib as ul; print ul.unquote(sys.stdin.read());"<cr>
+vmap <silent> ,d ygv!python -c "import sys, urllib as ul; print ul.unquote(sys.stdin.read());"<cr>
+
 " Functions -----------------------------------------------
 
 function! CommentHtml()
