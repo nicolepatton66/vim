@@ -1,15 +1,13 @@
 #!/usr/bin/env perl
 
 my $full_string = join ' ', @ARGV;
+$full_string =~ s/^#<//;
+$full_string =~ s/>$//;
 
 my @sections = split />, #</, $full_string;
 foreach my $section (@sections) {
-    $section =~ s/^#<//;
-    $section =~ s/>$//;
-
     $section =~ s/^([a-zA-Z:]+) //;
-    my $name = $1;
-    print "$name:\n";
+    print "$1\n";
 
     my @lines = sort split /, /, $section;
     foreach my $line (@lines) {
