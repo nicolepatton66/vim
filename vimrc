@@ -548,6 +548,9 @@ augroup custom
     autocmd BufRead,BufNewFile .bash_functions set ft=sh
     autocmd BufRead            COMMIT_EDITMSG  set ft=text
     autocmd BufRead            .erdconfig      set ft=yaml
+    autocmd BufRead,BufNewFile x               set ft=text
+    autocmd BufRead,BufNewFile y               set ft=text
+    autocmd BufRead,BufNewFile z               set ft=text
 
     autocmd FileType asm        call Asm_settings()
     autocmd FileType c          call C_settings()
