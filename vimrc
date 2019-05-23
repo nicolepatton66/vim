@@ -543,10 +543,8 @@ augroup custom
     autocmd BufRead,BufNewFile *.hs            setlocal ft=xml
     autocmd BufRead,BufNewFile *.tt            setlocal ft=html
     autocmd BufRead,BufNewFile *.tt2           setlocal ft=html
-    autocmd BufRead,BufNewFile *.txt           setlocal ft=text
     autocmd BufRead,BufNewFile *.json          setlocal ft=json
     autocmd BufRead,BufNewFile .bash_functions setlocal ft=sh
-    autocmd BufRead            COMMIT_EDITMSG  setlocal ft=text
     autocmd BufRead            .erdconfig      setlocal ft=yaml
 
     autocmd BufRead,BufNewFile * if &filetype == "" | setlocal ft=text | endif
