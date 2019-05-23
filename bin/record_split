@@ -1,11 +1,26 @@
-#!/usr/bin/env bash
-set -e
+#!/usr/bin/env perl
 
-# pretty print active record results
+# pretty print an array of ActiveRecord results
 
-while read input
-do
-    line=$input
-done < "${1:-/dev/stdin}"
+my $full_string;
+while(<>) {
+    chomp;
+    $full_string = $_;
+}
 
-perl $HOME/.vim/bin/record_split.pl "$line"
+$full_string =~ s/^#<//;
+$full_string =~ s/>$//;
+
+my @sections = split />, #</, $full_string;
+foreach my $section (@sections) {
+    $section =~ s/^([a-zA-Z:]+) //;
+    print "$1\n";
+
+    my @lines = sort split /, /, $section;
+    foreach my $line (@lines) {
+        $line =~ s/^\s*//;
+        print "  $line\n";
+    }
+
+    print "\n";
+}
