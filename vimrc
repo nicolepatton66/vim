@@ -545,7 +545,7 @@ augroup custom
     autocmd BufRead,BufNewFile *.tt2           setlocal ft=html
     autocmd BufRead,BufNewFile *.json          setlocal ft=json
     autocmd BufRead,BufNewFile .bash_functions setlocal ft=sh
-    autocmd BufRead            .erdconfig      setlocal ft=yaml
+    autocmd BufRead,BufNewFile .erdconfig      setlocal ft=yaml
 
     autocmd BufRead,BufNewFile * if &filetype == "" | setlocal ft=text | endif
 
