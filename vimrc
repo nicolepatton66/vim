@@ -547,6 +547,7 @@ augroup custom
     autocmd BufRead,BufNewFile .bash_functions setlocal ft=sh
     autocmd BufRead,BufNewFile .erdconfig      setlocal ft=yaml
 
+    " set text as the default filetype
     autocmd BufRead,BufNewFile * if &filetype == "" | setlocal ft=text | endif
 
     autocmd FileType asm        call Asm_settings()
