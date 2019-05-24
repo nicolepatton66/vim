@@ -282,18 +282,23 @@ nnoremap ,R :%s/\<<c-r><c-w>\>/<c-r><c-w>/gc<left><left><left>
 
 " pretty print json
 nnoremap <silent> ,x !!python -mjson.tool<cr>:set ft=json<cr>
+nmap <silent> ,pj ,x
 
 " pretty print xml
 nnoremap <silent> ,X !!xmllint --format -<cr>:set ft=xml<cr>
+nmap <silent> ,px ,X
 
 " pretty print sql
 nnoremap <silent> ,S !!sqlformat --reindent --keywords upper -<cr>:set ft=sql<cr>
+nmap <silent> ,ps ,S
 
 " pretty print active record results
 nnoremap <silent> ,k !!record_split<cr>:set ft=text<cr>
+nmap <silent> ,pr ,k
 
-" decode url parameters
+" pretty print decoded url parameters
 nnoremap <silent> ,d !!url_split<cr>:set ft=text<cr>
+nmap <silent> ,pu ,d
 
 " use visual blocks by default... ^v does character based
 nnoremap v <c-v>
@@ -649,11 +654,6 @@ function! Perl_settings()
     let perl_include_pod=1
 
     inoremap <silent> <tab> <c-r>=PerlTabWrapper()<cr>
-
-    vmap <silent> ,p !expand_params<cr>
-    nmap <silent> ,p 1:!expand_params<cr>
-    vmap <silent> ,P !collapse_params<cr>
-    nmap <silent> ,P :!collapse_params<cr>
 
     ia ret return
     ia xx #XXX
