@@ -558,6 +558,7 @@ augroup custom
     autocmd FileType coffee     call Coffee_settings()
     autocmd FileType cpp        call Cpp_settings()
     autocmd FileType eruby      call ERuby_settings()
+    autocmd FileType help       call Help_settings()
     autocmd FileType html       call Html_settings()
     autocmd FileType java       call Java_settings()
     autocmd FileType javascript call Javascript_settings()
@@ -723,6 +724,11 @@ endfunction
 function! Text_settings()
     setlocal nosmartindent
     setlocal formatoptions=tc1
+endfunction
+
+function! Help_settings()
+    " open help for word under cursor
+    nnoremap <silent> ,h :help <c-r><c-w><cr>
 endfunction
 
 function! Vim_settings()
