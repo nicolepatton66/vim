@@ -149,7 +149,7 @@ set rulerformat=%-32(%12(%l\ of\ %L%)\ %-6((%p%%)%)\ %-3c\ %)
 
 " statusline
 set laststatus=2
-set statusline=%t\ %y%r%m%=%-32(%12(%l\ of\ %L%)\ %-6((%p%%)%)\ %-3c\ %)
+set statusline=%F\ %y%r%m%=%-32(%12(%l\ of\ %L%)\ %-6((%p%%)%)\ %-3c\ %)
 
 " don't close buffers: hide them (allow opening new files with unsaved changes, etc)
 set hidden
