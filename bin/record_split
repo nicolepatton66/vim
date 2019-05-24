@@ -5,22 +5,18 @@
 my $full_string;
 while(<>) {
     chomp;
+    s/^#<//;
+    s/>$//;
     $full_string = $_;
 }
 
-$full_string =~ s/^#<//;
-$full_string =~ s/>$//;
-
 my @sections = split />, #</, $full_string;
 foreach my $section (@sections) {
-    $section =~ s/^([a-zA-Z:]+) //;
+    $section =~ s/^([a-zA-Z:]+) //; # pull out the model name
     print "$1\n";
 
-    my @lines = sort split /, /, $section;
-    foreach my $line (@lines) {
-        $line =~ s/^\s*//;
+    foreach my $line (sort split /, /, $section) {
         print "  $line\n";
     }
-
     print "\n";
 }
