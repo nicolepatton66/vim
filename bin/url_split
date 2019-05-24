@@ -1,0 +1,15 @@
+#!/usr/bin/env perl
+
+use URI::Escape;
+
+my $url_params;
+while(<>) {
+    chomp;
+    $url_params = $_;
+}
+
+my @params = split /&/, $url_params;
+foreach my $param (@params) {
+    my $escaped = uri_unescape($param);
+    print "$escaped\n";
+}
