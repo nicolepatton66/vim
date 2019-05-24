@@ -169,7 +169,7 @@ exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
 let g:bufExplorerSortBy = 'number'
 let g:bufExplorerSplitOutPathName = 1
 let g:bufExplorerDefaultHelp = 1
-nnoremap <silent> ,e \be
+nmap <silent> ,e \be
 
 " TagList (requires ctags)
 let Tlist_Inc_Winwidth = 0
