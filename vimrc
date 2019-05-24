@@ -709,11 +709,7 @@ function! Cpp_settings()
 endfunction
 
 function! Json_settings()
-    " hide double quotes or not
-    let g:vim_json_syntax_conceal = 0
-
     setlocal formatoptions=tcq2l
-    setlocal shiftwidth=2
 endfunction
 
 function! Make_settings()
