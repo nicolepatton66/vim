@@ -283,14 +283,17 @@ nnoremap ,R :%s/\<<c-r><c-w>\>/<c-r><c-w>/gc<left><left><left>
 " pretty print json
 nnoremap <silent> ,x !!python -mjson.tool<cr>:set ft=json<cr>
 nmap <silent> ,pj ,x
+vmap <silent> ,pj ,j,pj
 
 " pretty print xml
 nnoremap <silent> ,X !!xmllint --format -<cr>:set ft=xml<cr>
 nmap <silent> ,px ,X
+vmap <silent> ,px ,j,px
 
 " pretty print sql
 nnoremap <silent> ,S !!sqlformat --reindent --keywords upper -<cr>:set ft=sql<cr>
 nmap <silent> ,ps ,S
+vmap <silent> ,ps ,j,ps
 
 " pretty print active record results
 nnoremap <silent> ,k !!record_split<cr>:set ft=text<cr>
