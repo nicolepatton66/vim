@@ -290,10 +290,10 @@ nnoremap <silent> ,X !!xmllint --format -<cr>:set ft=xml<cr>
 nnoremap <silent> ,S !!sqlformat --reindent --keywords upper -<cr>:set ft=sql<cr>
 
 " pretty print active record results
-nnoremap <silent> ,k V!record_split<cr>:set ft=text<cr>
+nnoremap <silent> ,k !!record_split<cr>:set ft=text<cr>
 
-" decode urls
-nnoremap <silent> ,d V!url_split<cr>:set ft=text<cr>
+" decode url parameters
+nnoremap <silent> ,d !!url_split<cr>:set ft=text<cr>
 
 " use visual blocks by default... ^v does character based
 nnoremap v <c-v>
