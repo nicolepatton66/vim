@@ -85,8 +85,8 @@ set notitle
 
 " get the backspace key to do sensible things
 set backspace=indent,eol,start
-vmap <BS> x
-nmap <BS> hx
+vnoremap <BS> x
+nnoremap <BS> hx
 
 " don't read dot files in current dir!
 set noexrc
@@ -169,7 +169,7 @@ exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
 let g:bufExplorerSortBy = 'number'
 let g:bufExplorerSplitOutPathName = 1
 let g:bufExplorerDefaultHelp = 1
-nmap <silent> ,e \be
+nnoremap <silent> ,e \be
 
 " TagList (requires ctags)
 let Tlist_Inc_Winwidth = 0
@@ -227,10 +227,10 @@ nnoremap <silent> ,7 :!chmod 755 %<cr>
 
 " default comments (shell type)
 setlocal comments=:#
-nmap <silent> ,, !!comment_default<cr>
-vmap <silent> ,, ygv!comment_default<cr>
-nmap <silent> ,. :s/\(\s*\)#/\1/<cr>:call ClearEOLSpace()<cr>:nohlsearch<cr>
-vmap <silent> ,. :s/#//<cr>:call ClearEOLSpace()<cr>:nohlsearch<cr>
+nnoremap <silent> ,, !!comment_default<cr>
+vnoremap <silent> ,, ygv!comment_default<cr>
+nnoremap <silent> ,. :s/\(\s*\)#/\1/<cr>:call ClearEOLSpace()<cr>:nohlsearch<cr>
+vnoremap <silent> ,. :s/#//<cr>:call ClearEOLSpace()<cr>:nohlsearch<cr>
 
 " toggle colorcolumn
 nnoremap <silent> ,c :call ToggleColorColumn()<cr>
@@ -242,13 +242,13 @@ nnoremap <silent> ,C :set cursorcolumn!<cr>
 nnoremap <silent> ,n :set number!<cr>
 
 " column alignment (,l un-aligns)
-vmap <silent> ,a !align<cr>
-nmap <silent> ,a :!align<cr>
-vmap <silent> ,A !align_all<cr>
-nmap <silent> ,A :!align_all<cr>
-vmap <silent> ,= !align_equals<cr>
-nmap <silent> ,= :!align_equals<cr>
-nmap <silent> ,l 1,A
+vnoremap <silent> ,a !align<cr>
+nnoremap <silent> ,a :!align<cr>
+vnoremap <silent> ,A !align_all<cr>
+nnoremap <silent> ,A :!align_all<cr>
+vnoremap <silent> ,= !align_equals<cr>
+nnoremap <silent> ,= :!align_equals<cr>
+nnoremap <silent> ,l 1,A
 
 " join this line and the next
 nnoremap <silent> ,j 2:j<cr>
@@ -360,42 +360,42 @@ nnoremap <expr> gV "`[".getregtype(v:register)[0]."`]"
 
 function! CommentHtml()
     setlocal comments=
-    nmap <silent> ,, !!comment_html<cr>
-    vmap <silent> ,, ygv!comment_html<cr>
-    nmap <silent> ,. :s/<!-- *\(.*\)-->/\1/<cr><F8>
-    vmap <silent> ,. :s/<!-- *\(.*\)-->/\1/<cr><F8>
+    nnoremap <silent> ,, !!comment_html<cr>
+    vnoremap <silent> ,, ygv!comment_html<cr>
+    nnoremap <silent> ,. :s/<!-- *\(.*\)-->/\1/<cr><F8>
+    vnoremap <silent> ,. :s/<!-- *\(.*\)-->/\1/<cr><F8>
 endfunction
 
 function! CommentSlim()
     setlocal comments=:\/
-    nmap <silent> ,, !!comment_slim<cr>
-    vmap <silent> ,, ygv!comment_slim<cr>
-    nmap <silent> ,. :s/\///<cr><F8>
-    vmap <silent> ,. :s/\///<cr><F8>
+    nnoremap <silent> ,, !!comment_slim<cr>
+    vnoremap <silent> ,, ygv!comment_slim<cr>
+    nnoremap <silent> ,. :s/\///<cr><F8>
+    vnoremap <silent> ,. :s/\///<cr><F8>
 endfunction
 
 function! CommentForwardSlashes()
     setlocal comments=:\/\/
-    nmap <silent> ,, !!comment_forward_slashes<cr>
-    vmap <silent> ,, ygv!comment_forward_slashes<cr>
-    nmap <silent> ,. :s/\/\///<cr><F8>
-    vmap <silent> ,. :s/\/\///<cr><F8>
+    nnoremap <silent> ,, !!comment_forward_slashes<cr>
+    vnoremap <silent> ,, ygv!comment_forward_slashes<cr>
+    nnoremap <silent> ,. :s/\/\///<cr><F8>
+    vnoremap <silent> ,. :s/\/\///<cr><F8>
 endfunction
 
 function! CommentSql()
     setlocal comments=:--
-    nmap <silent> ,, !!comment_sql<cr>
-    vmap <silent> ,, ygv!comment_sql<cr>
-    nmap <silent> ,. :s/-- //<cr><F8>
-    vmap <silent> ,. :s/-- //<cr><F8>
+    nnoremap <silent> ,, !!comment_sql<cr>
+    vnoremap <silent> ,, ygv!comment_sql<cr>
+    nnoremap <silent> ,. :s/-- //<cr><F8>
+    vnoremap <silent> ,. :s/-- //<cr><F8>
 endfunction
 
 function! CommentVim()
     setlocal comments=:\"
-    nmap <silent> ,, !!comment_vim<cr>
-    vmap <silent> ,, ygv!comment_vim<cr>
-    nmap <silent> ,. :s/"//<cr><F8>
-    vmap <silent> ,. :s/"//<cr><F8>
+    nnoremap <silent> ,, !!comment_vim<cr>
+    vnoremap <silent> ,, ygv!comment_vim<cr>
+    nnoremap <silent> ,. :s/"//<cr><F8>
+    vnoremap <silent> ,. :s/"//<cr><F8>
 endfunction
 
 function! WrapLineInBraces()
