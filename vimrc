@@ -556,9 +556,6 @@ augroup custom
     autocmd FileType xml        call Html_settings()
     autocmd FileType yaml       call Yaml_settings()
 
-    " remove crap that somehow gets added
-    autocmd FileType * setlocal formatoptions-=r formatoptions-=o formatoptions-=l
-
     autocmd BufWrite *.java   :call DeleteTrailingWS()
     autocmd BufWrite *.js     :call DeleteTrailingWS()
     autocmd BufWrite *.pm     :call DeleteTrailingWS()
@@ -568,6 +565,9 @@ augroup custom
     autocmd BufWrite *.slim   :call DeleteTrailingWS()
     autocmd BufWrite *.yml    :call DeleteTrailingWS()
     autocmd BufWrite *.coffee :call DeleteTrailingWS()
+
+    " remove crap that somehow gets added
+    autocmd FileType * setlocal formatoptions-=r formatoptions-=o formatoptions-=l
 
     " make sure mouse is left in a sane state
     autocmd VimLeavePre * set ttymouse=xterm
