@@ -248,7 +248,7 @@ vnoremap <silent> ,A !align_all<cr>
 nnoremap <silent> ,A :!align_all<cr>
 vnoremap <silent> ,= !align_equals<cr>
 nnoremap <silent> ,= :!align_equals<cr>
-nnoremap <silent> ,l 1,A
+nmap     <silent> ,l 1,A
 
 " join this line and the next
 nnoremap <silent> ,j 2:j<cr>
