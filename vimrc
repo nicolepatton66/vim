@@ -213,13 +213,13 @@ nnoremap <silent> <F8> :call ClearEOLSpace()<cr>:nohlsearch<cr>
 nnoremap <silent> <F9> <c-l>:nohlsearch<cr>
 
 " F10 bash
-nnoremap <silent> <F10> :set ft=sh<cr>ggi#!/usr/bin/env bash<cr>set -e<cr><cr><esc>:!chmod 755 %<cr>
+nnoremap <silent> <F10> :set ft=sh<cr>ggi#!/usr/bin/env bash<cr>set -e<cr><cr><esc>
 
 " F11 perl
-nnoremap <silent> <F11> :set ft=perl<cr>ggi#!/usr/bin/env perl<cr><cr><esc>:!chmod 755 %<cr>
+nnoremap <silent> <F11> :set ft=perl<cr>ggi#!/usr/bin/env perl<cr><cr><esc>
 
 " F12 ruby
-nnoremap <silent> <F12> :set ft=ruby<cr>ggi#!/usr/bin/env ruby<cr><cr><esc>:!chmod 755 %<cr>
+nnoremap <silent> <F12> :set ft=ruby<cr>ggi#!/usr/bin/env ruby<cr><cr><esc>
 
 " set mode of current file
 nnoremap <silent> ,6 :!chmod 644 %<cr>
