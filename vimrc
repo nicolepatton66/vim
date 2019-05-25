@@ -227,10 +227,10 @@ nnoremap <silent> ,7 :!chmod 755 %<cr>
 
 " default comments (shell type)
 setlocal comments=:#
-nnoremap <silent> ,, !!comment_default<cr>
-vnoremap <silent> ,, ygv!comment_default<cr>
-nnoremap <silent> ,. :s/\(\s*\)#/\1/<cr>:call ClearEOLSpace()<cr>:nohlsearch<cr>
-vnoremap <silent> ,. :s/#//<cr>:call ClearEOLSpace()<cr>:nohlsearch<cr>
+nmap <silent> ,, !!comment_default<cr>
+vmap <silent> ,, ygv!comment_default<cr>
+nmap <silent> ,. :s/\(\s*\)#/\1/<cr>:call ClearEOLSpace()<cr>:nohlsearch<cr>
+vmap <silent> ,. :s/#//<cr>:call ClearEOLSpace()<cr>:nohlsearch<cr>
 
 " toggle colorcolumn
 nnoremap <silent> ,c :call ToggleColorColumn()<cr>
@@ -363,42 +363,42 @@ nnoremap <expr> gV "`[".getregtype(v:register)[0]."`]"
 
 function! CommentHtml()
     setlocal comments=
-    nnoremap <silent> ,, !!comment_html<cr>
-    vnoremap <silent> ,, ygv!comment_html<cr>
-    nnoremap <silent> ,. :s/<!-- *\(.*\)-->/\1/<cr><F8>
-    vnoremap <silent> ,. :s/<!-- *\(.*\)-->/\1/<cr><F8>
+    nmap <silent> ,, !!comment_html<cr>
+    vmap <silent> ,, ygv!comment_html<cr>
+    nmap <silent> ,. :s/<!-- *\(.*\)-->/\1/<cr><F8>
+    vmap <silent> ,. :s/<!-- *\(.*\)-->/\1/<cr><F8>
 endfunction
 
 function! CommentSlim()
     setlocal comments=:\/
-    nnoremap <silent> ,, !!comment_slim<cr>
-    vnoremap <silent> ,, ygv!comment_slim<cr>
-    nnoremap <silent> ,. :s/\///<cr><F8>
-    vnoremap <silent> ,. :s/\///<cr><F8>
+    nmap <silent> ,, !!comment_slim<cr>
+    vmap <silent> ,, ygv!comment_slim<cr>
+    nmap <silent> ,. :s/\///<cr><F8>
+    vmap <silent> ,. :s/\///<cr><F8>
 endfunction
 
 function! CommentForwardSlashes()
     setlocal comments=:\/\/
-    nnoremap <silent> ,, !!comment_forward_slashes<cr>
-    vnoremap <silent> ,, ygv!comment_forward_slashes<cr>
-    nnoremap <silent> ,. :s/\/\///<cr><F8>
-    vnoremap <silent> ,. :s/\/\///<cr><F8>
+    nmap <silent> ,, !!comment_forward_slashes<cr>
+    vmap <silent> ,, ygv!comment_forward_slashes<cr>
+    nmap <silent> ,. :s/\/\///<cr><F8>
+    vmap <silent> ,. :s/\/\///<cr><F8>
 endfunction
 
 function! CommentSql()
     setlocal comments=:--
-    nnoremap <silent> ,, !!comment_sql<cr>
-    vnoremap <silent> ,, ygv!comment_sql<cr>
-    nnoremap <silent> ,. :s/-- //<cr><F8>
-    vnoremap <silent> ,. :s/-- //<cr><F8>
+    nmap <silent> ,, !!comment_sql<cr>
+    vmap <silent> ,, ygv!comment_sql<cr>
+    nmap <silent> ,. :s/-- //<cr><F8>
+    vmap <silent> ,. :s/-- //<cr><F8>
 endfunction
 
 function! CommentVim()
     setlocal comments=:\"
-    nnoremap <silent> ,, !!comment_vim<cr>
-    vnoremap <silent> ,, ygv!comment_vim<cr>
-    nnoremap <silent> ,. :s/"//<cr><F8>
-    vnoremap <silent> ,. :s/"//<cr><F8>
+    nmap <silent> ,, !!comment_vim<cr>
+    vmap <silent> ,, ygv!comment_vim<cr>
+    nmap <silent> ,. :s/"//<cr><F8>
+    vmap <silent> ,. :s/"//<cr><F8>
 endfunction
 
 function! WrapLineInBraces()
@@ -423,7 +423,6 @@ function! ToggleShowEOLSpacesAndTabs()
     if !exists("b:list_showing")
         let b:list_showing = 0
     endif
-
     if b:list_showing == 0
         let b:list_showing = 1
         setlocal list
@@ -437,7 +436,6 @@ function! ToggleMouse()
     if !exists("g:old_mouse")
         let g:old_mouse = "a"
     endif
-
     if &mouse == ""
         let &mouse = g:old_mouse
         echo "Mouse is for Vim"
@@ -458,7 +456,6 @@ endfunction
 
 function! TabWrapper()
     let col = col('.') - 1
-
     if !col
         return "\<tab>"
     elseif getline('.')[col - 1] !~ '\k'
@@ -470,7 +467,6 @@ endfunction
 
 function! JavaTabWrapper()
     let col = col('.') - 1
-
     if !col
         return "\<tab>"
     elseif getline('.')[col - 1] == '.'
@@ -483,24 +479,16 @@ function! JavaTabWrapper()
 endfunction
 
 function! PerlTabWrapper ()
-    " Remember where we parked...
     let cursorpos = getpos('.')
     let cursorcol = cursorpos[2]
     let curr_line = getline('.')
-
-    " Special subpattern to match only at cursor position...
     let curr_pos_pat = '\%' . cursorcol . 'c'
-
-    " Tab as usual at the left margin...
     if curr_line =~ '^\s*' . curr_pos_pat
         return "\<tab>"
     endif
-
-    " If no contextual match and after an identifier, do keyword completion...
     if curr_line =~ '\k' . curr_pos_pat
         return "\<c-p>"
     endif
-
     if curr_line =~ '\(\->\|::\)' . curr_pos_pat
         return "\<c-x>\<c-o>"
     else
@@ -515,11 +503,10 @@ function! DeleteTrailingWS()
 endfunction
 
 function! RubyEndToken()
-    let current_line = getline( '.' )
-    let braces_at_end = '{\s*\(|\(,\|\s\|\w\)*|\s*\)\?$'
+    let current_line     = getline( '.' )
+    let braces_at_end    = '{\s*\(|\(,\|\s\|\w\)*|\s*\)\?$'
     let stuff_without_do = '^\s*\(class\|if\|unless\|begin\|case\|for\|module\|while\|until\|def\)'
-    let with_do = 'do\s*\(|\(,\|\s\|\w\)*|\s*\)\?$'
-
+    let with_do          = 'do\s*\(|\(,\|\s\|\w\)*|\s*\)\?$'
     if match(current_line, braces_at_end) >= 0
         return "\<CR>}\<C-O>O"
     elseif match(current_line, stuff_without_do) >= 0
@@ -545,7 +532,6 @@ augroup custom
     autocmd BufRead,BufNewFile .bash_functions setlocal ft=sh
     autocmd BufRead,BufNewFile .erdconfig      setlocal ft=yaml
 
-    " set text as the default filetype
     autocmd BufRead,BufNewFile * if &filetype == "" | setlocal ft=text | endif
 
     autocmd FileType asm        call Asm_settings()
@@ -597,26 +583,20 @@ augroup END
 
 function! Ruby_settings()
     call ShowEOLSpacesAndTabs()
-
     setlocal shiftwidth=2
-
-    " create closing tokens (complete block)
-    imap <buffer> <cr> <c-r>=RubyEndToken()<cr>
-
+    imap <silent> <cr> <c-r>=RubyEndToken()<cr>
     ia lb puts "============================================="
 endfunction
 
 function! ERuby_settings()
     call ShowEOLSpacesAndTabs()
     call CommentHtml()
-
     setlocal shiftwidth=2
 endfunction
 
 function! Html_settings()
     call ShowEOLSpacesAndTabs()
     call CommentHtml()
-
     setlocal shiftwidth=2
 endfunction
 
@@ -631,7 +611,6 @@ endfunction
 
 function! Slim_settings()
     call CommentSlim()
-
     setlocal cursorcolumn
     setlocal shiftwidth=2
 endfunction
@@ -641,19 +620,15 @@ function! Yaml_settings()
 endfunction
 
 function! Perl_settings()
+    let perl_want_scope_in_variables=1
+    let perl_extended_vars=1
+    let perl_include_pod=1
     call ShowEOLSpacesAndTabs()
-
     setlocal cin
     setlocal cino=:.5s=.5sc1
     setlocal cinkeys=0{,0},!^F,o,O,e
     setlocal iskeyword-=,
-
-    let perl_want_scope_in_variables=1
-    let perl_extended_vars=1
-    let perl_include_pod=1
-
     inoremap <silent> <tab> <c-r>=PerlTabWrapper()<cr>
-
     ia ret return
     ia xx #XXX
     ia lb print STDERR "###################\n";#XXX
@@ -662,26 +637,20 @@ endfunction
 function! Javascript_settings()
     call CommentForwardSlashes()
     call WrapLineInBraces()
-
     setlocal shiftwidth=2
 endfunction
 
 function! Java_settings()
     let java_allow_cpp_keywords=1
-
     call ShowEOLSpacesAndTabs()
     call CommentForwardSlashes()
     call WrapLineInBraces()
-
     setlocal cin
     setlocal cino=:.5s=.5sc1
-
     syn keyword javaTodo contained XXX DEBUG NOTICE WARNING TAG TODO FIXME HARDCODE DATABASE
-
     inoremap <silent> <tab> <c-r>=JavaTabWrapper()<cr>
-
-    nnoremap dm /}<cr>[m?^\(\s*$\\|{\)<cr>jV]m%d
-    nnoremap ym /}<cr>[m?^\(\s*$\\|{\)<cr>jV]m%y
+    nnoremap <silent> dm /}<cr>[m?^\(\s*$\\|{\)<cr>jV]m%d
+    nnoremap <silent> ym /}<cr>[m?^\(\s*$\\|{\)<cr>jV]m%y
 endfunction
 
 function! Asm_settings()
@@ -691,7 +660,6 @@ endfunction
 function! C_settings()
     call ShowEOLSpacesAndTabs()
     call CommentForwardSlashes()
-
     setlocal cin
     setlocal cino=:.5s=.5sc1
 endfunction
@@ -699,7 +667,6 @@ endfunction
 function! Cpp_settings()
     call ShowEOLSpacesAndTabs()
     call CommentForwardSlashes()
-
     setlocal cin
     setlocal cino=:.5s=.5sc1
 endfunction
@@ -722,13 +689,10 @@ function! Text_settings()
 endfunction
 
 function! Help_settings()
-    " open help for word under cursor
-    nnoremap <silent> ,h :help <c-r><c-w><cr>
+    nnoremap <buffer><silent> ,h :help <c-r><c-w><cr>
 endfunction
 
 function! Vim_settings()
     call CommentVim()
-
-    " open help for word under cursor
-    nnoremap <silent> ,h :help <c-r><c-w><cr>
+    nnoremap <buffer><silent> ,h :help <c-r><c-w><cr>
 endfunction
