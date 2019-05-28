@@ -80,9 +80,6 @@ set noswapfile
 " allow pasting from other apps, etc
 set clipboard=unnamedplus
 
-" don't change the terminal title
-set notitle
-
 " get the backspace key to do sensible things
 set backspace=indent,eol,start
 vnoremap <BS> x
