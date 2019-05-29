@@ -133,7 +133,7 @@ set viminfo='20,\"50,n~/.viminfo
 " auto ignore these when tabbing through file names
 set suffixes=.bak,~,.swp,.o,.info,.aux,.dvi,.out,.class
 
-" don't wrap lines
+" don't wrap lines by default
 set nowrap
 
 " menu
@@ -200,8 +200,8 @@ vnoremap <silent> <F5> gq
 " F6 show EOL whitespace
 nnoremap <silent> <F6> :call ToggleShowEOLSpacesAndTabs()<cr>
 
-" F7 clean up file (convert tabs, etc)
-nnoremap <silent> <F7> :%s/\s\+$//e<cr>ggVG=:v/./.,/./-1join<cr><c-l>gg:nohlsearch<cr>
+" F7 toggle wrap
+nnoremap <silent> <F7> :set wrap!<cr>
 
 " F8 clear eol space
 nnoremap <silent> <F8> :call ClearEOLSpace()<cr>:nohlsearch<cr>
