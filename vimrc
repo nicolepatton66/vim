@@ -21,13 +21,14 @@ filetype plugin on
 set encoding=utf-8
 set termencoding=utf-8
 
-" syntax highlighting
-set background=dark
-set termguicolors
-syntax on
+" sane indentation by default
+set autoindent
+filetype indent on
 
-" colors
-let g:gruvbox_contrast_dark = 'medium'
+" syntax highlighting
+set termguicolors
+set background=dark
+syntax on
 colorscheme gruvbox
 
 " make the background truly black
@@ -51,10 +52,6 @@ set scrolloff=5
 " num cols to scroll horizontally (0 will center)
 set sidescroll=5
 set sidescrolloff=5
-
-" sane indentation by default
-set autoindent
-filetype indent on
 
 " c = autowrap comments using textwidth
 " q = let gq format comments
