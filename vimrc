@@ -226,10 +226,10 @@ vmap <silent> ,. :s/#//<cr>:call ClearEOLSpace()<cr>:nohlsearch<cr>
 nnoremap <silent> ,6 :!chmod 644 %<cr>
 nnoremap <silent> ,7 :!chmod 755 %<cr>
 
-" toggle colorcolumn
+" toggle colorcolumn (line at column 80)
 nnoremap <silent> ,c :call ToggleColorColumn()<cr>
 
-" toggle cursorcolumn
+" toggle cursorcolumn (line at cursor)
 nnoremap <silent> ,C :set cursorcolumn!<cr>
 
 " toggle line numbers
