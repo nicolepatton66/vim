@@ -106,7 +106,6 @@ set nomore
 
 " use the mouse if possible (scrolling!)
 set mouse=a
-set ttymouse=xterm2
 
 " keep msgs abbreviated and short
 set shortmess=atT
