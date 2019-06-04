@@ -13,13 +13,13 @@
 " do this first!
 set nocompatible
 
-" detect filetypes and auto load any plugins for them
-filetype on
-filetype plugin on
-
 " encoding
 set encoding=utf-8
 set termencoding=utf-8
+
+" detect filetypes and auto load any plugins for them
+filetype on
+filetype plugin on
 
 " sane indentation by default
 set autoindent
@@ -34,9 +34,6 @@ colorscheme gruvbox
 " make the background truly black
 "highlight Normal ctermbg=black
 
-" enable matchit
-runtime macros/matchit.vim
-
 " set tab width and don't use tab chars
 set tabstop=8
 set softtabstop=-1
@@ -45,6 +42,9 @@ set expandtab
 
 " have shifts align to tabstops
 set shiftround
+
+" enable matchit
+runtime macros/matchit.vim
 
 " number of lines to keep above and below cursor (set to 999 to always center)
 set scrolloff=5
@@ -215,16 +215,16 @@ nnoremap <silent> <F11> :set ft=perl<cr>ggi#!/usr/bin/env perl<cr><cr><esc>
 " F12 ruby
 nnoremap <silent> <F12> :set ft=ruby<cr>ggi#!/usr/bin/env ruby<cr><cr><esc>
 
-" set mode of current file
-nnoremap <silent> ,6 :!chmod 644 %<cr>
-nnoremap <silent> ,7 :!chmod 755 %<cr>
-
 " default comments (shell type)
 setlocal comments=:#
 nmap <silent> ,, !!comment_default<cr>
 vmap <silent> ,, ygv!comment_default<cr>
 nmap <silent> ,. :s/\(\s*\)#/\1/<cr>:call ClearEOLSpace()<cr>:nohlsearch<cr>
 vmap <silent> ,. :s/#//<cr>:call ClearEOLSpace()<cr>:nohlsearch<cr>
+
+" set mode of current file
+nnoremap <silent> ,6 :!chmod 644 %<cr>
+nnoremap <silent> ,7 :!chmod 755 %<cr>
 
 " toggle colorcolumn
 nnoremap <silent> ,c :call ToggleColorColumn()<cr>
@@ -261,10 +261,6 @@ nnoremap <silent> ,Q :normal! "zyiw<esc>:let @z="\"".@z."\""<cr>cw<c-r>z<esc>b
 " spellcheck word
 nnoremap <silent> ,s :!echo <cword> \| aspell -a<cr>
 vnoremap <silent> ,s :w! %.spellcheck<cr>:!aspell -x check %.spellcheck<cr>:*d<cr>:if line(".") != line("$")<cr>.-1r %.spellcheck<cr>else<cr>.r %.spellcheck<cr>endif<cr>:!rm %.spellcheck<cr>
-
-" underline current line
-nnoremap <silent> ,u yypv$hr=
-nnoremap <silent> ,U yypv$hr-
 
 " move to top/bottom quarter of screen
 nnoremap <silent> ,H M8k
@@ -333,11 +329,11 @@ nnoremap <left>  :bp<cr>
 nnoremap <up>   <PageUp>H
 nnoremap <down> <PageDown>L
 
-" page up/down (shift)
+" page up/down
 noremap K <PageUp>H
 noremap J <PageDown>L
 
-" scroll screen in place (ctrl)
+" scroll screen in place
 noremap <c-k> <c-y>k
 noremap <c-j> <c-e>j
 noremap <c-h> 5zh
@@ -568,7 +564,7 @@ augroup custom
 
     " always return to last position when opening a file
     autocmd BufReadPost *
-    \   if line("'\"") > 1 && line("'\"") <= line("$")
+    \   if line("'\"") > 1 && line("'\"") <= line("$") && &ft !~# 'commit'
     \|     exe "normal! g`\""
     \|  endif
 augroup END
@@ -580,6 +576,7 @@ function! Ruby_settings()
     setlocal shiftwidth=2
     imap <silent> <cr> <c-r>=RubyEndToken()<cr>
     ia lb puts "============================================="
+    ia xx #XXX
 endfunction
 
 function! ERuby_settings()
