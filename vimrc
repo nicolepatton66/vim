@@ -422,14 +422,10 @@ function! ToggleShowEOLSpacesAndTabs()
 endfunction
 
 function! ToggleMouse()
-    if !exists("g:old_mouse")
-        let g:old_mouse = "a"
-    endif
     if &mouse == ""
-        let &mouse = g:old_mouse
+        let &mouse="a"
         echo "Mouse is for Vim"
     else
-        let g:old_mouse = &mouse
         let &mouse=""
         echo "Mouse is for terminal"
     endif
