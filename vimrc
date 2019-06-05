@@ -488,14 +488,12 @@ endfunction
 augroup custom
     autocmd!
 
-    autocmd BufRead,BufNewFile *.coffee        setlocal ft=coffee
-    autocmd BufRead,BufNewFile *.slim          setlocal ft=slim
-    autocmd BufRead,BufNewFile *.hs            setlocal ft=xml
-    autocmd BufRead,BufNewFile *.tt            setlocal ft=html
-    autocmd BufRead,BufNewFile *.tt2           setlocal ft=html
-    autocmd BufRead,BufNewFile *.json          setlocal ft=json
-    autocmd BufRead,BufNewFile .bash_functions setlocal ft=sh
-    autocmd BufRead,BufNewFile .erdconfig      setlocal ft=yaml
+    autocmd BufRead,BufNewFile *.coffee setlocal ft=coffee
+    autocmd BufRead,BufNewFile *.slim   setlocal ft=slim
+    autocmd BufRead,BufNewFile *.hs     setlocal ft=xml
+    autocmd BufRead,BufNewFile *.tt     setlocal ft=html
+    autocmd BufRead,BufNewFile *.tt2    setlocal ft=html
+    autocmd BufRead,BufNewFile *.json   setlocal ft=json
 
     autocmd BufRead,BufNewFile * if &filetype == "" | setlocal ft=text | endif
 
