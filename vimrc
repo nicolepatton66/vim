@@ -194,10 +194,10 @@ nnoremap <silent> <F5> gqap
 vnoremap <silent> <F5> gq
 
 " F6 show EOL whitespace
-nnoremap <silent> <F6> :call ToggleShowEOLSpacesAndTabs()<cr>
+nnoremap <silent> <F6> :setlocal list!<cr>
 
 " F7 toggle wrap
-nnoremap <silent> <F7> :set wrap!<cr>
+nnoremap <silent> <F7> :setlocal wrap!<cr>
 
 " F8 clear eol space
 nnoremap <silent> <F8> :call ClearEOLSpace()<cr>:nohlsearch<cr>
@@ -401,26 +401,6 @@ function! ClearEOLSpace()
     normal ``
 endfunction
 
-function! ShowEOLSpacesAndTabs()
-    if !exists("b:list_showing")
-        let b:list_showing = 1
-    endif
-    setlocal list
-endfunction
-
-function! ToggleShowEOLSpacesAndTabs()
-    if !exists("b:list_showing")
-        let b:list_showing = 0
-    endif
-    if b:list_showing == 0
-        let b:list_showing = 1
-        setlocal list
-    else
-        let b:list_showing = 0
-        setlocal nolist
-    endif
-endfunction
-
 function! ToggleMouse()
     if &mouse == ""
         let &mouse="a"
@@ -567,7 +547,7 @@ augroup END
 " Lang_settings -------------------------------------------
 
 function! Ruby_settings()
-    call ShowEOLSpacesAndTabs()
+    setlocal list
     setlocal shiftwidth=2
     imap <silent> <cr> <c-r>=RubyEndToken()<cr>
     ia lb puts "============================================="
@@ -575,14 +555,14 @@ function! Ruby_settings()
 endfunction
 
 function! ERuby_settings()
-    call ShowEOLSpacesAndTabs()
     call CommentHtml()
+    setlocal list
     setlocal shiftwidth=2
 endfunction
 
 function! Html_settings()
-    call ShowEOLSpacesAndTabs()
     call CommentHtml()
+    setlocal list
     setlocal shiftwidth=2
 endfunction
 
@@ -609,7 +589,7 @@ function! Perl_settings()
     let perl_want_scope_in_variables=1
     let perl_extended_vars=1
     let perl_include_pod=1
-    call ShowEOLSpacesAndTabs()
+    setlocal list
     setlocal cin
     setlocal cino=:.5s=.5sc1
     setlocal cinkeys=0{,0},!^F,o,O,e
@@ -628,9 +608,9 @@ endfunction
 
 function! Java_settings()
     let java_allow_cpp_keywords=1
-    call ShowEOLSpacesAndTabs()
     call CommentForwardSlashes()
     call WrapLineInBraces()
+    setlocal list
     setlocal cin
     setlocal cino=:.5s=.5sc1
     syn keyword javaTodo contained XXX DEBUG NOTICE WARNING TAG TODO FIXME HARDCODE DATABASE
@@ -644,15 +624,15 @@ function! Asm_settings()
 endfunction
 
 function! C_settings()
-    call ShowEOLSpacesAndTabs()
     call CommentForwardSlashes()
+    setlocal list
     setlocal cin
     setlocal cino=:.5s=.5sc1
 endfunction
 
 function! Cpp_settings()
-    call ShowEOLSpacesAndTabs()
     call CommentForwardSlashes()
+    setlocal list
     setlocal cin
     setlocal cino=:.5s=.5sc1
 endfunction
