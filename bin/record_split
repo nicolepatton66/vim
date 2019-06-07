@@ -1,22 +1,17 @@
-#!/usr/bin/env perl
+#!/usr/bin/env ruby
 
 # pretty print an array of ActiveRecord results
 
-my $full_string;
-while(<>) {
-    chomp;
-    s/^#<//;
-    s/>$//;
-    $full_string = $_;
-}
+full_string = ARGF.read
+full_string.sub!(/^#</, '')
+full_string.sub!(/>$/, '')
 
-my @sections = split />, #</, $full_string;
-foreach my $section (@sections) {
-    $section =~ s/^([a-zA-Z:]+) //; # pull out the model name
-    print "$1\n";
+full_string.split(/>, #</).each do |section|
+  section.sub!(/^([a-zA-Z:]+) /, '') # pull out the model name
+  puts $1
 
-    foreach my $line (sort split /, /, $section) {
-        print "  $line\n";
-    }
-    print "\n";
-}
+  section.split(/, /).sort.each do |part|
+    puts "  #{part}"
+  end
+  puts
+end
