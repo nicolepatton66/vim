@@ -6,7 +6,6 @@
 "   Keybindings
 "   Functions
 "   Autocommands
-"   Lang_settings
 "
 " ~~~~~~~~~~~~~~~~~~~~~
 
@@ -494,28 +493,6 @@ augroup custom
 
     autocmd BufRead,BufNewFile * if &filetype == "" | setlocal ft=text | endif
 
-    autocmd FileType asm        call Asm_settings()
-    autocmd FileType c          call C_settings()
-    autocmd FileType coffee     call Coffee_settings()
-    autocmd FileType cpp        call Cpp_settings()
-    autocmd FileType eruby      call ERuby_settings()
-    autocmd FileType help       call Help_settings()
-    autocmd FileType html       call Html_settings()
-    autocmd FileType java       call Java_settings()
-    autocmd FileType javascript call Javascript_settings()
-    autocmd FileType json       call Json_settings()
-    autocmd FileType make       call Make_settings()
-    autocmd FileType perl       call Perl_settings()
-    autocmd FileType ruby       call Ruby_settings()
-    autocmd FileType scss       call Scss_settings()
-    autocmd FileType slim       call Slim_settings()
-    autocmd FileType sql        call Sql_settings()
-    autocmd FileType text       call Text_settings()
-    autocmd FileType vim        call Vim_settings()
-    autocmd FileType xhtml      call Html_settings()
-    autocmd FileType xml        call Html_settings()
-    autocmd FileType yaml       call Yaml_settings()
-
     autocmd BufWrite *.java   :call DeleteTrailingWS()
     autocmd BufWrite *.js     :call DeleteTrailingWS()
     autocmd BufWrite *.pm     :call DeleteTrailingWS()
@@ -538,122 +515,3 @@ augroup custom
     \|     exe "normal! g`\""
     \|  endif
 augroup END
-
-" Lang_settings -------------------------------------------
-
-function! Ruby_settings()
-    setlocal list
-    setlocal shiftwidth=2
-    imap <silent> <cr> <c-r>=RubyEndToken()<cr>
-    ia lb puts "============================================="
-    ia xx #XXX
-endfunction
-
-function! ERuby_settings()
-    call CommentHtml()
-    setlocal list
-    setlocal shiftwidth=2
-endfunction
-
-function! Html_settings()
-    call CommentHtml()
-    setlocal list
-    setlocal shiftwidth=2
-endfunction
-
-function! Scss_settings()
-    setlocal shiftwidth=2
-endfunction
-
-function! Coffee_settings()
-    setlocal cursorcolumn
-    setlocal shiftwidth=2
-endfunction
-
-function! Slim_settings()
-    call CommentSlim()
-    setlocal cursorcolumn
-    setlocal shiftwidth=2
-endfunction
-
-function! Yaml_settings()
-    setlocal shiftwidth=2
-endfunction
-
-function! Perl_settings()
-    let perl_want_scope_in_variables=1
-    let perl_extended_vars=1
-    let perl_include_pod=1
-    setlocal list
-    setlocal cin
-    setlocal cino=:.5s=.5sc1
-    setlocal cinkeys=0{,0},!^F,o,O,e
-    setlocal iskeyword-=,
-    inoremap <silent> <tab> <c-r>=PerlTabWrapper()<cr>
-    ia ret return
-    ia xx #XXX
-    ia lb print STDERR "###################\n";#XXX
-endfunction
-
-function! Javascript_settings()
-    call CommentForwardSlashes()
-    call WrapLineInBraces()
-    setlocal shiftwidth=2
-endfunction
-
-function! Java_settings()
-    let java_allow_cpp_keywords=1
-    call CommentForwardSlashes()
-    call WrapLineInBraces()
-    setlocal list
-    setlocal cin
-    setlocal cino=:.5s=.5sc1
-    syn keyword javaTodo contained XXX DEBUG NOTICE WARNING TAG TODO FIXME HARDCODE DATABASE
-    inoremap <silent> <tab> <c-r>=JavaTabWrapper()<cr>
-    nnoremap <silent> dm /}<cr>[m?^\(\s*$\\|{\)<cr>jV]m%d
-    nnoremap <silent> ym /}<cr>[m?^\(\s*$\\|{\)<cr>jV]m%y
-endfunction
-
-function! Asm_settings()
-    setlocal shiftwidth=8
-endfunction
-
-function! C_settings()
-    call CommentForwardSlashes()
-    setlocal list
-    setlocal cin
-    setlocal cino=:.5s=.5sc1
-endfunction
-
-function! Cpp_settings()
-    call CommentForwardSlashes()
-    setlocal list
-    setlocal cin
-    setlocal cino=:.5s=.5sc1
-endfunction
-
-function! Json_settings()
-    setlocal formatoptions=tcq2l
-endfunction
-
-function! Make_settings()
-    setlocal noexpandtab
-endfunction
-
-function! Sql_settings()
-    call CommentSql()
-endfunction
-
-function! Text_settings()
-    setlocal nosmartindent
-    setlocal formatoptions=tc1
-endfunction
-
-function! Help_settings()
-    nnoremap <buffer><silent> ,h :help <c-r><c-w><cr>
-endfunction
-
-function! Vim_settings()
-    call CommentVim()
-    nnoremap <buffer><silent> ,h :help <c-r><c-w><cr>
-endfunction

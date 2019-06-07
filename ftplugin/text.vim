@@ -1,0 +1,2 @@
+setlocal nosmartindent
+setlocal formatoptions=tc1
