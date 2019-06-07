@@ -74,9 +74,6 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-" allow pasting from other apps, etc
-set clipboard=unnamedplus
-
 " get the backspace key to do sensible things
 set backspace=indent,eol,start
 vnoremap <BS> x
