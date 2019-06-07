@@ -1,16 +1,12 @@
-#!/usr/bin/env perl
+#!/usr/bin/env ruby
 
 # decode and pretty print url parameters
 
-use URI::Escape;
+require 'cgi'
 
-my $url_params;
-while(<>) {
-    chomp;
-    s/^http[^?]+\?//;
-    $url_params = $_;
-}
+url = ARGF.read
+url.sub!(/^http[^?]+\?/, '')
 
-foreach my $param (split /&/, $url_params) {
-    print uri_unescape($param) . "\n";
-}
+url.split(/&/).each do |param|
+  puts CGI.unescape(param)
+end
