@@ -174,6 +174,9 @@ nnoremap <silent> ,t :TlistToggle<cr>
 " Closetag
 let g:closetag_filetypes = 'html,xhtml,eruby,xml'
 
+" GitGutter
+set updatetime=100
+
 " Keybindings ---------------------------------------------
 
 " F2 toggles between autoindent when pasting or not
@@ -229,6 +232,9 @@ nnoremap <silent> ,C :set cursorcolumn!<cr>
 
 " toggle line numbers
 nnoremap <silent> ,n :set number!<cr>
+
+" toggle gitgutter
+nnoremap <silent> ,g :GitGutterBufferToggle<cr>
 
 " column alignment (,l un-aligns)
 vnoremap <silent> ,a !align<cr>
