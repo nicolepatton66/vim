@@ -173,6 +173,9 @@ nnoremap <silent> ,t :TlistToggle<cr>
 " Closetag
 let g:closetag_filetypes = 'html,xhtml,eruby,xml'
 
+" GitGutter
+set updatetime=100
+
 " Keybindings ---------------------------------------------
 
 " F2 toggles between autoindent when pasting or not
@@ -228,6 +231,9 @@ nnoremap <silent> ,C :set cursorcolumn!<cr>
 
 " toggle line numbers
 nnoremap <silent> ,n :set number!<cr>
+
+" toggle gitgutter
+nnoremap <silent> ,g :GitGutterBufferToggle<cr>
 
 " column alignment
 vnoremap <silent> ,a !align<cr>
@@ -462,22 +468,6 @@ function! DeleteTrailingWS()
     exe "normal mz"
     %s/\s\+$//ge
     exe "normal `z"
-endfunction
-
-function! RubyEndToken()
-    let current_line     = getline( '.' )
-    let braces_at_end    = '{\s*\(|\(,\|\s\|\w\)*|\s*\)\?$'
-    let stuff_without_do = '^\s*\(class\|if\|unless\|begin\|case\|for\|module\|while\|until\|def\)'
-    let with_do          = 'do\s*\(|\(,\|\s\|\w\)*|\s*\)\?$'
-    if match(current_line, braces_at_end) >= 0
-        return "\<CR>}\<C-O>O"
-    elseif match(current_line, stuff_without_do) >= 0
-        return "\<CR>end\<C-O>O"
-    elseif match(current_line, with_do) >= 0
-        return "\<CR>end\<C-O>O"
-    else
-        return "\<CR>"
-    endif
 endfunction
 
 " Autocommands --------------------------------------------
