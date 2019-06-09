@@ -482,17 +482,11 @@ augroup custom
     autocmd BufRead,BufNewFile *.tt2    setlocal ft=html
     autocmd BufRead,BufNewFile *.json   setlocal ft=json
 
+    " set default filetype to text
     autocmd BufRead,BufNewFile * if &filetype == "" | setlocal ft=text | endif
 
-    autocmd BufWrite *.java   :call DeleteTrailingWS()
-    autocmd BufWrite *.js     :call DeleteTrailingWS()
-    autocmd BufWrite *.pm     :call DeleteTrailingWS()
-    autocmd BufWrite *.pl     :call DeleteTrailingWS()
-    autocmd BufWrite *.rb     :call DeleteTrailingWS()
-    autocmd BufWrite *.erb    :call DeleteTrailingWS()
-    autocmd BufWrite *.slim   :call DeleteTrailingWS()
-    autocmd BufWrite *.yml    :call DeleteTrailingWS()
-    autocmd BufWrite *.coffee :call DeleteTrailingWS()
+    " always delete trailing whitespace
+    autocmd BufWrite * :call DeleteTrailingWS()
 
     " remove crap that somehow gets added
     autocmd FileType * setlocal formatoptions-=r formatoptions-=o formatoptions-=l
