@@ -1,11 +1,10 @@
 " ~~~~~~~ vimrc ~~~~~~~
 " ~~~ Nicole Patton ~~~
 "
-" TAGS:
-"   Module_settings
-"   Keybindings
-"   Functions
-"   Autocommands
+"  Module_settings
+"  Keybindings
+"  Functions
+"  Autocommands
 "
 " ~~~~~~~~~~~~~~~~~~~~~
 
@@ -230,14 +229,16 @@ nnoremap <silent> ,C :set cursorcolumn!<cr>
 " toggle line numbers
 nnoremap <silent> ,n :set number!<cr>
 
-" column alignment (,l un-aligns)
+" column alignment
 vnoremap <silent> ,a !align<cr>
 nnoremap <silent> ,a :!align<cr>
 vnoremap <silent> ,A !align_all<cr>
 nnoremap <silent> ,A :!align_all<cr>
 vnoremap <silent> ,= !align_equals<cr>
 nnoremap <silent> ,= :!align_equals<cr>
-nmap     <silent> ,l 1,A
+
+" un-align the current row
+nmap <silent> ,l 1,A
 
 " join this line and the next
 nnoremap <silent> ,j 2:j<cr>
@@ -293,7 +294,7 @@ nnoremap <silent> <delete> :earlier 1f<cr>
 " have Y yank to eol
 nnoremap Y y$
 
-" have Q exit perl instead of enter Ex mode
+" have Q exit vim instead of enter Ex mode
 noremap Q :q<cr>
 
 " have & remember flags and be global
