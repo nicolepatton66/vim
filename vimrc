@@ -216,8 +216,8 @@ nnoremap <silent> <F12> :set ft=ruby<cr>ggi#!/usr/bin/env ruby<cr><cr><esc>
 setlocal comments=:#
 nmap <silent> ,, !!comment_default<cr>
 vmap <silent> ,, ygv!comment_default<cr>
-nmap <silent> ,. :s/\(\s*\)#/\1/<cr>:call ClearEOLSpace()<cr>:nohlsearch<cr>
-vmap <silent> ,. :s/#//<cr>:call ClearEOLSpace()<cr>:nohlsearch<cr>
+nmap <silent> ,. :s/\(\s*\)#/\1/<cr><F8>
+vmap <silent> ,. :s/#//<cr><F8>
 
 " set mode of current file
 nnoremap <silent> ,6 :!chmod 644 %<cr>
