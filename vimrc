@@ -192,10 +192,10 @@ nnoremap <silent> <F5> gqap
 vnoremap <silent> <F5> gq
 
 " F6 show EOL whitespace
-nnoremap <silent> <F6> :setlocal list!<cr>
+nnoremap <silent> <F6> :setlocal list!<cr>:set list?<cr>
 
 " F7 toggle wrap
-nnoremap <silent> <F7> :setlocal wrap!<cr>
+nnoremap <silent> <F7> :setlocal wrap!<cr>:set wrap?<cr>
 
 " F8 clear eol space
 nnoremap <silent> <F8> :call ClearEOLSpace()<cr>:nohlsearch<cr>
@@ -304,7 +304,7 @@ nnoremap <silent> <delete> :earlier 1f<cr>
 nnoremap Y y$
 
 " have Q do nothing
-noremap Q <NOP>
+noremap Q <nop>
 
 " have & remember flags and be global
 nnoremap & :%&&<cr>
