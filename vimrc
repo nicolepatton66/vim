@@ -232,8 +232,8 @@ nnoremap <silent> ,C :set cursorcolumn!<cr>
 " toggle line numbers
 nnoremap <silent> ,n :set number!<cr>
 
-" toggle gitgutter
-nnoremap <silent> ,g :GitGutterBufferToggle<cr>
+" update gitgutter display
+nnoremap <silent> ,g :GitGutterAll<cr>
 
 " column alignment
 vnoremap <silent> ,a !align<cr>
