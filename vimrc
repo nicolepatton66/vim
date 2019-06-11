@@ -235,6 +235,9 @@ nnoremap <silent> ,n :set number!<cr>
 " update gitgutter display
 nnoremap <silent> ,g :GitGutterAll<cr>
 
+" source vimrc
+nnoremap <silent> ,v :source $MYVIMRC<cr>
+
 " column alignment
 vnoremap <silent> ,a !align<cr>
 nnoremap <silent> ,a :!align<cr>
