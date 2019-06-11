@@ -300,8 +300,8 @@ nnoremap <silent> <delete> :earlier 1f<cr>
 " have Y yank to eol
 nnoremap Y y$
 
-" have Q exit vim instead of enter Ex mode
-noremap Q :q<cr>
+" have Q do nothing
+noremap Q <NOP>
 
 " have & remember flags and be global
 nnoremap & :%&&<cr>
