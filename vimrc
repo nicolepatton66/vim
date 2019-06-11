@@ -352,7 +352,7 @@ nnoremap n nzz
 nnoremap `` ``zz
 
 " select pasted text
-nnoremap <expr> gV "`[".getregtype(v:register)[0]."`]"
+nnoremap <silent> gV `[v`]
 
 " Functions -----------------------------------------------
 
