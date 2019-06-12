@@ -319,9 +319,6 @@ noremap <space> <PageDown>L
 vnoremap <tab>   >gv
 vnoremap <s-tab> <gv
 
-" have tab autocomplete
-inoremap <silent> <tab> <c-r>=TabWrapper()<cr>
-
 " use tab to switch buffers
 nnoremap <silent> <tab>   :bn<cr>
 nnoremap <silent> <s-tab> :bp<cr>
@@ -422,48 +419,6 @@ function! ToggleColorColumn()
         set colorcolumn=80
     else
         set colorcolumn=
-    endif
-endfunction
-
-function! TabWrapper()
-    let col = col('.') - 1
-    if !col
-        return "\<tab>"
-    elseif getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-p>"
-    endif
-endfunction
-
-function! JavaTabWrapper()
-    let col = col('.') - 1
-    if !col
-        return "\<tab>"
-    elseif getline('.')[col - 1] == '.'
-        return "\<c-x>\<c-o>"
-    elseif getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-p>"
-    endif
-endfunction
-
-function! PerlTabWrapper ()
-    let cursorpos = getpos('.')
-    let cursorcol = cursorpos[2]
-    let curr_line = getline('.')
-    let curr_pos_pat = '\%' . cursorcol . 'c'
-    if curr_line =~ '^\s*' . curr_pos_pat
-        return "\<tab>"
-    endif
-    if curr_line =~ '\k' . curr_pos_pat
-        return "\<c-p>"
-    endif
-    if curr_line =~ '\(\->\|::\)' . curr_pos_pat
-        return "\<c-x>\<c-o>"
-    else
-        return "\<s-tab>"
     endif
 endfunction
 
