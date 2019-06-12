@@ -467,12 +467,6 @@ function! PerlTabWrapper ()
     endif
 endfunction
 
-function! DeleteTrailingWS()
-    exe "normal mz"
-    %s/\s\+$//ge
-    exe "normal `z"
-endfunction
-
 " Autocommands --------------------------------------------
 
 augroup custom
@@ -489,7 +483,7 @@ augroup custom
     autocmd BufRead,BufNewFile * if &filetype == "" | setlocal ft=text | endif
 
     " always delete trailing whitespace
-    autocmd BufWrite * :call DeleteTrailingWS()
+    autocmd BufWrite * :call ClearEOLSpace()
 
     " remove crap that somehow gets added
     autocmd FileType * setlocal formatoptions-=r formatoptions-=o formatoptions-=l
