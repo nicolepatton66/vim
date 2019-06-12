@@ -494,9 +494,6 @@ augroup custom
     " remove crap that somehow gets added
     autocmd FileType * setlocal formatoptions-=r formatoptions-=o formatoptions-=l
 
-    " make sure mouse is left in a sane state
-    autocmd VimLeavePre * set ttymouse=xterm
-
     " always return to last position when opening a file
     autocmd BufReadPost *
     \   if line("'\"") > 1 && line("'\"") <= line("$") && &ft !~# 'commit'
