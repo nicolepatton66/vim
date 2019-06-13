@@ -265,7 +265,6 @@ nnoremap <silent> ,Q :normal! "zyiw<esc>:let @z="\"".@z."\""<cr>cw<c-r>z<esc>b
 
 " spellcheck word
 nnoremap <silent> ,s :!echo <cword> \| aspell -a<cr>
-vnoremap <silent> ,s :w! %.spellcheck<cr>:!aspell -x check %.spellcheck<cr>:*d<cr>:if line(".") != line("$")<cr>.-1r %.spellcheck<cr>else<cr>.r %.spellcheck<cr>endif<cr>:!rm %.spellcheck<cr>
 
 " move to top/bottom quarter of screen
 nnoremap <silent> ,H M8k
