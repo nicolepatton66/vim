@@ -233,10 +233,10 @@ nnoremap <silent> ,C :set cursorcolumn!<cr>
 nnoremap <silent> ,n :set number!<cr>
 
 " update gitgutter display
-nnoremap <silent> ,g :GitGutterAll<cr>
+nnoremap <silent> ,g :GitGutterAll<cr>:redraw<cr>:echo 'gitgutter refreshed'<cr>
 
 " source vimrc
-nnoremap <silent> ,v :source $MYVIMRC<cr>
+nnoremap <silent> ,v :source $MYVIMRC<cr>:redraw<cr>:echo 'vimrc sourced'<cr>
 
 " column alignment
 vnoremap <silent> ,a !align<cr>
