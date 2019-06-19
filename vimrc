@@ -131,10 +131,6 @@ set nowrap
 set wildmenu
 set wildmode=list:longest,full
 
-" ruler (only used when there is no statusline)
-set ruler
-set rulerformat=%-32(%12(%l\ of\ %L%)\ (%p%%)\ %-3c\ %-5([%n]%)%)
-
 " statusline
 set laststatus=2
 set statusline=%F\ %y%r%m%=%12(%l\ of\ %L%)\ (%p%%)\ %-3c\ %-5([%n]%)
