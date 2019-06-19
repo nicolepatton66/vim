@@ -67,7 +67,7 @@ set autowrite
 " auto load changes
 set autoread
 
-" don't leave backup files all over the place, or swap files
+" don't leave backup or swap files all over the place
 set nobackup
 set nowritebackup
 set noswapfile
