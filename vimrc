@@ -1,11 +1,6 @@
+" ~~~~~~~~~~~~~~~~~~~~~
 " ~~~~~~~ vimrc ~~~~~~~
 " ~~~ Nicole Patton ~~~
-"
-"  Module_settings
-"  Keybindings
-"  Functions
-"  Autocommands
-"
 " ~~~~~~~~~~~~~~~~~~~~~
 
 " do this first!
@@ -147,7 +142,7 @@ set undolevels=1000
 " customize tabs, trailing whitespace, and non-breaking spaces (when list is on)
 exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
 
-" Module_settings -----------------------------------------
+" Module settings -----------------------------------------
 
 " BufExplorer
 let g:bufExplorerSortBy = 'number'
