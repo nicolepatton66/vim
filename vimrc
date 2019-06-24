@@ -312,8 +312,8 @@ vnoremap <tab>   >gv
 vnoremap <s-tab> <gv
 
 " use tab to switch buffers
-nnoremap <silent> <tab>   :bn<cr>
-nnoremap <silent> <s-tab> :bp<cr>
+nnoremap <tab>   :bn<cr>
+nnoremap <s-tab> :bp<cr>
 
 " use right/left arrow keys to switch buffers
 nnoremap <right> :bn<cr>
@@ -341,7 +341,7 @@ nnoremap n nzz
 nnoremap `` ``zz
 
 " select pasted text
-nnoremap <silent> gV `[v`]
+nnoremap gV `[v`]
 
 " Functions -----------------------------------------------
 
