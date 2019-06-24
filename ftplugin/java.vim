@@ -9,5 +9,5 @@ setlocal cino=:.5s=.5sc1
 
 syn keyword javaTodo contained XXX DEBUG NOTICE WARNING TAG TODO FIXME HARDCODE DATABASE
 
-nnoremap <silent> dm /}<cr>[m?^\(\s*$\\|{\)<cr>jV]m%d
-nnoremap <silent> ym /}<cr>[m?^\(\s*$\\|{\)<cr>jV]m%y
+nnoremap <buffer><silent> dm /}<cr>[m?^\(\s*$\\|{\)<cr>jV]m%d
+nnoremap <buffer><silent> ym /}<cr>[m?^\(\s*$\\|{\)<cr>jV]m%y

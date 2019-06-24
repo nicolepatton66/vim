@@ -347,47 +347,47 @@ nnoremap gV `[v`]
 
 function! CommentHtml()
     setlocal comments=
-    nmap <silent> ,, !!comment_html<cr>
-    vmap <silent> ,, ygv!comment_html<cr>
-    nmap <silent> ,. :s/<!-- *\(.*\)-->/\1/<cr><F8>
-    vmap <silent> ,. :s/<!-- *\(.*\)-->/\1/<cr><F8>
+    nmap <buffer><silent> ,, !!comment_html<cr>
+    vmap <buffer><silent> ,, ygv!comment_html<cr>
+    nmap <buffer><silent> ,. :s/<!-- *\(.*\)-->/\1/<cr><F8>
+    vmap <buffer><silent> ,. :s/<!-- *\(.*\)-->/\1/<cr><F8>
 endfunction
 
 function! CommentSlim()
     setlocal comments=:\/
-    nmap <silent> ,, !!comment_slim<cr>
-    vmap <silent> ,, ygv!comment_slim<cr>
-    nmap <silent> ,. :s/\///<cr><F8>
-    vmap <silent> ,. :s/\///<cr><F8>
+    nmap <buffer><silent> ,, !!comment_slim<cr>
+    vmap <buffer><silent> ,, ygv!comment_slim<cr>
+    nmap <buffer><silent> ,. :s/\///<cr><F8>
+    vmap <buffer><silent> ,. :s/\///<cr><F8>
 endfunction
 
 function! CommentForwardSlashes()
     setlocal comments=:\/\/
-    nmap <silent> ,, !!comment_forward_slashes<cr>
-    vmap <silent> ,, ygv!comment_forward_slashes<cr>
-    nmap <silent> ,. :s/\/\///<cr><F8>
-    vmap <silent> ,. :s/\/\///<cr><F8>
+    nmap <buffer><silent> ,, !!comment_forward_slashes<cr>
+    vmap <buffer><silent> ,, ygv!comment_forward_slashes<cr>
+    nmap <buffer><silent> ,. :s/\/\///<cr><F8>
+    vmap <buffer><silent> ,. :s/\/\///<cr><F8>
 endfunction
 
 function! CommentSql()
     setlocal comments=:--
-    nmap <silent> ,, !!comment_sql<cr>
-    vmap <silent> ,, ygv!comment_sql<cr>
-    nmap <silent> ,. :s/-- //<cr><F8>
-    vmap <silent> ,. :s/-- //<cr><F8>
+    nmap <buffer><silent> ,, !!comment_sql<cr>
+    vmap <buffer><silent> ,, ygv!comment_sql<cr>
+    nmap <buffer><silent> ,. :s/-- //<cr><F8>
+    vmap <buffer><silent> ,. :s/-- //<cr><F8>
 endfunction
 
 function! CommentVim()
     setlocal comments=:\"
-    nmap <silent> ,, !!comment_vim<cr>
-    vmap <silent> ,, ygv!comment_vim<cr>
-    nmap <silent> ,. :s/"//<cr><F8>
-    vmap <silent> ,. :s/"//<cr><F8>
+    nmap <buffer><silent> ,, !!comment_vim<cr>
+    vmap <buffer><silent> ,, ygv!comment_vim<cr>
+    nmap <buffer><silent> ,. :s/"//<cr><F8>
+    vmap <buffer><silent> ,. :s/"//<cr><F8>
 endfunction
 
 function! WrapLineInBraces()
-    nnoremap <silent> ,w :normal! kA {<esc>jo}<esc>k==
-    nnoremap <silent> ,W :normal! k$hDjjddk<cr>==
+    nnoremap <buffer><silent> ,w :normal! kA {<esc>jo}<esc>k==
+    nnoremap <buffer><silent> ,W :normal! k$hDjjddk<cr>==
 endfunction
 
 function! ClearEOLSpace()
