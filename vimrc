@@ -292,9 +292,6 @@ nnoremap <silent> ,pu !!url_split<cr>:set ft=text<cr>
 nnoremap v <c-v>
 nnoremap <c-v> v
 
-" delete in normal mode goes back to last write
-nnoremap <silent> <delete> :earlier 1f<cr>
-
 " have Y yank to eol
 nnoremap Y y$
 
