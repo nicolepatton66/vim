@@ -310,14 +310,6 @@ vnoremap <s-tab> <gv
 nnoremap <silent> <tab>   :bn<cr>
 nnoremap <silent> <s-tab> :bp<cr>
 
-" use right/left arrow keys to switch buffers
-nnoremap <silent> <right> :bn<cr>
-nnoremap <silent> <left>  :bp<cr>
-
-" use up/down arrow keys to page up/down
-nnoremap <up>   <PageUp>H
-nnoremap <down> <PageDown>L
-
 " page up/down
 noremap K <PageUp>H
 noremap J <PageDown>L
