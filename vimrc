@@ -204,7 +204,7 @@ nnoremap <silent> <F11> :set ft=perl<cr>ggi#!/usr/bin/env perl<cr><cr><esc>
 nnoremap <silent> <F12> :set ft=ruby<cr>ggi#!/usr/bin/env ruby<cr><cr><esc>
 
 " default comments (shell type)
-setlocal comments=:#
+set comments=:#
 nmap <silent> ,, !!comment_default<cr>
 vmap <silent> ,, ygv!comment_default<cr>
 nmap <silent> ,. :s/\(\s*\)#/\1/<cr><F8>
