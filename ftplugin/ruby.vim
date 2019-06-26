@@ -3,3 +3,4 @@ setlocal shiftwidth=2
 
 ia lb puts "============================================="
 ia xx #XXX
+ia ret return
