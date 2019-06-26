@@ -5,8 +5,9 @@
 require 'cgi'
 
 url = ARGF.read
-url.sub!(/^http[^?]+\?/, '')
+url.sub!(/^(http[^?]+)\?/, '')
+puts $1
 
 url.split(/&/).each do |param|
-  puts CGI.unescape(param)
+  puts "  #{CGI.unescape(param)}"
 end
