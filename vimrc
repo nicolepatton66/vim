@@ -319,9 +319,6 @@ noremap <c-j> <c-e>j
 noremap <c-h> 5zh
 noremap <c-l> 5zl
 
-" have ctrl-p auto-indent
-nnoremap <c-p> p=`]
-
 " center these in searches
 nnoremap n nzz
 nnoremap `` ``zz
