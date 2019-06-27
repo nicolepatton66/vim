@@ -242,7 +242,6 @@ nmap <silent> ,l 1,A
 
 " join this line and the next
 nnoremap <silent> ,j 2:j<cr>
-vnoremap <silent> ,j J
 
 " join an entire paragraph
 nnoremap <silent> ,J vip:j<cr>jj
