@@ -69,8 +69,8 @@ set noswapfile
 
 " get the backspace key to do sensible things
 set backspace=indent,eol,start
-vnoremap <BS> x
-nnoremap <BS> hx
+vnoremap <bs> x
+nnoremap <bs> hx
 
 " don't read dot files in current dir!
 set noexrc
@@ -299,7 +299,7 @@ nnoremap & :%&&<cr>
 nnoremap <return> o<esc>
 
 " have space page down
-noremap <space> <PageDown>L
+noremap <space> <pagedown>L
 
 " have tab indent a visual selection
 vnoremap <tab>   >gv
@@ -310,8 +310,8 @@ nnoremap <silent> <tab>   :bn<cr>
 nnoremap <silent> <s-tab> :bp<cr>
 
 " page up/down
-noremap K <PageUp>H
-noremap J <PageDown>L
+noremap K <pageup>H
+noremap J <pagedown>L
 
 " scroll screen in place
 noremap <c-k> <c-y>k
