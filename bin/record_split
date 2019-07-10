@@ -4,6 +4,8 @@
 
 full_string = ARGF.read
 
+full_string.sub!(/^\[/, '')
+full_string.sub!(/\[$/, '')
 full_string.sub!(/^#<ActiveRecord::Relation \[/, '')
 full_string.sub!(/\]>$/, '')
 full_string.sub!(/^#</, '')
