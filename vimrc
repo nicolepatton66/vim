@@ -78,9 +78,6 @@ set noexrc
 " maximize help window (see ,m below)
 set helpheight=99
 
-" case-insensitive search if pattern all lower case, case-sensitive otherwise
-set smartcase
-
 " searching: hightlight matches, dynamically show match
 set hlsearch
 set incsearch
@@ -236,6 +233,9 @@ vnoremap <silent> ,A !align_all<cr>
 nnoremap <silent> ,A :!align_all<cr>
 vnoremap <silent> ,= !align_equals<cr>
 nnoremap <silent> ,= :!align_equals<cr>
+
+" toggle ignorecase
+nnoremap <silent> ,i :set ignorecase!<cr>:echo "ignorecase=" . &ignorecase<cr>
 
 " un-align the current row
 nmap <silent> ,l 1,A
