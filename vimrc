@@ -249,10 +249,6 @@ nnoremap <silent> ,J vip:j<cr>jj
 " flip focus and maximize split window (used with help window)
 nnoremap <silent> ,m <c-w>w<c-w>_
 
-" quote word
-nnoremap <silent> ,q :normal! "zyiw<esc>:let @z="\'".@z."\'"<cr>cw<c-r>z<esc>b
-nnoremap <silent> ,Q :normal! "zyiw<esc>:let @z="\"".@z."\""<cr>cw<c-r>z<esc>b
-
 " spellcheck word
 nnoremap <silent> ,s :!echo <cword> \| aspell -a<cr>
 
