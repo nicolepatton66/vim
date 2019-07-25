@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -e
+
+cd ~/.vim
+vim -c "helptags doc/" -c q
