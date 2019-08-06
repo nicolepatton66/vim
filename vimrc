@@ -119,6 +119,9 @@ set suffixes=.bak,~,.swp,.o,.info,.aux,.dvi,.out,.class
 " don't wrap lines by default
 set nowrap
 
+" indicate beginning of a wrapped line
+set showbreak=↳
+
 " menu
 set wildmenu
 set wildmode=list:longest,full
