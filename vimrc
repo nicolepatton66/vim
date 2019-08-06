@@ -161,7 +161,7 @@ let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_Close_On_Select = 1
 let Tlist_Exit_OnlyWindow = 1
 let Tlist_Show_One_File = 1
-let Tlist_Sort_Type = "name"
+let Tlist_Sort_Type = 'name'
 let Tlist_Enable_Fold_Column = 0
 nnoremap <silent> ,t :TlistToggle<cr>
 
@@ -347,12 +347,12 @@ function! ClearEOLSpace()
 endfunction
 
 function! ToggleMouse()
-    if &mouse == ""
-        let &mouse="a"
-        echo "Mouse is for Vim"
+    if &mouse == ''
+        let &mouse='a'
+        echo 'Mouse is for Vim'
     else
-        let &mouse=""
-        echo "Mouse is for terminal"
+        let &mouse=''
+        echo 'Mouse is for terminal'
     endif
 endfunction
 
