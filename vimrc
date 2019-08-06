@@ -143,6 +143,9 @@ set undolevels=1000
 set list
 set listchars=tab:»»,trail:·,extends:→,nbsp:˽
 
+" use system clipboard for cut and paste
+set clipboard=unnamed
+
 " Module settings -----------------------------------------
 
 " BufExplorer
