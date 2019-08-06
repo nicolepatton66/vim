@@ -215,8 +215,8 @@ nmap <silent> ,. :s/\(\s*\)#/\1/<cr><F8>
 vmap <silent> ,. :s/#//<cr><F8>
 
 " set mode of current file
-nnoremap <silent> ,6 :!chmod 644 %<cr>
-nnoremap <silent> ,7 :!chmod 755 %<cr>
+nnoremap <silent> ,6 :!chmod 644 %<cr><cr><cr>
+nnoremap <silent> ,7 :!chmod 755 %<cr><cr><cr>
 
 " toggle colorcolumn (line at column 80)
 nnoremap <silent> ,c :call ToggleColorColumn()<cr>
