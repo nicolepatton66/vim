@@ -1,6 +1,5 @@
 let java_allow_cpp_keywords=1
 
-call CommentForwardSlashes()
 call WrapLineInBraces()
 
 setlocal list

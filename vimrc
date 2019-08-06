@@ -171,6 +171,11 @@ let g:closetag_filetypes = 'html,xhtml,eruby,xml'
 " GitGutter
 set updatetime=100
 
+" NERDCommenter
+let g:NERDDefaultAlign = 'left'
+let g:NERDCommentEmptyLines = 1
+let g:NERDTrimTrailingWhitespace = 1
+
 " Keybindings ---------------------------------------------
 
 " F2 toggles between autoindent when pasting or not
@@ -207,12 +212,11 @@ nnoremap <silent> <F11> :set ft=perl<cr>ggi#!/usr/bin/env perl<cr><cr><esc>
 " F12 ruby
 nnoremap <silent> <F12> :set ft=ruby<cr>ggi#!/usr/bin/env ruby<cr><cr><esc>
 
-" default comments (shell type)
-set comments=:#
-nmap <silent> ,, !!comment_default<cr>
-vmap <silent> ,, ygv!comment_default<cr>
-nmap <silent> ,. :s/\(\s*\)#/\1/<cr><F8>
-vmap <silent> ,. :s/#//<cr><F8>
+" commenting
+nmap <silent> ,, <plug>NERDCommenterYank
+vmap <silent> ,, <plug>NERDCommenterYank
+nmap <silent> ,. <plug>NERDCommenterUncomment
+vmap <silent> ,. <plug>NERDCommenterUncomment
 
 " set mode of current file
 nnoremap <silent> ,6 :!chmod 644 %<cr><cr><cr>
@@ -330,46 +334,6 @@ nnoremap `` ``zz
 nnoremap gV `[v`]
 
 " Functions -----------------------------------------------
-
-function! CommentHtml()
-    setlocal comments=
-    nmap <buffer><silent> ,, !!comment_html<cr>
-    vmap <buffer><silent> ,, ygv!comment_html<cr>
-    nmap <buffer><silent> ,. :s/<!-- *\(.*\)-->/\1/<cr><F8>
-    vmap <buffer><silent> ,. :s/<!-- *\(.*\)-->/\1/<cr><F8>
-endfunction
-
-function! CommentSlim()
-    setlocal comments=:\/
-    nmap <buffer><silent> ,, !!comment_slim<cr>
-    vmap <buffer><silent> ,, ygv!comment_slim<cr>
-    nmap <buffer><silent> ,. :s/\///<cr><F8>
-    vmap <buffer><silent> ,. :s/\///<cr><F8>
-endfunction
-
-function! CommentForwardSlashes()
-    setlocal comments=:\/\/
-    nmap <buffer><silent> ,, !!comment_forward_slashes<cr>
-    vmap <buffer><silent> ,, ygv!comment_forward_slashes<cr>
-    nmap <buffer><silent> ,. :s/\/\///<cr><F8>
-    vmap <buffer><silent> ,. :s/\/\///<cr><F8>
-endfunction
-
-function! CommentSql()
-    setlocal comments=:--
-    nmap <buffer><silent> ,, !!comment_sql<cr>
-    vmap <buffer><silent> ,, ygv!comment_sql<cr>
-    nmap <buffer><silent> ,. :s/-- //<cr><F8>
-    vmap <buffer><silent> ,. :s/-- //<cr><F8>
-endfunction
-
-function! CommentVim()
-    setlocal comments=:\"
-    nmap <buffer><silent> ,, !!comment_vim<cr>
-    vmap <buffer><silent> ,, ygv!comment_vim<cr>
-    nmap <buffer><silent> ,. :s/"//<cr><F8>
-    vmap <buffer><silent> ,. :s/"//<cr><F8>
-endfunction
 
 function! WrapLineInBraces()
     nnoremap <buffer><silent> ,w :normal! kA {<esc>jo}<esc>k==
