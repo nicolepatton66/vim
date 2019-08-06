@@ -139,8 +139,9 @@ set virtualedit=block
 " how many changes can we undo
 set undolevels=1000
 
-" customize tabs, trailing whitespace, and non-breaking spaces (when list is on)
-exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
+" set list on by default, and customize characters used
+set list
+set listchars=tab:»»,trail:·,extends:→,nbsp:˽
 
 " Module settings -----------------------------------------
 
