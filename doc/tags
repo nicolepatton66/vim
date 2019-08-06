@@ -128,9 +128,6 @@ bufexplorer-usage	bufexplorer.txt	/*bufexplorer-usage*
 bufexplorer-windowlayout	bufexplorer.txt	/*bufexplorer-windowlayout*
 bufexplorer.txt	bufexplorer.txt	/*bufexplorer.txt*
 buffer-explorer	bufexplorer.txt	/*buffer-explorer*
-cS	surround.txt	/*cS*
-cs	surround.txt	/*cs*
-ds	surround.txt	/*ds*
 g:SuperTabClosePreviewOnPopupClose	supertab.txt	/*g:SuperTabClosePreviewOnPopupClose*
 g:SuperTabCompleteCase	supertab.txt	/*g:SuperTabCompleteCase*
 g:SuperTabCompletionContexts	supertab.txt	/*g:SuperTabCompletionContexts*
@@ -223,8 +220,6 @@ gitgutter-options	gitgutter.txt	/*gitgutter-options*
 gitgutter-text-object	gitgutter.txt	/*gitgutter-text-object*
 gitgutter-troubleshooting	gitgutter.txt	/*gitgutter-troubleshooting*
 gitgutter.txt	gitgutter.txt	/*gitgutter.txt*
-i_CTRL-G_S	surround.txt	/*i_CTRL-G_S*
-i_CTRL-G_s	surround.txt	/*i_CTRL-G_s*
 indent-guides	indent_guides.txt	/*indent-guides*
 indent-guides-about	indent_guides.txt	/*indent-guides-about*
 indent-guides-changelog	indent_guides.txt	/*indent-guides-changelog*
@@ -257,13 +252,6 @@ supertab-options	supertab.txt	/*supertab-options*
 supertab-preventcomplete	supertab.txt	/*supertab-preventcomplete*
 supertab-usage	supertab.txt	/*supertab-usage*
 supertab.txt	supertab.txt	/*supertab.txt*
-surround	surround.txt	/*surround*
-surround-customizing	surround.txt	/*surround-customizing*
-surround-issues	surround.txt	/*surround-issues*
-surround-mappings	surround.txt	/*surround-mappings*
-surround-replacements	surround.txt	/*surround-replacements*
-surround-targets	surround.txt	/*surround-targets*
-surround.txt	surround.txt	/*surround.txt*
 taglist-commands	taglist.txt	/*taglist-commands*
 taglist-debug	taglist.txt	/*taglist-debug*
 taglist-extend	taglist.txt	/*taglist-extend*
@@ -281,9 +269,3 @@ taglist-session	taglist.txt	/*taglist-session*
 taglist-todo	taglist.txt	/*taglist-todo*
 taglist-using	taglist.txt	/*taglist-using*
 taglist.txt	taglist.txt	/*taglist.txt*
-vS	surround.txt	/*vS*
-vgS	surround.txt	/*vgS*
-yS	surround.txt	/*yS*
-ySS	surround.txt	/*ySS*
-ys	surround.txt	/*ys*
-yss	surround.txt	/*yss*
