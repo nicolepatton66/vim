@@ -14,7 +14,7 @@ set termencoding=utf-8
 filetype on
 filetype plugin on
 
-" sane indentation by default
+" enable indentation
 set autoindent
 filetype indent on
 
@@ -39,10 +39,10 @@ set shiftround
 " enable matchit
 runtime macros/matchit.vim
 
-" number of lines to keep above and below cursor (set to 999 to always center)
+" number of lines to keep above and below cursor
 set scrolloff=5
 
-" num cols to scroll horizontally (0 will center)
+" num cols to scroll horizontally
 set sidescroll=5
 set sidescrolloff=5
 
@@ -88,7 +88,7 @@ set nojoinspaces
 " don't redraw while executing macros
 set lazyredraw
 
-" just let msgs stream on by (don't pause all the time)
+" let messages stream by without pausing
 set nomore
 
 " use the mouse if possible (scrolling!)
@@ -100,14 +100,14 @@ set shortmess=atT
 " display commands and other useful stuff
 set showcmd
 
-" what sort of eol's to handle (priority list)
+" what sort of eol's to use (priority list)
 set fileformats=unix,dos
 
-" milliseconds before cmd is cancelled
+" milliseconds before command is cancelled
 set timeoutlen=2000
 set ttimeoutlen=2000
 
-" how much ex cmd history to keep
+" how much ex command history to keep
 set history=50
 
 " keep the viminfo file under control
