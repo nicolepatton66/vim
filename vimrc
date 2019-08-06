@@ -183,7 +183,7 @@ nnoremap <silent> <F4> :IndentGuidesToggle<cr>
 nnoremap <silent> <F5> gqap
 vnoremap <silent> <F5> gq
 
-" F6 show EOL whitespace
+" F6 toggle list
 nnoremap <silent> <F6> :setlocal list!<cr>:set list?<cr>
 
 " F7 toggle wrap
