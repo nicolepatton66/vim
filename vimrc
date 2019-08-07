@@ -385,7 +385,6 @@ augroup custom
     autocmd BufRead,BufNewFile *.tt     setlocal ft=html
     autocmd BufRead,BufNewFile *.tt2    setlocal ft=html
     autocmd BufRead,BufNewFile *.json   setlocal ft=json
-    autocmd BufRead,BufNewFile *.rb.*   setlocal ft=ruby
 
     " set default filetype to text
     autocmd BufRead,BufNewFile * if &filetype == "" | setlocal ft=text | endif
