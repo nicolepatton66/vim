@@ -211,13 +211,13 @@ nnoremap <silent> <F8> :call ClearEOLSpace()<cr>:nohlsearch<cr>
 nnoremap <silent> <F9> :redraw!<cr>:nohlsearch<cr>
 
 " F10 bash
-nnoremap <silent> <F10> :setlocal ft=sh<cr>ggi#!/usr/bin/env bash<cr>set -e<cr><cr><esc>
+nnoremap <silent> <F10> :setlocal filetype=sh<cr>ggi#!/usr/bin/env bash<cr>set -e<cr><cr><esc>
 
 " F11 perl
-nnoremap <silent> <F11> :setlocal ft=perl<cr>ggi#!/usr/bin/env perl<cr><cr><esc>
+nnoremap <silent> <F11> :setlocal filetype=perl<cr>ggi#!/usr/bin/env perl<cr><cr><esc>
 
 " F12 ruby
-nnoremap <silent> <F12> :setlocal ft=ruby<cr>ggi#!/usr/bin/env ruby<cr><cr><esc>
+nnoremap <silent> <F12> :setlocal filetype=ruby<cr>ggi#!/usr/bin/env ruby<cr><cr><esc>
 
 " commenting
 nmap <silent> ,, <plug>NERDCommenterYank
@@ -282,22 +282,22 @@ nnoremap ,r :%s/\<<c-r><c-w>\>//gc<left><left><left>
 nnoremap ,R :%s/\<<c-r><c-w>\>/<c-r><c-w>/gc<left><left><left>
 
 " pretty print json
-nnoremap <silent> ,pj !!python -mjson.tool<cr>:set ft=json<cr>
+nnoremap <silent> ,pj !!python -mjson.tool<cr>:set filetype=json<cr>
 vmap     <silent> ,pj ,j,pj
 
 " pretty print xml
-nnoremap <silent> ,px !!xmllint --format -<cr>:set ft=xml<cr>
+nnoremap <silent> ,px !!xmllint --format -<cr>:set filetype=xml<cr>
 vmap     <silent> ,px ,j,px
 
 " pretty print sql
-nnoremap <silent> ,ps !!sqlformat --reindent --keywords upper -<cr>:set ft=sql<cr>
+nnoremap <silent> ,ps !!sqlformat --reindent --keywords upper -<cr>:set filetype=sql<cr>
 vmap     <silent> ,ps ,j,ps
 
 " pretty print active record results
-nnoremap <silent> ,pr !!record_split<cr>:set ft=text<cr>
+nnoremap <silent> ,pr !!record_split<cr>:set filetype=text<cr>
 
 " pretty print decoded url parameters
-nnoremap <silent> ,pu !!url_split<cr>:set ft=text<cr>
+nnoremap <silent> ,pu !!url_split<cr>:set filetype=text<cr>
 
 " use visual blocks by default... ^v does character based
 nnoremap v <c-v>
@@ -379,15 +379,15 @@ endfunction
 augroup custom
     autocmd!
 
-    autocmd BufRead,BufNewFile *.coffee setlocal ft=coffee
-    autocmd BufRead,BufNewFile *.slim   setlocal ft=slim
-    autocmd BufRead,BufNewFile *.hs     setlocal ft=xml
-    autocmd BufRead,BufNewFile *.tt     setlocal ft=html
-    autocmd BufRead,BufNewFile *.tt2    setlocal ft=html
-    autocmd BufRead,BufNewFile *.json   setlocal ft=json
+    autocmd BufRead,BufNewFile *.coffee setlocal filetype=coffee
+    autocmd BufRead,BufNewFile *.slim   setlocal filetype=slim
+    autocmd BufRead,BufNewFile *.hs     setlocal filetype=xml
+    autocmd BufRead,BufNewFile *.tt     setlocal filetype=html
+    autocmd BufRead,BufNewFile *.tt2    setlocal filetype=html
+    autocmd BufRead,BufNewFile *.json   setlocal filetype=json
 
     " set default filetype to text
-    autocmd BufRead,BufNewFile * if &filetype == "" | setlocal ft=text | endif
+    autocmd BufRead,BufNewFile * if &filetype == "" | setlocal filetype=text | endif
 
     " always delete trailing whitespace
     autocmd BufWrite * :call ClearEOLSpace()
@@ -397,7 +397,7 @@ augroup custom
 
     " always return to last position when opening a file
     autocmd BufReadPost *
-    \   if line("'\"") > 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+    \   if line("'\"") > 1 && line("'\"") <= line("$") && &filetype !~# 'commit'
     \|     exe "normal! g`\""
     \|  endif
 augroup END
