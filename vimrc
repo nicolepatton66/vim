@@ -178,6 +178,10 @@ let g:NERDTrimTrailingWhitespace = 1
 
 " CtrlP
 let g:ctrlp_working_path_mode = 'rc'
+let g:ctrlp_custom_ignore = {
+            \ 'dir': '\vtmp$',
+            \ 'file': '\v\.(xml|csv)$'
+            \ }
 
 " Keybindings ---------------------------------------------
 
