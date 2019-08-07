@@ -219,6 +219,10 @@ nnoremap <silent> <F11> :setlocal filetype=perl<cr>ggi#!/usr/bin/env perl<cr><cr
 " F12 ruby
 nnoremap <silent> <F12> :setlocal filetype=ruby<cr>ggi#!/usr/bin/env ruby<cr><cr><esc>
 
+" set mode of current file
+nnoremap <silent> ,6 :!chmod 644 %<cr><cr><cr>
+nnoremap <silent> ,7 :!chmod 755 %<cr><cr><cr>
+
 " commenting
 nmap <silent> ,, <plug>NERDCommenterYank
 vmap <silent> ,, <plug>NERDCommenterYank
@@ -227,10 +231,6 @@ vmap <silent> ,. <plug>NERDCommenterUncomment
 
 " open CtrlP fuzzy file finder
 nnoremap <silent> ,f :CtrlP<cr>
-
-" set mode of current file
-nnoremap <silent> ,6 :!chmod 644 %<cr><cr><cr>
-nnoremap <silent> ,7 :!chmod 755 %<cr><cr><cr>
 
 " toggle colorcolumn (line at column 80)
 nnoremap <silent> ,c :call ToggleColorColumn()<cr>
