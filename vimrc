@@ -176,6 +176,9 @@ let g:NERDDefaultAlign = 'left'
 let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
 
+" CtrlP
+let g:ctrlp_working_path_mode = 'rc'
+
 " Keybindings ---------------------------------------------
 
 " F2 toggles between autoindent when pasting or not
@@ -217,6 +220,9 @@ nmap <silent> ,, <plug>NERDCommenterYank
 vmap <silent> ,, <plug>NERDCommenterYank
 nmap <silent> ,. <plug>NERDCommenterUncomment
 vmap <silent> ,. <plug>NERDCommenterUncomment
+
+" open CtrlP fuzzy file finder
+nnoremap <silent> ,f :CtrlP<cr>
 
 " set mode of current file
 nnoremap <silent> ,6 :!chmod 644 %<cr><cr><cr>
