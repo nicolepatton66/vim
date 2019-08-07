@@ -211,13 +211,13 @@ nnoremap <silent> <F8> :call ClearEOLSpace()<cr>:nohlsearch<cr>
 nnoremap <silent> <F9> <c-l>:nohlsearch<cr>
 
 " F10 bash
-nnoremap <silent> <F10> :set ft=sh<cr>ggi#!/usr/bin/env bash<cr>set -e<cr><cr><esc>
+nnoremap <silent> <F10> :setlocal ft=sh<cr>ggi#!/usr/bin/env bash<cr>set -e<cr><cr><esc>
 
 " F11 perl
-nnoremap <silent> <F11> :set ft=perl<cr>ggi#!/usr/bin/env perl<cr><cr><esc>
+nnoremap <silent> <F11> :setlocal ft=perl<cr>ggi#!/usr/bin/env perl<cr><cr><esc>
 
 " F12 ruby
-nnoremap <silent> <F12> :set ft=ruby<cr>ggi#!/usr/bin/env ruby<cr><cr><esc>
+nnoremap <silent> <F12> :setlocal ft=ruby<cr>ggi#!/usr/bin/env ruby<cr><cr><esc>
 
 " commenting
 nmap <silent> ,, <plug>NERDCommenterYank
@@ -236,10 +236,10 @@ nnoremap <silent> ,7 :!chmod 755 %<cr><cr><cr>
 nnoremap <silent> ,c :call ToggleColorColumn()<cr>
 
 " toggle cursorcolumn (line at cursor)
-nnoremap <silent> ,C :set cursorcolumn!<cr>
+nnoremap <silent> ,C :setlocal cursorcolumn!<cr>
 
 " toggle line numbers
-nnoremap <silent> ,n :set number!<cr>
+nnoremap <silent> ,n :setlocal number!<cr>
 
 " update gitgutter display
 nnoremap <silent> ,g :GitGutterAll<cr>:redraw<cr>:echo 'gitgutter refreshed'<cr>
