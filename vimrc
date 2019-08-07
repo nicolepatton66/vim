@@ -208,7 +208,7 @@ nnoremap <silent> <F7> :setlocal wrap!<cr>:set wrap?<cr>
 nnoremap <silent> <F8> :call ClearEOLSpace()<cr>:nohlsearch<cr>
 
 " F9 redraw screen and clear highlighting
-nnoremap <silent> <F9> <c-l>:nohlsearch<cr>
+nnoremap <silent> <F9> :redraw!<cr>:nohlsearch<cr>
 
 " F10 bash
 nnoremap <silent> <F10> :setlocal ft=sh<cr>ggi#!/usr/bin/env bash<cr>set -e<cr><cr><esc>
