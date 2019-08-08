@@ -242,7 +242,12 @@ nnoremap <silent> ,C :setlocal cursorcolumn!<cr>
 nnoremap <silent> ,n :setlocal number!<cr>
 
 " update gitgutter display
-nnoremap <silent> ,g :GitGutterAll<cr>:redraw<cr>:echo 'gitgutter refreshed'<cr>
+nnoremap <silent> ,gg :GitGutterAll<cr>:redraw<cr>
+
+" fugitive git commands
+nnoremap <silent> ,gb :Gblame<cr>
+nnoremap <silent> ,gd :Gdiff<cr>
+nnoremap <silent> ,gs :Gstatus<cr>
 
 " source vimrc
 nnoremap <silent> ,v :source $MYVIMRC<cr>:redraw<cr>:echo 'vimrc sourced'<cr>
