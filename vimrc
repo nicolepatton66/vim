@@ -253,6 +253,7 @@ nnoremap <silent> ,gb :Gblame<cr>
 nnoremap <silent> ,gd :Gdiff<cr>
 nnoremap <silent> ,gs :Gstatus<cr>
 nnoremap <silent> ,ge :Gsplit<cr>
+nnoremap <silent> ,gr :Gread<cr>
 
 " source vimrc
 nnoremap <silent> ,v :source $MYVIMRC<cr>:redraw<cr>:echo 'vimrc sourced'<cr>
