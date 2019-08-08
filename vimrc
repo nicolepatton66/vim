@@ -146,6 +146,10 @@ set listchars=tab:»»,trail:·,extends:→,nbsp:˽
 " use system clipboard for cut and paste
 set clipboard=unnamed
 
+" persistent undo
+set undofile
+set undodir=~/.vim/undofiles
+
 " Module settings -----------------------------------------
 
 " BufExplorer
