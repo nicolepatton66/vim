@@ -345,6 +345,12 @@ noremap J <pagedown>L
 noremap <c-k> <c-y>k
 noremap <c-j> <c-e>j
 
+" navigate splits
+noremap <leader>k <c-w>k
+noremap <leader>j <c-w>j
+noremap <leader>h <c-w>h
+noremap <leader>l <c-w>l
+
 " center these in searches
 nnoremap n nzz
 nnoremap `` ``zz
