@@ -398,9 +398,6 @@ augroup custom
     " always delete trailing whitespace
     autocmd BufWrite * :call ClearEOLSpace()
 
-    " refresh git gutter when entering a buffer
-    autocmd BufEnter * :GitGutterAll
-
     " remove crap that somehow gets added
     autocmd FileType * setlocal formatoptions-=r formatoptions-=o formatoptions-=l
 
