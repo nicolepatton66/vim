@@ -335,11 +335,11 @@ nnoremap <silent> <s-tab> :bp<cr>
 noremap K <pageup>H
 noremap J <pagedown>L
 
-" scroll screen in place
-noremap <c-k> <c-y>k
-noremap <c-j> <c-e>j
-noremap <c-h> 5zh
-noremap <c-l> 5zl
+" navigate splits
+noremap <c-k> <c-w>k
+noremap <c-j> <c-w>j
+noremap <c-h> <c-w>h
+noremap <c-l> <c-w>l
 
 " center these in searches
 nnoremap n nzz
