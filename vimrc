@@ -342,8 +342,8 @@ noremap K <pageup>H
 noremap J <pagedown>L
 
 " navigate splits
-noremap <c-k> <c-w>k
 noremap <c-j> <c-w>j
+noremap <c-k> <c-w>k
 noremap <c-h> <c-w>h
 noremap <c-l> <c-w>l
 
