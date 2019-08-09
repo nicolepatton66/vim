@@ -284,10 +284,6 @@ nnoremap <silent> ,m <c-w>w<c-w>_
 " spellcheck word
 nnoremap <silent> ,s :!echo <cword> \| aspell -a<cr>
 
-" move to top/bottom quarter of screen
-nnoremap <silent> ,H M8k
-nnoremap <silent> ,L M8j
-
 " search and replace word under cursor
 nnoremap ,r :%s/\<<c-r><c-w>\>//gc<left><left><left>
 nnoremap ,R :%s/\<<c-r><c-w>\>/<c-r><c-w>/gc<left><left><left>
@@ -336,6 +332,10 @@ vnoremap <s-tab> <gv
 " use tab to switch buffers
 nnoremap <silent> <tab>   :bn<cr>
 nnoremap <silent> <s-tab> :bp<cr>
+
+" move to top/bottom quarter of screen
+nnoremap <silent> ,H M8k
+nnoremap <silent> ,L M8j
 
 " page up/down
 noremap K <pageup>H
