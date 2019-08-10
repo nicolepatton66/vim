@@ -3,6 +3,8 @@
 " ~~~ Nicole Patton ~~~
 " ~~~~~~~~~~~~~~~~~~~~~
 
+" requires: exuberant ctags, fzf, fd
+
 " do this first!
 set nocompatible
 
