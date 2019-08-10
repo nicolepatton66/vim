@@ -258,8 +258,6 @@ nnoremap <silent> ,ff :Files!<cr>
 nnoremap <silent> ,fg :GFiles!<cr>
 nnoremap <silent> ,fl :BLines!<cr>
 nnoremap <silent> ,fc :Commits!<cr>
-nnoremap <silent> ,ft :Tags<cr>
-nnoremap <silent> ,fs :Tags <cword><cr>
 
 " source vimrc
 nnoremap <silent> ,v :source $MYVIMRC<cr>:redraw<cr>:echo 'vimrc sourced'<cr>
