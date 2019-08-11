@@ -155,7 +155,7 @@ set undodir=~/.vim/undofiles
 " enable fzf
 set rtp+=/usr/local/opt/fzf
 
-" use hidden tags files
+" use hidden tags file
 set tags=./.tags;
 
 " Module settings -----------------------------------------
