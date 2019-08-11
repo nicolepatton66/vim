@@ -254,10 +254,9 @@ nnoremap <silent> ,ge :Gsplit<cr>
 nnoremap <silent> ,gr :Gread<cr>
 
 " fzf commands
-nnoremap <silent> ,ff :Files!<cr>
-nnoremap <silent> ,fg :GFiles!<cr>
-nnoremap <silent> ,fl :BLines!<cr>
-nnoremap <silent> ,fc :Commits!<cr>
+nnoremap <silent> ,ff :GFiles<cr>
+nnoremap <silent> ,fl :BLines<cr>
+nnoremap <silent> ,fc :BCommits!<cr>
 
 " source vimrc
 nnoremap <silent> ,v :source $MYVIMRC<cr>:redraw<cr>:echo 'vimrc sourced'<cr>
