@@ -256,7 +256,6 @@ nnoremap <silent> ,ge :Gsplit<cr>
 nnoremap <silent> ,ff :GFiles<cr>
 nnoremap <silent> ,fl :BLines<cr>
 nnoremap <silent> ,fc :BCommits!<cr>
-nnoremap <silent> ,fw :call fzf#vim#gitfiles('.', {'options':'--query '.tolower(expand('<cword>'))})<cr>
 
 " source vimrc
 nnoremap <silent> ,v :source $MYVIMRC<cr>:redraw<cr>:echo 'vimrc sourced'<cr>
