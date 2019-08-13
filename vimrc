@@ -153,7 +153,11 @@ set undofile
 set undodir=~/.vim/undofiles
 
 " enable fzf
-set rtp+=/usr/local/opt/fzf
+if has('macunix')
+    set rtp+=/usr/local/opt/fzf
+else
+    set rtp+=~/.fzf
+endif
 
 " use hidden tags file
 set tags=./.tags;
