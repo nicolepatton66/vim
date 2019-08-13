@@ -154,9 +154,9 @@ set undodir=~/.vim/undofiles
 
 " enable fzf
 if has('macunix')
-    set rtp+=/usr/local/opt/fzf
+  set rtp+=/usr/local/opt/fzf
 else
-    set rtp+=~/.fzf
+  set rtp+=~/.fzf
 endif
 
 " use hidden tags file
@@ -368,58 +368,58 @@ nnoremap gV `[v`]
 " Functions -----------------------------------------------
 
 function! WrapLineInBraces()
-    nnoremap <buffer><silent> ,w :normal! kA {<esc>jo}<esc>k==
-    nnoremap <buffer><silent> ,W :normal! k$hDjjddk<cr>==
+  nnoremap <buffer><silent> ,w :normal! kA {<esc>jo}<esc>k==
+  nnoremap <buffer><silent> ,W :normal! k$hDjjddk<cr>==
 endfunction
 
 function! ClearEOLSpace()
-    normal m`
-    %s/\s\+$//e
-    normal ``
+  normal m`
+  %s/\s\+$//e
+  normal ``
 endfunction
 
 function! ToggleMouse()
-    if &mouse == ''
-        let &mouse='a'
-        echo 'Mouse is for Vim'
-    else
-        let &mouse=''
-        echo 'Mouse is for terminal'
-    endif
+  if &mouse == ''
+    let &mouse='a'
+    echo 'Mouse is for Vim'
+  else
+    let &mouse=''
+    echo 'Mouse is for terminal'
+  endif
 endfunction
 
 function! ToggleColorColumn()
-    if &colorcolumn == ''
-        setlocal colorcolumn=80
-    else
-        setlocal colorcolumn=
-    endif
+  if &colorcolumn == ''
+    setlocal colorcolumn=80
+  else
+    setlocal colorcolumn=
+  endif
 endfunction
 
 " Autocommands --------------------------------------------
 
 augroup custom
-    autocmd!
+  autocmd!
 
-    autocmd BufRead,BufNewFile *.coffee setlocal filetype=coffee
-    autocmd BufRead,BufNewFile *.slim   setlocal filetype=slim
-    autocmd BufRead,BufNewFile *.hs     setlocal filetype=xml
-    autocmd BufRead,BufNewFile *.tt     setlocal filetype=html
-    autocmd BufRead,BufNewFile *.tt2    setlocal filetype=html
-    autocmd BufRead,BufNewFile *.json   setlocal filetype=json
+  autocmd BufRead,BufNewFile *.coffee setlocal filetype=coffee
+  autocmd BufRead,BufNewFile *.slim   setlocal filetype=slim
+  autocmd BufRead,BufNewFile *.hs     setlocal filetype=xml
+  autocmd BufRead,BufNewFile *.tt     setlocal filetype=html
+  autocmd BufRead,BufNewFile *.tt2    setlocal filetype=html
+  autocmd BufRead,BufNewFile *.json   setlocal filetype=json
 
-    " set default filetype to text
-    autocmd BufRead,BufNewFile * if &filetype == "" | setlocal filetype=text | endif
+  " set default filetype to text
+  autocmd BufRead,BufNewFile * if &filetype == "" | setlocal filetype=text | endif
 
-    " always delete trailing whitespace
-    autocmd BufWrite * :call ClearEOLSpace()
+  " always delete trailing whitespace
+  autocmd BufWrite * :call ClearEOLSpace()
 
-    " remove crap that somehow gets added
-    autocmd FileType * setlocal formatoptions-=r formatoptions-=o formatoptions-=l
+  " remove crap that somehow gets added
+  autocmd FileType * setlocal formatoptions-=r formatoptions-=o formatoptions-=l
 
-    " always return to last position when opening a file
-    autocmd BufReadPost *
-    \   if line("'\"") > 1 && line("'\"") <= line("$") && &filetype !~# 'commit'
-    \|     exe "normal! g`\""
-    \|  endif
+  " always return to last position when opening a file
+  autocmd BufReadPost *
+  \   if line("'\"") > 1 && line("'\"") <= line("$") && &filetype !~# 'commit'
+  \|    exe "normal! g`\""
+  \|  endif
 augroup END
