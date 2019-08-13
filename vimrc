@@ -3,7 +3,7 @@
 " ~~~ Nicole Patton ~~~
 " ~~~~~~~~~~~~~~~~~~~~~
 
-" requires: exuberant ctags, fzf, fd
+" requires: exuberant_ctags, fzf, fd, the_silver_searcher (ag)
 
 " do this first!
 set nocompatible
