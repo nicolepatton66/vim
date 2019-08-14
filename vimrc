@@ -250,6 +250,9 @@ nnoremap <silent> ,n :setlocal number!<cr>
 " update gitgutter display
 nnoremap <silent> ,gg :GitGutterAll<cr>:redraw<cr>
 
+" undo the current hunk
+nmap <silent> ,gu <plug>GitGutterUndoHunk
+
 " fugitive git commands
 nnoremap <silent> ,gb :Gblame<cr>
 nnoremap <silent> ,gd :Gdiff<cr>
