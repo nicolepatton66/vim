@@ -139,7 +139,7 @@ set hidden
 set virtualedit=block
 
 " how many changes can we undo
-set undolevels=1000
+set undolevels=100
 
 " set list on by default, and customize characters used
 set list
