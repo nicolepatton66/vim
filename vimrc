@@ -152,15 +152,15 @@ set clipboard=unnamed
 set undofile
 set undodir=~/.vim/undofiles
 
+" use hidden tags file
+set tags=./.tags;
+
 " enable fzf
 if has('macunix')
   set rtp+=/usr/local/opt/fzf
 else
   set rtp+=~/.fzf
 endif
-
-" use hidden tags file
-set tags=./.tags;
 
 " Module settings -----------------------------------------
 
