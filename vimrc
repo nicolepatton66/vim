@@ -31,7 +31,7 @@ colorscheme gruvbox
 
 " set tab width and don't use tab chars
 set tabstop=8
-set softtabstop=-1
+set softtabstop=4
 set shiftwidth=4
 set expandtab
 
