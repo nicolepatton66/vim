@@ -1,2 +1,2 @@
-setlocal nosmartindent
+setlocal noautoindent
 setlocal formatoptions=tc1
