@@ -1,1 +1,1 @@
-nnoremap <buffer><silent> ,h :help <c-r><c-w><cr>
+nnoremap <buffer><silent> ,? :help <c-r><c-w><cr>
