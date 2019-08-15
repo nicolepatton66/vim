@@ -109,6 +109,9 @@ set fileformats=unix,dos
 set timeoutlen=2000
 set ttimeoutlen=2000
 
+" make sure syntax highlighting works for very long files
+set redrawtime=10000
+
 " how much ex command history to keep
 set history=50
 
