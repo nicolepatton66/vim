@@ -146,7 +146,7 @@ set undolevels=100
 
 " set list on by default, and customize characters used
 set list
-set listchars=tab:»»,trail:·,extends:→,nbsp:˽
+set listchars=tab:»»,trail:·,precedes:←,extends:→,nbsp:˽
 
 " use system clipboard for cut and paste
 set clipboard=unnamed
