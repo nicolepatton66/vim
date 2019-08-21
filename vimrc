@@ -270,7 +270,7 @@ nnoremap <silent> ,fc :BCommits!<cr>
 nnoremap <silent> ,fa :Ag <c-r><c-w><cr>
 
 " source vimrc
-nnoremap <silent> ,v :source $MYVIMRC<cr>:redraw<cr>:echo 'vimrc sourced'<cr>
+nnoremap <silent> ,v :source $MYVIMRC<cr>:redraw<cr>:e<cr>:echo 'vimrc sourced'<cr>
 
 " column alignment
 vnoremap <silent> ,a !align<cr>
