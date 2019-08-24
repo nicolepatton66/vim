@@ -3,7 +3,7 @@
 " ~~~ Nicole Patton ~~~
 " ~~~~~~~~~~~~~~~~~~~~~
 
-" requires: ctags, fzf, fd, ag (the_silver_searcher), xmllint, sqlformat
+" requires: ctags, fzf, ag, xmllint, sqlformat
 
 " do this first!
 set nocompatible
