@@ -1,2 +1,2 @@
-set textwidth=72
+set textwidth=100
 set nolist
