@@ -354,6 +354,10 @@ nnoremap <silent> <s-tab> :bp<cr>
 nnoremap <silent> ,H M8k
 nnoremap <silent> ,L M8j
 
+" move display-wise
+nnoremap <silent> j gj
+nnoremap <silent> k gk
+
 " page up/down
 noremap K <pageup>H
 noremap J <pagedown>L
