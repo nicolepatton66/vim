@@ -250,9 +250,6 @@ nnoremap <silent> ,C :setlocal cursorcolumn!<cr>
 " toggle line numbers
 nnoremap <silent> ,n :setlocal number!<cr>
 
-" toggle undotree
-nnoremap <silent> ,u :UndotreeToggle<cr>
-
 " update gitgutter display
 nnoremap <silent> ,gg :GitGutterAll<cr>:redraw<cr>
 
