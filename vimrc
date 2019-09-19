@@ -269,6 +269,10 @@ nnoremap <silent> ,fl :BLines<cr>
 nnoremap <silent> ,fc :BCommits!<cr>
 nnoremap <silent> ,fa :Ag <c-r><c-w><cr>
 
+" simple quotes
+nmap <silent> ,q ysiw'
+nmap <silent> ,Q ysiw"
+
 " source vimrc (:e causes ft plugins to activate)
 nnoremap <silent> ,v :source $MYVIMRC<cr>:e<cr>:redraw<cr>:echo 'vimrc sourced'<cr>
 
