@@ -262,6 +262,7 @@ nnoremap <silent> ,gb :Gblame<cr>
 nnoremap <silent> ,gd :Gdiff<cr>
 nnoremap <silent> ,gs :Gstatus<cr>
 nnoremap <silent> ,ge :Gsplit<cr>
+nnoremap <silent> ,gw :Gwrite<cr>
 
 " fzf commands
 nnoremap <silent> ,ff :GFiles<cr>
