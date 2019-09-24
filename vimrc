@@ -158,13 +158,6 @@ set undodir=~/.vim/undofiles
 " use hidden tags file
 set tags=./tags,tags,./.tags,.tags;
 
-" enable fzf
-if has('macunix')
-  set rtp+=/usr/local/opt/fzf
-else
-  set rtp+=~/.fzf
-endif
-
 " Module settings -----------------------------------------
 
 " BufExplorer
@@ -263,12 +256,6 @@ nnoremap <silent> ,gd :Gdiff<cr>
 nnoremap <silent> ,gs :Gstatus<cr>
 nnoremap <silent> ,ge :Gsplit<cr>
 nnoremap <silent> ,gw :Gwrite<cr>
-
-" fzf commands
-nnoremap <silent> ,ff :GFiles<cr>
-nnoremap <silent> ,fl :BLines<cr>
-nnoremap <silent> ,fc :BCommits!<cr>
-nnoremap <silent> ,fa :Ag <c-r><c-w><cr>
 
 " simple quotes
 nmap <silent> ,q ysiw'
