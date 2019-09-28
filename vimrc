@@ -127,6 +127,10 @@ set nowrap
 " indicate beginning of a wrapped line
 set showbreak=↳
 
+" set list on by default, and customize characters used
+set list
+set listchars=tab:»»,trail:·,precedes:←,extends:→,nbsp:˽
+
 " menu
 set wildmenu
 set wildmode=list:longest,full
@@ -144,10 +148,6 @@ set virtualedit=block
 " how many changes can we undo
 set undolevels=100
 
-" set list on by default, and customize characters used
-set list
-set listchars=tab:»»,trail:·,precedes:←,extends:→,nbsp:˽
-
 " use system clipboard for cut and paste
 set clipboard=unnamed
 
@@ -160,13 +160,12 @@ set tags=./tags,tags,./.tags,.tags;
 
 " Module settings -----------------------------------------
 
-" BufExplorer
+" bufexplorer
 let g:bufExplorerSortBy = 'number'
 let g:bufExplorerSplitOutPathName = 1
 let g:bufExplorerDefaultHelp = 1
-nmap <silent> ,e \be
 
-" TagList (requires ctags)
+" taglist (requires ctags)
 let Tlist_Inc_Winwidth = 0
 let Tlist_WinWidth = 50
 let Tlist_GainFocus_On_ToggleOpen = 1
@@ -175,15 +174,14 @@ let Tlist_Exit_OnlyWindow = 1
 let Tlist_Show_One_File = 1
 let Tlist_Sort_Type = 'name'
 let Tlist_Enable_Fold_Column = 0
-nnoremap <silent> ,t :TlistToggle<cr>
 
-" Closetag
+" closetag
 let g:closetag_filetypes = 'html,xhtml,eruby,xml'
 
-" GitGutter
+" gitgutter
 set updatetime=100
 
-" NERDCommenter
+" nerdcommenter
 let g:NERDDefaultAlign = 'left'
 let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
@@ -228,6 +226,12 @@ nnoremap <silent> <F12> :setlocal filetype=ruby<cr>ggi#!/usr/bin/env ruby<cr><cr
 nnoremap <silent> ,6 :!chmod 644 %<cr><cr><cr>
 nnoremap <silent> ,7 :!chmod 755 %<cr><cr><cr>
 
+" call bufexplorer
+nmap <silent> ,e \be
+
+" toggle taglist
+nnoremap <silent> ,t :TlistToggle<cr>
+
 " commenting
 nmap <silent> ,, <plug>NERDCommenterYank
 vmap <silent> ,, <plug>NERDCommenterYank
@@ -257,7 +261,7 @@ nnoremap <silent> ,gs :Gstatus<cr>
 nnoremap <silent> ,ge :Gsplit<cr>
 nnoremap <silent> ,gw :Gwrite<cr>
 
-" simple quotes
+" simple quotes (uses surround plugin)
 nmap <silent> ,q ysiw'
 nmap <silent> ,Q ysiw"
 
@@ -272,9 +276,6 @@ nnoremap <silent> ,A :!align_all<cr>
 vnoremap <silent> ,= !align_equals<cr>
 nnoremap <silent> ,= :!align_equals<cr>
 
-" toggle ignorecase
-nnoremap <silent> ,i :set ignorecase!<cr>:echo "ignorecase=" . &ignorecase<cr>
-
 " un-align the current row
 nmap <silent> ,l 1,A
 
@@ -283,6 +284,9 @@ nnoremap <silent> ,j 2:j<cr>
 
 " join an entire paragraph
 nnoremap <silent> ,J vip:j<cr>jj
+
+" toggle ignorecase
+nnoremap <silent> ,i :set ignorecase!<cr>:echo "ignorecase=" . &ignorecase<cr>
 
 " flip focus and maximize split window (used with help window)
 nnoremap <silent> ,m <c-w>w<c-w>_
@@ -309,7 +313,7 @@ vmap     <silent> ,ps ,j,ps
 " pretty print active record results
 nnoremap <silent> ,pr !!record_split<cr>:set filetype=text<cr>
 
-" pretty print decoded url parameters
+" pretty print encoded url parameters
 nnoremap <silent> ,pu !!url_split<cr>:set filetype=text<cr>
 
 " use visual blocks by default... ^v does character based
@@ -412,7 +416,7 @@ augroup custom
   autocmd BufRead,BufNewFile *.json   setlocal filetype=json
 
   " set default filetype to text
-  autocmd BufRead,BufNewFile * if &filetype == "" | setlocal filetype=text | endif
+  autocmd BufRead,BufNewFile * if &filetype == '' | setlocal filetype=text | endif
 
   " always delete trailing whitespace
   autocmd BufWrite * :call ClearEOLSpace()
