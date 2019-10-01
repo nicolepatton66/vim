@@ -241,8 +241,8 @@ vmap <silent> ,. <plug>NERDCommenterUncomment
 " toggle colorcolumn (line at column 80)
 nnoremap <silent> ,c :call ToggleColorColumn()<cr>
 
-" toggle cursorcolumn (line at cursor)
-nnoremap <silent> ,C :setlocal cursorcolumn!<cr>
+" toggle cursorcolumn and cursorline (lines at cursor)
+nnoremap <silent> ,C :setlocal cursorcolumn!<cr>:setlocal cursorline!<cr>
 
 " toggle line numbers
 nnoremap <silent> ,n :setlocal number!<cr>
