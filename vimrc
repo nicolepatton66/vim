@@ -264,6 +264,8 @@ nnoremap <silent> ,gw :Gwrite<cr>
 " simple quotes (uses surround plugin)
 nmap <silent> ,q ysiw'
 nmap <silent> ,Q ysiw"
+nmap <silent> ,f cs"'
+nmap <silent> ,F cs'"
 
 " source vimrc (:e causes ft plugins to activate)
 nnoremap <silent> ,v :source $MYVIMRC<cr>:e<cr>:redraw<cr>:echo 'vimrc sourced'<cr>
