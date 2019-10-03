@@ -278,8 +278,9 @@ nnoremap <silent> ,A :!align_all<cr>
 vnoremap <silent> ,= !align_equals<cr>
 nnoremap <silent> ,= :!align_equals<cr>
 
-" un-align the current row
-nmap <silent> ,l 1,A
+" un-align
+vnoremap <silent> ,l !un_align<cr>
+nnoremap <silent> ,l 1:!un_align<cr>
 
 " join this line and the next
 nnoremap <silent> ,j 2:j<cr>

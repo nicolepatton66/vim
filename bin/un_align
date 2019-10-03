@@ -1,0 +1,11 @@
+#!/usr/bin/env perl
+
+while(<>) {
+    chomp($line = $_);
+    $line =~ s/(^\s*)//;
+    $leader = $1;
+    $line =~ s/\s+/ /g;
+    print $leader . $line . "\n";
+}
+
+exit 0;
