@@ -282,6 +282,9 @@ nnoremap <silent> ,= :!align_equals<cr>
 vnoremap <silent> ,l !un_align<cr>
 nnoremap <silent> ,l 1:!un_align<cr>
 
+" smush (remove all spaces)
+nnoremap <silent> ,S 1:!smush<cr>
+
 " join this line and the next
 nnoremap <silent> ,j 2:j<cr>
 
