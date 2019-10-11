@@ -162,6 +162,10 @@ set tags=./tags,tags,./.tags,.tags;
 
 " Module settings -----------------------------------------
 
+" netrw
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+
 " bufexplorer
 let g:bufExplorerSortBy = 'number'
 let g:bufExplorerSplitOutPathName = 1
@@ -230,6 +234,9 @@ nnoremap <silent> ,7 :!chmod 755 %<cr><cr><cr>
 
 " call bufexplorer
 nmap <silent> ,e \be
+
+" open netrw
+nnoremap <silent> ,E :Explore<cr>
 
 " toggle taglist
 nnoremap <silent> ,t :TlistToggle<cr>
