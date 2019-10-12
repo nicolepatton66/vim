@@ -164,7 +164,7 @@ set tags=./tags,tags,./.tags,.tags;
 
 " netrw
 let g:netrw_banner = 0
-let g:netrw_liststyle = 3
+let g:netrw_fastbrowse = 0
 
 " bufexplorer
 let g:bufExplorerSortBy = 'number'
@@ -436,6 +436,9 @@ augroup custom
 
   " always delete trailing whitespace
   autocmd BufWrite * :call ClearEOLSpace()
+
+  " fix netrw
+  autocmd FileType netrw setl bufhidden=wipe
 
   " remove crap that somehow gets added
   autocmd FileType * setlocal formatoptions-=r formatoptions-=o formatoptions-=l
