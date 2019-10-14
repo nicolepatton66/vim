@@ -3,7 +3,7 @@
 " ~~~ Nicole Patton ~~~
 " ~~~~~~~~~~~~~~~~~~~~~
 
-" requires: ctags, xmllint, sqlformat
+" requires: ctags, fzf, ag, xmllint, sqlformat
 
 " do this first!
 set nocompatible
