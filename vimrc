@@ -235,9 +235,6 @@ nnoremap <silent> ,7 :!chmod 755 %<cr><cr><cr>
 " call bufexplorer
 nmap <silent> ,e \be
 
-" open netrw
-nnoremap <silent> ,E :Explore<cr>
-
 " toggle taglist
 nnoremap <silent> ,t :TlistToggle<cr>
 
