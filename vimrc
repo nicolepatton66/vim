@@ -281,7 +281,7 @@ nmap <silent> ,f mzcs"'`z
 nmap <silent> ,F mzcs'"`z
 
 " fzf
-nnoremap <silent> ,ff :GFiles<cr>
+nnoremap <silent> ,z :GFiles<cr>
 
 " source vimrc (:e causes ft plugins to activate)
 nnoremap <silent> ,v :source $MYVIMRC<cr>:e<cr>:redraw<cr>:echo 'vimrc sourced'<cr>
