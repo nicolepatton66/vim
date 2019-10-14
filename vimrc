@@ -139,8 +139,9 @@ set wildmode=list:longest,full
 
 " statusline
 set laststatus=2
-set statusline=%F\ %1*%m%*%=%12(%l\ of\ %L%)\ (%p%%)\ %-3c
+set statusline=%F\ %1*%m%*%=\ %2*%l\ of\ %L\ (%p%%)\ %c%*
 hi User1 ctermbg=239 ctermfg=red
+hi User2 ctermbg=239 ctermfg=green
 
 " don't close buffers: hide them (allow opening new files with unsaved changes, etc)
 set hidden
