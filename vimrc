@@ -160,6 +160,13 @@ set undodir=~/.vim/undofiles
 " use hidden tags file
 set tags=./tags,tags,./.tags,.tags;
 
+" enable fzf
+if has('macunix')
+  set rtp+=/usr/local/opt/fzf
+else
+  set rtp+=~/.fzf
+endif
+
 " Module settings -----------------------------------------
 
 " netrw
@@ -272,6 +279,12 @@ nmap <silent> ,q mzysiw'`z
 nmap <silent> ,Q mzysiw"`z
 nmap <silent> ,f mzcs"'`z
 nmap <silent> ,F mzcs'"`z
+
+" fzf commands
+nnoremap <silent> ,ff :GFiles<cr>
+nnoremap <silent> ,fl :BLines<cr>
+nnoremap <silent> ,fc :BCommits!<cr>
+nnoremap <silent> ,fa :Ag <c-r><c-w><cr>
 
 " source vimrc (:e causes ft plugins to activate)
 nnoremap <silent> ,v :source $MYVIMRC<cr>:e<cr>:redraw<cr>:echo 'vimrc sourced'<cr>
