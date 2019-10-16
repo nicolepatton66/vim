@@ -241,7 +241,16 @@ nnoremap <silent> <F12> :setlocal filetype=ruby<cr>ggi#!/usr/bin/env ruby<cr><cr
 nnoremap <silent> ,6 :!chmod 644 %<cr><cr><cr>
 nnoremap <silent> ,7 :!chmod 755 %<cr><cr><cr>
 
-" call bufexplorer
+" source vimrc (:e causes ft plugins to activate)
+nnoremap <silent> ,v :source $MYVIMRC<cr>:e<cr>:redraw<cr>:echo 'vimrc sourced'<cr>
+
+" flip focus and maximize split window (used with help window)
+nnoremap <silent> ,m <c-w>w<c-w>_
+
+" fzf
+nnoremap <silent> ,z :GFiles<cr>
+
+" bufexplorer
 nmap <silent> ,e \be
 
 " toggle taglist
@@ -262,13 +271,6 @@ nnoremap <silent> ,C :setlocal cursorcolumn!<cr>:setlocal cursorline!<cr>
 " toggle line numbers
 nnoremap <silent> ,n :setlocal number!<cr>
 
-" update gitgutter display
-nnoremap <silent> ,gg :GitGutterAll<cr>:redraw<cr>
-
-" gitgutter hunk commands
-nmap <silent> ,hu <plug>GitGutterUndoHunk
-nmap <silent> ,hs <plug>GitGutterStageHunk
-
 " fugitive git commands
 nnoremap <silent> ,gb :Gblame<cr>
 nnoremap <silent> ,gd :Gdiff<cr>
@@ -276,17 +278,18 @@ nnoremap <silent> ,gs :Gstatus<cr>
 nnoremap <silent> ,ge :Gsplit<cr>
 nnoremap <silent> ,gw :Gwrite<cr>
 
+" update gitgutter display
+nnoremap <silent> ,gg :GitGutterAll<cr>:redraw<cr>
+
+" gitgutter hunk commands
+nmap <silent> ,hu <plug>GitGutterUndoHunk
+nmap <silent> ,hs <plug>GitGutterStageHunk
+
 " simple quotes (uses surround plugin)
 nmap <silent> ,q mzysiw'`z
 nmap <silent> ,Q mzysiw"`z
 nmap <silent> ,f mzcs"'`z
 nmap <silent> ,F mzcs'"`z
-
-" fzf
-nnoremap <silent> ,z :GFiles<cr>
-
-" source vimrc (:e causes ft plugins to activate)
-nnoremap <silent> ,v :source $MYVIMRC<cr>:e<cr>:redraw<cr>:echo 'vimrc sourced'<cr>
 
 " column alignment
 vnoremap <silent> ,a !align<cr>
@@ -312,9 +315,6 @@ nnoremap <silent> ,J vip:j<cr>jj
 
 " toggle ignorecase
 nnoremap <silent> ,i :set ignorecase!<cr>:echo "ignorecase=" . &ignorecase<cr>
-
-" flip focus and maximize split window (used with help window)
-nnoremap <silent> ,m <c-w>w<c-w>_
 
 " spellcheck word
 nnoremap <silent> ,s :!echo <cword> \| aspell -a<cr>
