@@ -249,11 +249,12 @@ nnoremap <silent> ,m <c-w>w<c-w>_
 
 " fzf
 nnoremap <silent> ,z :GFiles<cr>
+nnoremap <silent> ,Z :Files<cr>
 
 " bufexplorer
 nmap <silent> ,e \be
 
-" toggle taglist
+" taglist
 nnoremap <silent> ,t :TlistToggle<cr>
 
 " commenting
