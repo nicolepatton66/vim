@@ -54,11 +54,11 @@ set sidescrolloff=5
 set textwidth=80
 set formatoptions=cq1
 
-" . = scan the current buffer ('wrapscan' is ignored)
-" b = scan other loaded buffers that are in the buffer list
-" t = scan tags file
-set complete=.,b,t
+" completion options
+set complete=.  " scan the current buffer
+set complete+=b " scan other buffers
 set complete+=k~/.vim/dictionary
+set complete+=t " scan tags file
 
 " write file when putting vim to sleep
 set autowrite
