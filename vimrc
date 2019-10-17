@@ -448,7 +448,7 @@ augroup custom
   autocmd BufWrite * :call ClearEOLSpace()
 
   " fix netrw
-  autocmd FileType netrw setl bufhidden=wipe
+  autocmd FileType netrw setlocal bufhidden=wipe
 
   " remove crap that somehow gets added
   autocmd FileType * setlocal formatoptions-=r formatoptions-=o formatoptions-=l
