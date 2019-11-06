@@ -73,8 +73,6 @@ set noswapfile
 
 " get the backspace key to do sensible things
 set backspace=indent,eol,start
-vnoremap <bs> x
-nnoremap <bs> hx
 
 " don't read dot files in current dir!
 set noexrc
@@ -345,6 +343,10 @@ nnoremap <silent> ,pr !!record_split<cr>:set filetype=text<cr>
 
 " pretty print encoded url parameters
 nnoremap <silent> ,pu !!url_split<cr>:set filetype=text<cr>
+
+" have backspace delete
+vnoremap <bs> x
+nnoremap <bs> hx
 
 " use visual blocks by default... ^v does character based
 nnoremap v <c-v>
