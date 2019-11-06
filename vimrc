@@ -292,10 +292,8 @@ nmap <silent> ,Q mzysiw"`z
 nmap <silent> ,f mzcs"'`z
 nmap <silent> ,F mzcs'"`z
 
-" convert a string to a ruby symbol
+" convert a string to/from a ruby symbol
 nmap <silent> ,y cs"'ds'i:<esc>
-
-" convert a ruby symbol to a string
 nmap <silent> ,Y F:xysiw'
 
 " column alignment
