@@ -446,6 +446,7 @@ augroup custom
   autocmd BufRead,BufNewFile *.tt     setlocal filetype=html
   autocmd BufRead,BufNewFile *.tt2    setlocal filetype=html
   autocmd BufRead,BufNewFile *.json   setlocal filetype=json
+  autocmd BufRead,BufNewFile *.csv    setlocal filetype=csv
 
   " set default filetype to text
   autocmd BufRead,BufNewFile * if &filetype == '' | setlocal filetype=text | endif
