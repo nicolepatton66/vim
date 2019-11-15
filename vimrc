@@ -322,6 +322,9 @@ nnoremap <silent> ,i :set ignorecase!<cr>:echo "ignorecase=" . &ignorecase<cr>
 " spellcheck word
 nnoremap <silent> ,s :!echo <cword> \| aspell -a<cr>
 
+" turn on spell checking
+nnoremap <silent> ,K :setlocal spell spelllang=en_us<cr>:echo "Spell checking on"<cr>
+
 " search and replace word under cursor
 nnoremap ,r :%s/\<<c-r><c-w>\>//gc<left><left><left>
 nnoremap ,R :%s/\<<c-r><c-w>\>/<c-r><c-w>/gc<left><left><left>
