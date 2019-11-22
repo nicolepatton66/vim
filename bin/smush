@@ -1,11 +1,9 @@
-#!/usr/bin/env perl
+#!/usr/bin/env ruby
 
-while(<>) {
-    chomp($line = $_);
-    $line =~ s/(^\s*)//;
-    $leader = $1;
-    $line =~ s/\s+//g;
-    print $leader . $line . "\n";
-}
-
-exit 0;
+ARGF.each do |line|
+  line.chomp!
+  line.gsub!(/^(\s*)/, '')
+  leader = $1
+  line.gsub!(/\s+/, '')
+  puts "#{leader}#{line}"
+end
