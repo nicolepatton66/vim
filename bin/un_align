@@ -2,7 +2,7 @@
 
 ARGF.each do |line|
   line.chomp!
-  line.gsub!(/^(\s*)/, '')
+  line.sub!(/^(\s*)/, '')
   leader = $1
   line.gsub!(/\s+/, ' ')
   puts "#{leader}#{line}"
