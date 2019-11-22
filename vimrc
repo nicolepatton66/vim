@@ -306,6 +306,10 @@ nnoremap <silent> ,= :!align_equals<cr>
 vnoremap <silent> ,l !un_align<cr>
 nnoremap <silent> ,l 1:!un_align<cr>
 
+" un-align and smush tags
+vnoremap <silent> ,L !un_align_smush_tags<cr>
+nnoremap <silent> ,L 1:!un_align_smush_tags<cr>
+
 " smush (remove all spaces)
 vnoremap <silent> ,S !smush<cr>
 nnoremap <silent> ,S 1:!smush<cr>
