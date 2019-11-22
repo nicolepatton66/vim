@@ -378,10 +378,6 @@ vnoremap <s-tab> <gv
 nnoremap <silent> <tab>   :bn<cr>
 nnoremap <silent> <s-tab> :bp<cr>
 
-" move to top/bottom quarter of screen
-nnoremap <silent> ,H M8k
-nnoremap <silent> ,L M8j
-
 " move display-wise
 nnoremap <silent> j gj
 nnoremap <silent> k gk
