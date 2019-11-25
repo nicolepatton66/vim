@@ -1,5 +1,14 @@
 #!/usr/bin/env ruby
 
+opt = ARGV.shift
+if opt == '-a'
+  SPLIT_REGEX = /\s+/
+  JOIN_CHAR = ' '
+elsif opt == '-e'
+  SPLIT_REGEX = /=/
+  JOIN_CHAR = '='
+end
+
 leader = nil
 line_arrays = []
 max_sizes = []
@@ -7,7 +16,7 @@ max_sizes = []
 ARGF.each_with_index do |line, line_no|
   line.chomp!.gsub!(/^(\s*)/, '')
   leader = $1 if leader.nil?
-  line_arrays[line_no] = line.split(/\s+/)
+  line_arrays[line_no] = line.split(SPLIT_REGEX)
   line_arrays[line_no].each_with_index do |token, col_num|
     max_sizes[col_num] = token.length if token.length > (max_sizes[col_num] || 0)
   end
@@ -17,6 +26,6 @@ line_arrays.each_with_index do |tokens, line_no|
   tokens.each_with_index do |token, col_num|
     line_arrays[line_no][col_num] << ' ' * (max_sizes[col_num] - token.length)
   end
-  line = line_arrays[line_no].join(' ')
+  line = line_arrays[line_no].join(JOIN_CHAR)
   puts "#{leader}#{line.gsub(/\s+$/, '')}"
 end
