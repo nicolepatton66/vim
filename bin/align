@@ -14,7 +14,7 @@ line_arrays = []
 max_sizes = []
 
 ARGF.each_with_index do |line, line_no|
-  line.chomp!.gsub!(/^(\s*)/, '')
+  line.chomp!.sub!(/^(\s*)/, '')
   leader = $1 if leader.nil?
   line_arrays[line_no] = line.split(SPLIT_REGEX)
   line_arrays[line_no].each_with_index do |token, col_num|
@@ -27,5 +27,5 @@ line_arrays.each_with_index do |tokens, line_no|
     line_arrays[line_no][col_num] << ' ' * (max_sizes[col_num] - token.length)
   end
   line = line_arrays[line_no].join(JOIN_CHAR)
-  puts "#{leader}#{line.gsub(/\s+$/, '')}"
+  puts "#{leader}#{line.sub(/\s+$/, '')}"
 end
