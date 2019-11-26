@@ -22,9 +22,9 @@ ARGF.each_with_index do |line, line_no|
   end
 end
 
-tokenized_lines.each_with_index do |tokens, line_no|
+tokenized_lines.each do |tokens|
   tokens.each_with_index do |token, col_num|
-    tokenized_lines[line_no][col_num] << ' ' * (max_sizes[col_num] - token.length)
+    token << ' ' * (max_sizes[col_num] - token.length)
   end
-  puts "#{leader}#{tokenized_lines[line_no].join(JOIN_CHAR)}".sub(/\s+$/, '')
+  puts "#{leader}#{tokens.join(JOIN_CHAR)}".sub(/\s+$/, '')
 end
