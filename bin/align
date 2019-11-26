@@ -26,6 +26,5 @@ line_arrays.each_with_index do |tokens, line_no|
   tokens.each_with_index do |token, col_num|
     line_arrays[line_no][col_num] << ' ' * (max_sizes[col_num] - token.length)
   end
-  line = line_arrays[line_no].join(JOIN_CHAR).sub(/\s+$/, '')
-  puts "#{leader}#{line}"
+  puts "#{leader}#{line_arrays[line_no].join(JOIN_CHAR)}".sub(/\s+$/, '')
 end
