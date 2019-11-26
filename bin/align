@@ -18,7 +18,7 @@ ARGF.each_with_index do |line, line_no|
   leader = $1 if leader.nil?
   line_arrays[line_no] = line.split(SPLIT_REGEX)
   line_arrays[line_no].each_with_index do |token, col_num|
-    max_sizes[col_num] = token.length if token.length > (max_sizes[col_num] || 0)
+    max_sizes[col_num] = token.length if token.length >= (max_sizes[col_num] || 0)
   end
 end
 
