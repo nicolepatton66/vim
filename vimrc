@@ -129,7 +129,7 @@ set showbreak=↳
 
 " set list on by default, and customize characters used
 set list
-set listchars=tab:»»,trail:·,precedes:←,extends:→,nbsp:˽
+set listchars=tab:=»,trail:·,precedes:←,extends:→,nbsp:˽
 
 " menu
 set wildmenu
