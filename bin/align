@@ -7,6 +7,9 @@ if opt == '-a'
 elsif opt == '-e'
   SPLIT_REGEX = /=/
   JOIN_CHAR = '='
+elsif opt == '-c'
+  SPLIT_REGEX = /,/
+  JOIN_CHAR = ','
 end
 
 leader = nil
