@@ -8,5 +8,7 @@ ARGF.each do |line|
   line.gsub!(/%> <%=/, '%>___<%=')
   line.gsub!(/> </, '><')
   line.gsub!(/%>___<%=/, '%> <%=')
+  line.gsub!(/\s+,/, ',')
+  line.gsub!(/\s+:/, ':')
   puts "#{leader}#{line}"
 end
