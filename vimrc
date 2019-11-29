@@ -297,10 +297,10 @@ nmap <silent> ,Y F:xysiw'
 " column alignment
 vnoremap <silent> ,aa !align -a<cr>
 nnoremap <silent> ,aa :!align -a<cr>
-vnoremap <silent> ,ae !align -e<cr>
-nnoremap <silent> ,ae :!align -e<cr>
-vnoremap <silent> ,ac !align -c<cr>
-nnoremap <silent> ,ac :!align -c<cr>
+vnoremap <silent> ,a= !align -e<cr>
+nnoremap <silent> ,a= :!align -e<cr>
+vnoremap <silent> ,a, !align -c<cr>
+nnoremap <silent> ,a, :!align -c<cr>
 
 " un-align
 vnoremap <silent> ,l !un_align<cr>
