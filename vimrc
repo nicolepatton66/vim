@@ -284,9 +284,11 @@ nnoremap <silent> ,gg :GitGutterAll<cr>:redraw<cr>
 nmap <silent> ,hu <plug>GitGutterUndoHunk
 nmap <silent> ,hs <plug>GitGutterStageHunk
 
-" simple quotes (uses surround plugin)
+" quote word (uses surround plugin)
 nmap <silent> ,q mzysiw'`z
 nmap <silent> ,Q mzysiw"`z
+
+" flip quotes
 nmap <silent> ,f mzcs"'`z
 nmap <silent> ,F mzcs'"`z
 
@@ -316,8 +318,10 @@ nnoremap <silent> ,j 2:j<cr>
 " join an entire paragraph
 nnoremap <silent> ,J vip:j<cr>jj
 
-" visual block deletes and squashes
+" delete whitespace
 vnoremap <silent> ,ds mz:s/\%V\s*//g<cr>`z:nohlsearch<cr>
+
+" delete given character
 vnoremap <silent> ,d) mz:s/\%V)//g<cr>`z:nohlsearch<cr>
 vnoremap <silent> ,d} mz:s/\%V}//g<cr>`z:nohlsearch<cr>
 vnoremap <silent> ,d] mz:s/\%V\]//g<cr>`z:nohlsearch<cr>
@@ -325,6 +329,8 @@ vnoremap <silent> ,d, mz:s/\%V,//g<cr>`z:nohlsearch<cr>
 vnoremap <silent> ,d: mz:s/\%V://g<cr>`z:nohlsearch<cr>
 vnoremap <silent> ,d' mz:s/\%V'//g<cr>`z:nohlsearch<cr>
 vnoremap <silent> ,d" mz:s/\%V"//g<cr>`z:nohlsearch<cr>
+
+" delete whitespace before given character
 vnoremap <silent> ,D) mz:s/\%V\(\s*\))/)\1/g<cr>`z:nohlsearch<cr>
 vnoremap <silent> ,D} mz:s/\%V\(\s*\)}/}\1/g<cr>`z:nohlsearch<cr>
 vnoremap <silent> ,D] mz:s/\%V\(\s*\)\]/\]\1/g<cr>`z:nohlsearch<cr>
