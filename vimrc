@@ -272,9 +272,9 @@ nnoremap <silent> ,n :setlocal number!<cr>
 
 " fugitive git commands
 nnoremap <silent> ,gb :Gblame<cr>
-nnoremap <silent> ,gd :Gvdiff<cr>
+nnoremap <silent> ,gd :Gdiff<cr>
 nnoremap <silent> ,gs :Gstatus<cr>
-nnoremap <silent> ,ge :Gvsplit<cr>
+nnoremap <silent> ,ge :Gsplit<cr>
 nnoremap <silent> ,gw :Gwrite<cr>
 
 " update gitgutter display
