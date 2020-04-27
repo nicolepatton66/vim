@@ -352,6 +352,11 @@ nnoremap <silent> ,K :setlocal spell spelllang=en_us<cr>:echo "Spell checking on
 nnoremap ,r :%s/\<<c-r><c-w>\>//gc<left><left><left>
 nnoremap ,R :%s/\<<c-r><c-w>\>/<c-r><c-w>/gc<left><left><left>
 
+" temporal marks (save/restore)
+nnoremap ,us :AddTemporalMark a<cr>:echo 'Temporal mark set'<cr>
+nnoremap ,ur :AddTemporalMark b<cr>:JumpToTemporalMark a<cr>:redraw<cr>:echo 'Temporal mark restored'<cr>
+nnoremap ,uu :JumpToTemporalMark b<cr>:redraw<cr>:echo 'Undo last restore'<cr>
+
 " pretty print json
 nnoremap <silent> ,pj !!python -mjson.tool<cr>:set filetype=json<cr>
 vmap     <silent> ,pj ,j,pj
