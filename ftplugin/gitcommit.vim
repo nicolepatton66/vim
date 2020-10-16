@@ -1,3 +1,3 @@
-setlocal textwidth=100
+setlocal textwidth=120
 setlocal nolist
 setlocal spell spelllang=en_us
