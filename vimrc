@@ -292,9 +292,6 @@ nmap <silent> ,Q mzysiw"`z
 nmap <silent> ,f mzcs"'`z
 nmap <silent> ,F mzcs'"`z
 
-" convert to symbol
-nmap <silent> ,y ds'i:<esc>
-
 " column alignment
 vnoremap <silent> ,aa !align -a<cr>
 nnoremap <silent> ,aa :!align -a<cr>
