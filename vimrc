@@ -38,9 +38,6 @@ set expandtab
 " have shifts align to tabstops
 set shiftround
 
-" enable matchit
-runtime macros/matchit.vim
-
 " number of lines to keep above and below cursor
 set scrolloff=5
 
@@ -159,6 +156,9 @@ set undodir=~/.vim/undofiles
 
 " use hidden tags file
 set tags=./tags,tags,./.tags,.tags;
+
+" enable matchit
+runtime macros/matchit.vim
 
 " enable fzf
 if has('macunix')
@@ -487,7 +487,7 @@ augroup custom
   " remove crap that somehow gets added
   autocmd FileType * setlocal formatoptions-=r formatoptions-=o formatoptions-=l
 
-  " always return to last position when opening a file
+  " return to last position when opening a file
   autocmd BufReadPost *
   \   if line("'\"") > 1 && line("'\"") <= line("$") && &filetype !~# 'commit'
   \|    exe "normal! g`\""
