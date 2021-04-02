@@ -42,8 +42,8 @@ set shiftround
 set scrolloff=5
 
 " num cols to scroll horizontally
-set sidescroll=5
-set sidescrolloff=5
+set sidescroll=1
+set sidescrolloff=1
 
 " c = autowrap comments using textwidth
 " q = let gq format comments
