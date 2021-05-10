@@ -5,6 +5,9 @@
 
 " requires: ctags, fzf, xmllint, sqlformat
 
+" to snake case: crs
+" to camel case: crc
+
 " do this first!
 set nocompatible
 
