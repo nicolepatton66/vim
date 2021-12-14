@@ -174,9 +174,6 @@ set undodir=~/.vim/undofiles
 " use hidden tags file
 set tags=./tags,tags,./.tags,.tags;
 
-" stop junk from displaying
-set t_RV=
-
 " enable matchit
 runtime macros/matchit.vim
 
