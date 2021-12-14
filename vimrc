@@ -338,6 +338,9 @@ nnoremap <silent> ,j 2:j<cr>
 " join an entire paragraph
 nnoremap <silent> ,J vip:j<cr>jj
 
+" expand all folds
+nnoremap <silent> ,X zR
+
 " delete whitespace
 vnoremap <silent> ,ds mz:s/\%V\s*//g<cr>`z:nohlsearch<cr>
 
