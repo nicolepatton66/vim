@@ -137,9 +137,10 @@ set wildmode=list:longest,full
 
 " statusline
 set laststatus=2
-set statusline=%F\ %1*%m%*%=\ %2*%l\ of\ %L\ (%p%%)\ %c%*\ "
+set statusline=%F\ %1*%m%*%=%3*%.15{StatusLineGit()}\ %2*%l\ of\ %L\ (%p%%)\ %c%*\ "
 highlight User1 ctermbg=239 ctermfg=red
 highlight User2 ctermbg=239 ctermfg=green
+highlight User3 ctermbg=239 ctermfg=yellow
 
 " don't close buffers: hide them (allow opening new files with unsaved changes, etc)
 set hidden
@@ -466,6 +467,15 @@ function! ToggleColorColumn()
   else
     setlocal colorcolumn=
   endif
+endfunction
+
+function! GitBranch()
+  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+endfunction
+
+function! StatusLineGit()
+  let l:branchname = GitBranch()
+  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
 endfunction
 
 " Autocommands --------------------------------------------
