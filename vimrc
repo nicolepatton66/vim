@@ -136,8 +136,21 @@ set wildmenu
 set wildmode=list:longest,full
 
 " statusline
-set laststatus=2
-set statusline=%F\ %1*%m%*%=%3*%.15{StatusLineGit()}\ %2*%l\ of\ %L\ (%p%%)\ %c%*\ "
+set laststatus=2                      " always show statusline
+set statusline=                       " reset
+set statusline+=%F                    " filename
+set statusline+=\ %1*                 " color red
+set statusline+=%m                    " modified flag
+set statusline+=%*                    " reset color (for correct bg color)
+set statusline+=%=                    " switch to right
+set statusline+=%3*                   " color yellow
+set statusline+=%.15{StatusLineGit()} " git branch
+set statusline+=\ %2*                 " color green
+set statusline+=%l\ of\ %L            " line of total
+set statusline+=\ (%p%%)              " percentage
+set statusline+=\ %c                  " character number
+set statusline+=%*\ "                 " reset color and pad
+
 highlight User1 ctermbg=239 ctermfg=red
 highlight User2 ctermbg=239 ctermfg=green
 highlight User3 ctermbg=239 ctermfg=yellow
