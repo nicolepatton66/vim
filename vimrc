@@ -144,7 +144,7 @@ set statusline+=%m                    " modified flag
 set statusline+=%*                    " reset color (for correct bg color)
 set statusline+=%=                    " switch to right
 set statusline+=%3*                   " color yellow
-set statusline+=%.15{StatusLineGit()} " git branch
+set statusline+=%{gitbranch#name()}   " git branch
 set statusline+=\ %2*                 " color green
 set statusline+=%l\ of\ %L            " line of total
 set statusline+=\ (%p%%)              " percentage
@@ -483,15 +483,6 @@ function! ToggleColorColumn()
   else
     setlocal colorcolumn=
   endif
-endfunction
-
-function! GitBranch()
-  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-endfunction
-
-function! StatusLineGit()
-  let l:branchname = GitBranch()
-  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
 endfunction
 
 " Autocommands --------------------------------------------
