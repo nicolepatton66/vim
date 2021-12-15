@@ -143,8 +143,13 @@ set statusline+=\ %1*                 " color red
 set statusline+=%m                    " modified flag
 set statusline+=%*                    " reset color (for correct bg color)
 set statusline+=%=                    " switch to right
-set statusline+=%3*                   " color yellow
-set statusline+=%{gitbranch#name()}   " git branch
+let branch=gitbranch#name()
+if len(branch) != 0
+  set statusline+=\ %3*               " color yellow
+  set statusline+=%{branch}           " git branch
+  set statusline+=%*                  " reset color
+  set statusline+=\ \|                " add separator
+end
 set statusline+=\ %2*                 " color green
 set statusline+=%l\ of\ %L            " line of total
 set statusline+=\ (%p%%)              " percentage
