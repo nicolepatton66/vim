@@ -5,8 +5,8 @@
 
 " requires: ctags, fzf, xmllint, sqlformat
 
-" to snake case: crs
-" to camel case: crc
+" to snake case (normal mode): crs
+" to camel case (normal mode): crc
 
 " do this first!
 set nocompatible
@@ -48,11 +48,11 @@ set scrolloff=5
 set sidescroll=1
 set sidescrolloff=1
 
-" c = autowrap comments using textwidth
-" q = let gq format comments
-" 1 = don't break line after 1 letter word
+" format options
 set textwidth=80
-set formatoptions=cq1
+set formatoptions=c  " autowrap comments using textwidth
+set formatoptions+=q " let gq format comments
+set formatoptions+=1 " don't break line after 1 letter word
 
 " completion options
 set complete=.  " scan the current buffer
@@ -136,25 +136,24 @@ set wildmenu
 set wildmode=list:longest,full
 
 " statusline
-set laststatus=2                      " always show statusline
-set statusline=                       " reset
-set statusline+=%F                    " filename
-set statusline+=\ %1*                 " color red
-set statusline+=%m                    " modified flag
-set statusline+=%*                    " reset color (for correct bg color)
-set statusline+=%=                    " switch to right
+set laststatus=2             " always show statusline
+set statusline=%F            " filename
+set statusline+=\ %1*        " color red
+set statusline+=%m           " modified flag
+set statusline+=%*           " reset color (for correct bg color)
+set statusline+=%=           " switch to right
 let branch=gitbranch#name()
 if len(branch) != 0
-  set statusline+=\ %3*               " color yellow
-  set statusline+=%{branch}           " git branch
-  set statusline+=%*                  " reset color
-  set statusline+=\ \|                " add separator
+  set statusline+=\ %3*      " color yellow
+  set statusline+=%{branch}  " git branch
+  set statusline+=%*         " reset color
+  set statusline+=\ \|       " add separator
 end
-set statusline+=\ %2*                 " color green
-set statusline+=%l\ of\ %L            " line of total
-set statusline+=\ (%p%%)              " percentage
-set statusline+=\ %c                  " character number
-set statusline+=%*\ "                 " reset color and pad
+set statusline+=\ %2*        " color green
+set statusline+=%l\ of\ %L   " line of total
+set statusline+=\ (%p%%)     " percentage
+set statusline+=\ %c         " column number
+set statusline+=%*\ "        " reset color and pad
 
 highlight User1 ctermbg=239 ctermfg=red
 highlight User2 ctermbg=239 ctermfg=green
