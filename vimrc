@@ -393,8 +393,8 @@ nnoremap <silent> ,px !!xmllint --format -<cr>:set filetype=xml<cr>
 vmap     <silent> ,px ,j,px
 
 " pretty print sql
-nnoremap <silent> ,ps !!sqlformat --reindent --keywords upper -<cr>:set filetype=sql<cr>
-vmap     <silent> ,ps ,j,ps
+"nnoremap <silent> ,ps !!sqlformat --reindent --keywords upper -<cr>:set filetype=sql<cr>
+"vmap     <silent> ,ps ,j,ps
 
 " pretty print active record results
 nnoremap <silent> ,pr !!record_split<cr>:set filetype=text<cr>
