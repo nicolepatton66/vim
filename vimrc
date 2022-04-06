@@ -385,22 +385,24 @@ nnoremap ,ur :AddTemporalMark b<cr>:JumpToTemporalMark a<cr>:redraw<cr>:echo 'Te
 nnoremap ,uu :JumpToTemporalMark b<cr>:redraw<cr>:echo 'Undo last restore'<cr>
 
 " pretty print json
-nnoremap <silent> ,pj !!python -mjson.tool<cr>:set filetype=json<cr>
-vmap     <silent> ,pj ,j,pj
+nnoremap <silent> ,pj ggVG!python -mjson.tool<cr>:set filetype=json<cr>
+vmap     <silent> ,pj !python -mjson.tool<cr>:set filetype=json<cr>
 
 " pretty print xml
-nnoremap <silent> ,px !!xmllint --format -<cr>:set filetype=xml<cr>
-vmap     <silent> ,px ,j,px
+nnoremap <silent> ,px ggVG!xmllint --format -<cr>:set filetype=xml<cr>
+vmap     <silent> ,px !xmllint --format -<cr>:set filetype=xml<cr>
 
 " pretty print sql
-"nnoremap <silent> ,ps !!sqlformat --reindent --keywords upper -<cr>:set filetype=sql<cr>
-"vmap     <silent> ,ps ,j,ps
+nnoremap <silent> ,ps ggVG!sqlformat --reindent --keywords upper -<cr>:set filetype=sql<cr>
+vmap     <silent> ,ps !sqlformat --reindent --keywords upper -<cr>:set filetype=sql<cr>
 
 " pretty print active record results
-nnoremap <silent> ,pr !!record_split<cr>:set filetype=text<cr>
+nnoremap <silent> ,pr ggVG!record_split<cr>:set filetype=text<cr>
+vmap     <silent> ,pr !record_split<cr>:set filetype=text<cr>
 
 " pretty print encoded url parameters
-nnoremap <silent> ,pu !!url_split<cr>:set filetype=text<cr>
+nnoremap <silent> ,pu ggVG!url_split<cr>:set filetype=text<cr>
+vmap     <silent> ,pu !url_split<cr>:set filetype=text<cr>
 
 " have backspace delete
 vnoremap <bs> x
