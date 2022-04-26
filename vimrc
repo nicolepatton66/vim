@@ -251,7 +251,7 @@ nnoremap <silent> <F8> :call ClearEOLSpace()<cr>:nohlsearch<cr>
 nnoremap <silent> <F9> :redraw!<cr>:nohlsearch<cr>
 
 " F10 bash
-nnoremap <silent> <F10> :setlocal filetype=sh<cr>ggi#!/usr/bin/env bash<cr>set -e<cr><cr><esc>
+nnoremap <silent> <F10> :setlocal filetype=sh<cr>ggi#!/usr/bin/env bash<cr><cr><esc>
 
 " F11 perl
 nnoremap <silent> <F11> :setlocal filetype=perl<cr>ggi#!/usr/bin/env perl<cr><cr><esc>
