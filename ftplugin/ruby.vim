@@ -6,5 +6,5 @@ nmap <silent> ,y cs"'ds'i:<esc>
 nmap <silent> ,Y F:xysiw'
 
 ia lb puts "============================================="
-ia xx #XXX
+ia lbs puts "                ============================="
 ia ret return
