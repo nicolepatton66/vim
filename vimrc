@@ -314,10 +314,6 @@ nmap <silent> ,Q mzysiw"`z
 nmap <silent> ,f mzcs"'`z
 nmap <silent> ,F mzcs'"`z
 
-" create escape braces
-nmap <silent> ,# i#{}<esc>i
-nmap <silent> ,' i'#{}'<esc>hi
-
 " column alignment
 vnoremap <silent> ,aa !align -a<cr>
 nnoremap <silent> ,aa :!align -a<cr>
