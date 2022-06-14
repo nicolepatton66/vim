@@ -46,7 +46,7 @@ set scrolloff=5
 
 " num cols to scroll horizontally
 set sidescroll=1
-set sidescrolloff=1
+set sidescrolloff=10
 
 " format options
 set textwidth=80
