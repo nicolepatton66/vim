@@ -217,6 +217,7 @@ let g:closetag_filetypes = 'html,xhtml,eruby,xml'
 
 " gitgutter
 set updatetime=100
+let g:gitgutter_max_signs = 5000
 
 " nerdcommenter
 let g:NERDDefaultAlign = 'left'
