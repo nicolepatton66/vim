@@ -181,6 +181,8 @@ set tags=./tags,tags,./.tags,.tags;
 " stop junk from displaying
 set t_RV=
 
+" Module settings -----------------------------------------
+
 " enable matchit
 runtime macros/matchit.vim
 
@@ -190,8 +192,6 @@ if has('macunix')
 else
   set rtp+=~/.fzf
 endif
-
-" Module settings -----------------------------------------
 
 " netrw
 let g:netrw_banner = 0
