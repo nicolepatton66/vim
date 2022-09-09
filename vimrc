@@ -265,7 +265,7 @@ nnoremap <silent> ,6 :!chmod 644 %<cr><cr><cr>
 nnoremap <silent> ,7 :!chmod 755 %<cr><cr><cr>
 
 " source vimrc (:e causes ft plugins to activate)
-nnoremap <silent> ,v :source $MYVIMRC<cr>:e<cr>:redraw<cr>:echo 'vimrc sourced'<cr>
+nnoremap <silent> ,v :source $MYVIMRC<cr>:e<cr>:redraw<cr>:nohlsearch<cr>:echo 'vimrc sourced'<cr>
 
 " flip focus and maximize split window (used with help window)
 nnoremap <silent> ,m <c-w>w<c-w>_
