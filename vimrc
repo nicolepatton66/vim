@@ -154,6 +154,8 @@ set statusline+=%l\ of\ %L   " line of total
 set statusline+=\ (%p%%)     " percentage
 set statusline+=\ %c         " column number
 set statusline+=%*\ "        " reset color and pad
+set statusline+=\ <%n>       " add buffer number
+set statusline+=\ "          " pad
 
 highlight User1 ctermbg=239 ctermfg=red
 highlight User2 ctermbg=239 ctermfg=green
