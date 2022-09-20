@@ -98,6 +98,7 @@ set mouse=a
 
 " keep msgs abbreviated and short
 set shortmess=atT
+set shortmess-=S
 
 " display commands and other useful stuff
 set showcmd
@@ -452,10 +453,6 @@ noremap <leader>k <c-w>k
 noremap <leader>j <c-w>j
 noremap <leader>h <c-w>h
 noremap <leader>l <c-w>l
-
-" center these in searches
-nnoremap n nzz
-nnoremap `` ``zz
 
 " select pasted text
 nnoremap gV `[v`]
