@@ -98,7 +98,6 @@ set mouse=a
 
 " keep msgs abbreviated and short
 set shortmess=atT
-set shortmess-=S
 
 " display commands and other useful stuff
 set showcmd
