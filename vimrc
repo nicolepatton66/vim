@@ -160,7 +160,7 @@ set statusline+=%*          " reset color
 set statusline+=\ "         " pad
 set statusline+=\|          " separator
 set statusline+=\ "         " pad
-set statusline+=%3*         " color yellow
+set statusline+=%4*         " color blue
 set statusline+=%n          " buffer number
 set statusline+=%*          " reset color
 set statusline+=\ "         " pad
@@ -169,6 +169,7 @@ set statusline+=\ "         " pad
 highlight User1 ctermbg=239 ctermfg=red
 highlight User2 ctermbg=239 ctermfg=green
 highlight User3 ctermbg=239 ctermfg=yellow
+highlight User4 ctermbg=239 ctermfg=blue
 
 " don't close buffers: hide them (allow opening new files with unsaved changes, etc)
 set hidden
