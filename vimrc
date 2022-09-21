@@ -136,26 +136,36 @@ set wildmenu
 set wildmode=list:longest,full
 
 " statusline
-set laststatus=2             " always show statusline
-set statusline=%F            " filename
-set statusline+=\ %1*        " color red
-set statusline+=%m           " modified flag
-set statusline+=%*           " reset color (for correct bg color)
-set statusline+=%=           " switch to right
+set laststatus=2            " always show statusline
+set statusline=%F           " filename
+set statusline+=\ "         " pad
+set statusline+=%1*         " color red
+set statusline+=%m          " modified flag
+set statusline+=%*          " reset color
+set statusline+=%=          " switch to right
+set statusline+=\ "         " pad
 let branch=gitbranch#name()
 if len(branch) != 0
-  set statusline+=\ %3*      " color yellow
-  set statusline+=%{branch}  " git branch
-  set statusline+=%*         " reset color
-  set statusline+=\ \|       " add separator
+  set statusline+=%3*       " color yellow
+  set statusline+=%{branch} " git branch
+  set statusline+=%*        " reset color
+  set statusline+=\ "       " pad
+  set statusline+=\|        " separator
+  set statusline+=\ "       " pad
 end
-set statusline+=\ %2*        " color green
-set statusline+=%l\ of\ %L   " line of total
-set statusline+=\ (%p%%)     " percentage
-set statusline+=\ %c         " column number
-set statusline+=%*           " reset color
-set statusline+=\ <%n>\ "    " add buffer number and pad
+set statusline+=%2*         " color green
+set statusline+=%l\ of\ %L  " line of total
+set statusline+=,\ %c       " column number
+set statusline+=%*          " reset color
+set statusline+=\ "         " pad
+set statusline+=\|          " separator
+set statusline+=\ "         " pad
+set statusline+=%3*         " color yellow
+set statusline+=%n          " buffer number
+set statusline+=%*          " reset color
+set statusline+=\ "         " pad
 
+" (bg color doesn't exactly match gruvbox)
 highlight User1 ctermbg=239 ctermfg=red
 highlight User2 ctermbg=239 ctermfg=green
 highlight User3 ctermbg=239 ctermfg=yellow
