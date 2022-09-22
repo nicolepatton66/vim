@@ -147,7 +147,7 @@ set statusline+=\ "
 let branch=gitbranch#name()
 if len(branch) != 0
   set statusline+=%3*       " set color
-  set statusline+=%{branch} " git branch
+  set statusline+=%{branch}
   set statusline+=%1*\ \|\ "
 end
 set statusline+=%4*         " set color
