@@ -158,11 +158,11 @@ set statusline+=%5*         " set color
 set statusline+=%n          " buffer number
 set statusline+=\ "
 
-highlight User1 ctermbg=236 ctermfg=white
-highlight User2 ctermbg=236 ctermfg=red
-highlight User3 ctermbg=236 ctermfg=darkyellow
-highlight User4 ctermbg=236 ctermfg=cyan
-highlight User5 ctermbg=236 ctermfg=darkblue
+highlight User1 ctermbg=237 ctermfg=white
+highlight User2 ctermbg=237 ctermfg=red
+highlight User3 ctermbg=237 ctermfg=darkyellow
+highlight User4 ctermbg=237 ctermfg=cyan
+highlight User5 ctermbg=237 ctermfg=darkblue
 " black    blue        brown       cyan      darkblue   darkcyan
 " darkgray darkgreen   darkmagenta darkred   darkyellow gray
 " green    lightblue   lightcyan   lightgray lightgreen lightmagenta
