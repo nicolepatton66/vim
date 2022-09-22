@@ -137,39 +137,36 @@ set wildmode=list:longest,full
 
 " statusline
 set laststatus=2            " always show statusline
-set statusline=%F           " filename
-set statusline+=\ "         " pad
-set statusline+=%1*         " color red
+set statusline=%1*          " set color
+set statusline+=%F          " filename
+set statusline+=\ "
+set statusline+=%2*         " set color
 set statusline+=%m          " modified flag
-set statusline+=%*          " reset color
 set statusline+=%=          " switch to right
-set statusline+=\ "         " pad
+set statusline+=\ "
 let branch=gitbranch#name()
 if len(branch) != 0
-  set statusline+=%3*       " color yellow
+  set statusline+=%3*       " set color
   set statusline+=%{branch} " git branch
-  set statusline+=%*        " reset color
-  set statusline+=\ "       " pad
-  set statusline+=\|        " separator
-  set statusline+=\ "       " pad
+  set statusline+=%1*\ \|\ "
 end
-set statusline+=%2*         " color green
+set statusline+=%4*         " set color
 set statusline+=%l\ of\ %L  " line of total
 set statusline+=,\ %c       " column number
-set statusline+=%*          " reset color
-set statusline+=\ "         " pad
-set statusline+=\|          " separator
-set statusline+=\ "         " pad
-set statusline+=%4*         " color blue
+set statusline+=%1*\ \|\ "
+set statusline+=%5*         " set color
 set statusline+=%n          " buffer number
-set statusline+=%*          " reset color
-set statusline+=\ "         " pad
+set statusline+=\ "
 
-" (bg color doesn't exactly match gruvbox)
-highlight User1 ctermbg=239 ctermfg=red
-highlight User2 ctermbg=239 ctermfg=green
-highlight User3 ctermbg=239 ctermfg=yellow
-highlight User4 ctermbg=239 ctermfg=blue
+highlight User1 ctermbg=236 ctermfg=white
+highlight User2 ctermbg=236 ctermfg=red
+highlight User3 ctermbg=236 ctermfg=darkyellow
+highlight User4 ctermbg=236 ctermfg=cyan
+highlight User5 ctermbg=236 ctermfg=darkblue
+" black    blue        brown       cyan      darkblue   darkcyan
+" darkgray darkgreen   darkmagenta darkred   darkyellow gray
+" green    lightblue   lightcyan   lightgray lightgreen lightmagenta
+" lightred lightyellow magenta     red       white      yellow
 
 " don't close buffers: hide them (allow opening new files with unsaved changes, etc)
 set hidden
