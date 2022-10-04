@@ -135,34 +135,25 @@ set listchars=tab:»»,trail:·,precedes:←,extends:→,nbsp:˽
 set wildmenu
 set wildmode=list:longest,full
 
-" statusline
-set laststatus=2            " always show statusline
-set statusline=%1*          " set color
-set statusline+=%F          " filename
+" statusline (color set with %#*)
+set laststatus=2               " always show statusline
+set statusline=%1*%F           " filename
 set statusline+=\ "
-set statusline+=%2*         " set color
-set statusline+=%m          " modified flag
-set statusline+=%=          " switch to right
-set statusline+=\ "
+set statusline+=%2*%m          " modified flag
+set statusline+=%=             " switch to right
+set statusline+=%1*\ \|\ "
 let branch=gitbranch#name()
 if len(branch) != 0
-  set statusline+=%3*       " set color
-  set statusline+=%{branch}
+  set statusline+=%3*%{branch}
   set statusline+=%1*\ \|\ "
 end
-set statusline+=%4*         " set color
-set statusline+=%l          " line number
-set statusline+=%5*         " set color
-set statusline+=\ of\ "
-set statusline+=%4*         " set color
-set statusline+=%L          " total lines
-set statusline+=%5*         " set color
-set statusline+=\ ·\ "
-set statusline+=%4*         " set color
-set statusline+=%c          " column number
+set statusline+=%4*%l          " line number
+set statusline+=%5*\ of\ "
+set statusline+=%4*%L          " total lines
+set statusline+=%5*\ ·\ "
+set statusline+=%4*%c          " column number
 set statusline+=%1*\ \|\ "
-set statusline+=%6*         " set color
-set statusline+=%n          " buffer number
+set statusline+=%6*%n          " buffer number
 set statusline+=\ "
 
 highlight User1 ctermbg=237 ctermfg=white
