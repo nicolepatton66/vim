@@ -151,10 +151,17 @@ if len(branch) != 0
   set statusline+=%1*\ \|\ "
 end
 set statusline+=%4*         " set color
-set statusline+=%l\ of\ %L  " line of total
-set statusline+=,\ %c       " column number
-set statusline+=%1*\ \|\ "
+set statusline+=%l          " line number
 set statusline+=%5*         " set color
+set statusline+=\ of\ "
+set statusline+=%4*         " set color
+set statusline+=%L          " total lines
+set statusline+=%5*         " set color
+set statusline+=\ ·\ "
+set statusline+=%4*         " set color
+set statusline+=%c          " column number
+set statusline+=%1*\ \|\ "
+set statusline+=%6*         " set color
 set statusline+=%n          " buffer number
 set statusline+=\ "
 
@@ -162,7 +169,8 @@ highlight User1 ctermbg=237 ctermfg=white
 highlight User2 ctermbg=237 ctermfg=red
 highlight User3 ctermbg=237 ctermfg=darkyellow
 highlight User4 ctermbg=237 ctermfg=cyan
-highlight User5 ctermbg=237 ctermfg=darkblue
+highlight User5 ctermbg=237 ctermfg=darkmagenta
+highlight User6 ctermbg=237 ctermfg=darkblue
 " black    blue        brown       cyan      darkblue   darkcyan
 " darkgray darkgreen   darkmagenta darkred   darkyellow gray
 " green    lightblue   lightcyan   lightgray lightgreen lightmagenta
