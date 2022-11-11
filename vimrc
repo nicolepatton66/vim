@@ -116,7 +116,7 @@ set redrawtime=10000
 set history=50
 
 " keep the viminfo file under control
-set viminfo='20,\"50,n~/.viminfo
+set viminfo='20,\"100,:20,%,n~/.viminfo
 
 " auto ignore these when tabbing through file names
 set suffixes=.bak,~,.swp,.o,.info,.aux,.dvi,.out,.class
