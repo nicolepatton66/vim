@@ -8,6 +8,9 @@ nmap <silent> ,Y F:xysiw'
 nmap <silent> ,b 0/ef \(self.\)\?/e<cr>wyiwoputs "============================================="<esc>i <esc>pl:nohlsearch<cr>
 nmap <silent> ,B 0/ef \(self.\)\?/e<cr>wyiwoputs "                ============================="<esc>i <esc>pl:nohlsearch<cr>
 
+" copy current method (Get Function)
+nmap <silent> ,gf mz$?^\s*def <cr>$^V%y`z:nohlsearch<cr>
+
 ia lb puts "============================================="
 ia lbs puts "                ============================="
 ia ret return
