@@ -57,7 +57,9 @@ set formatoptions+=1 " don't break line after 1 letter word
 " completion options
 set complete=.  " scan the current buffer
 set complete+=b " scan other buffers
-set complete+=k~/.vim/dictionary
+if filereadable("/Users/npatton/.vim/dictionary")
+  set complete+=k~/.vim/dictionary
+endif
 set complete+=t " scan tags file
 
 " write file when putting vim to sleep
@@ -520,9 +522,11 @@ augroup custom
   " remove crap that somehow gets added
   autocmd FileType * setlocal formatoptions-=r formatoptions-=o formatoptions-=l
 
-  " return to last position when opening a file
-  autocmd BufReadPost *
-  \   if line("'\"") > 1 && line("'\"") <= line("$") && &filetype !~# 'commit'
-  \|    exe "normal! g`\""
-  \|  endif
+  if 0 " (doesn't seem to be working)
+    " return to last position when opening a file
+    autocmd BufReadPost *
+    \   if line("'\"") > 1 && line("'\"") <= line("$") && &filetype !~# 'commit'
+    \|    exe "normal! g`\""
+    \|  endif
+  endif
 augroup END
