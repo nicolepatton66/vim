@@ -3,7 +3,7 @@
 " ~~~ Nicole Patton ~~~
 " ~~~~~~~~~~~~~~~~~~~~~
 
-" requires: ctags, fzf, xmllint, sqlformat
+" requires: ctags, xmllint, sqlformat
 
 " to snake case (normal mode): crs
 " to camel case (normal mode): crc
@@ -57,7 +57,7 @@ set formatoptions+=1 " don't break line after 1 letter word
 " completion options
 set complete=.  " scan the current buffer
 set complete+=b " scan other buffers
-if filereadable("/Users/npatton/.vim/dictionary")
+if filereadable("~/.vim/dictionary")
   set complete+=k~/.vim/dictionary
 endif
 set complete+=t " scan tags file
@@ -196,13 +196,6 @@ set t_RV=
 " enable matchit
 runtime macros/matchit.vim
 
-" enable fzf
-if has('macunix')
-  set rtp+=/usr/local/opt/fzf
-else
-  set rtp+=~/.fzf
-endif
-
 " netrw
 let g:netrw_banner = 0
 let g:netrw_fastbrowse = 0
@@ -279,10 +272,6 @@ nnoremap <silent> ,v :source $MYVIMRC<cr>:e<cr>:redraw<cr>:nohlsearch<cr>:echo '
 
 " flip focus and maximize split window (used with help window)
 nnoremap <silent> ,m <c-w>w<c-w>_
-
-" fzf
-nnoremap <silent> ,z :GFiles<cr>
-nnoremap <silent> ,Z :Files<cr>
 
 " bufexplorer
 nmap <silent> ,e \be
