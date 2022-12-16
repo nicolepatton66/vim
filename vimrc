@@ -346,24 +346,6 @@ nnoremap <silent> ,X zR
 " delete whitespace
 vnoremap <silent> ,ds mz:s/\%V\s*//g<cr>`z:nohlsearch<cr>
 
-" delete given character
-vnoremap <silent> ,d) mz:s/\%V)//g<cr>`z:nohlsearch<cr>
-vnoremap <silent> ,d} mz:s/\%V}//g<cr>`z:nohlsearch<cr>
-vnoremap <silent> ,d] mz:s/\%V\]//g<cr>`z:nohlsearch<cr>
-vnoremap <silent> ,d, mz:s/\%V,//g<cr>`z:nohlsearch<cr>
-vnoremap <silent> ,d: mz:s/\%V://g<cr>`z:nohlsearch<cr>
-vnoremap <silent> ,d' mz:s/\%V'//g<cr>`z:nohlsearch<cr>
-vnoremap <silent> ,d" mz:s/\%V"//g<cr>`z:nohlsearch<cr>
-
-" delete whitespace before given character
-vnoremap <silent> ,D) mz:s/\%V\(\s*\))/)\1/g<cr>`z:nohlsearch<cr>
-vnoremap <silent> ,D} mz:s/\%V\(\s*\)}/}\1/g<cr>`z:nohlsearch<cr>
-vnoremap <silent> ,D] mz:s/\%V\(\s*\)\]/\]\1/g<cr>`z:nohlsearch<cr>
-vnoremap <silent> ,D, mz:s/\%V\(\s*\),/,\1/g<cr>`z:nohlsearch<cr>
-vnoremap <silent> ,D: mz:s/\%V\(\s*\):/:\1/g<cr>`z:nohlsearch<cr>
-vnoremap <silent> ,D' mz:s/\%V\(\s*\)'/'\1/g<cr>`z:nohlsearch<cr>
-vnoremap <silent> ,D" mz:s/\%V\(\s*\)"/"\1/g<cr>`z:nohlsearch<cr>
-
 " toggle ignorecase
 nnoremap <silent> ,i :set ignorecase!<cr>:echo "ignorecase=" . &ignorecase<cr>
 
