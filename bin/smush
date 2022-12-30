@@ -1,8 +1,0 @@
-#!/usr/bin/env ruby
-
-ARGF.each do |line|
-  line.chomp!.sub!(/^(\s*)/, '')
-  leader = $1
-  line.gsub!(/\s+/, '')
-  puts "#{leader}#{line}"
-end
