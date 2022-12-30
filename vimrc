@@ -376,10 +376,6 @@ vmap     <silent> ,px !xmllint --format -<cr>:set filetype=xml<cr>
 nnoremap <silent> ,ps ggVG!sqlformat --reindent --keywords upper -<cr>:set filetype=sql<cr>
 vmap     <silent> ,ps !sqlformat --reindent --keywords upper -<cr>:set filetype=sql<cr>
 
-" pretty print active record results
-nnoremap <silent> ,pr ggVG!record_split<cr>:set filetype=text<cr>
-vmap     <silent> ,pr !record_split<cr>:set filetype=text<cr>
-
 " pretty print encoded url parameters
 nnoremap <silent> ,pu ggVG!url_split<cr>:set filetype=text<cr>
 vmap     <silent> ,pu !url_split<cr>:set filetype=text<cr>
