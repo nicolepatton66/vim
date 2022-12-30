@@ -468,14 +468,13 @@ endfunction
 augroup custom
   autocmd!
 
-  autocmd BufRead,BufNewFile *.coffee setlocal filetype=coffee
-  autocmd BufRead,BufNewFile *.slim   setlocal filetype=slim
-  autocmd BufRead,BufNewFile *.hs     setlocal filetype=xml
-  autocmd BufRead,BufNewFile *.tt     setlocal filetype=html
-  autocmd BufRead,BufNewFile *.tt2    setlocal filetype=html
-  autocmd BufRead,BufNewFile *.json   setlocal filetype=json
-  autocmd BufRead,BufNewFile *.csv    setlocal filetype=csv
-  autocmd BufRead,BufNewFile *.book   setlocal filetype=book
+  autocmd BufRead,BufNewFile *.slim setlocal filetype=slim
+  autocmd BufRead,BufNewFile *.hs   setlocal filetype=xml
+  autocmd BufRead,BufNewFile *.tt   setlocal filetype=html
+  autocmd BufRead,BufNewFile *.tt2  setlocal filetype=html
+  autocmd BufRead,BufNewFile *.json setlocal filetype=json
+  autocmd BufRead,BufNewFile *.csv  setlocal filetype=csv
+  autocmd BufRead,BufNewFile *.book setlocal filetype=book
 
   " set default filetype to text
   autocmd BufRead,BufNewFile * if &filetype == '' | setlocal filetype=text | endif
